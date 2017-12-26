@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D1646551FF24CDE0059BBDF /* FirstStart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D1646531FF24CDE0059BBDF /* FirstStart.storyboard */; };
 		0D5B82701FC9A5D30055A72C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B826F1FC9A5D30055A72C /* AppDelegate.swift */; };
 		0D5B82721FC9A5D30055A72C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B82711FC9A5D30055A72C /* ViewController.swift */; };
 		0D5B82751FC9A5D30055A72C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D5B82731FC9A5D30055A72C /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D1646541FF24CDE0059BBDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FirstStart.storyboard; sourceTree = "<group>"; };
 		0D5B826C1FC9A5D30055A72C /* SyncPod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyncPod.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D5B826F1FC9A5D30055A72C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D5B82711FC9A5D30055A72C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				0D5B826F1FC9A5D30055A72C /* AppDelegate.swift */,
 				0D5B82711FC9A5D30055A72C /* ViewController.swift */,
 				0D5B82731FC9A5D30055A72C /* Main.storyboard */,
+				0D1646531FF24CDE0059BBDF /* FirstStart.storyboard */,
 				0D5B82761FC9A5D30055A72C /* Assets.xcassets */,
 				0D5B82781FC9A5D30055A72C /* LaunchScreen.storyboard */,
 				0D5B827B1FC9A5D30055A72C /* Info.plist */,
@@ -234,6 +237,7 @@
 			files = (
 				0D5B827A1FC9A5D30055A72C /* LaunchScreen.storyboard in Resources */,
 				0D5B82771FC9A5D30055A72C /* Assets.xcassets in Resources */,
+				0D1646551FF24CDE0059BBDF /* FirstStart.storyboard in Resources */,
 				0D5B82751FC9A5D30055A72C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +300,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0D1646531FF24CDE0059BBDF /* FirstStart.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D1646541FF24CDE0059BBDF /* Base */,
+			);
+			name = FirstStart.storyboard;
+			sourceTree = "<group>";
+		};
 		0D5B82731FC9A5D30055A72C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
