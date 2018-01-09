@@ -17,10 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-        let isSinined: Bool = false;
+        let isSignined: Bool = false;
 
         // ユーザがいない場合、初回起動画面に遷移
-        if(!isSinined) {
+        if(!isSignined) {
             let storyboard: UIStoryboard = UIStoryboard(name: "FirstStart", bundle: nil)
             let viewController: UIViewController = storyboard.instantiateViewController(withIdentifier: "FirstStartTopView") as UIViewController
             window?.rootViewController = viewController
