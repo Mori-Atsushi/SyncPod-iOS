@@ -160,10 +160,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxI-Y1-elE">
                                         <rect key="frame" x="0.0" y="0.0" width="62" height="30"/>
                                         <state key="normal" title="ログイン"/>
+                                        <connections>
+                                            <segue destination="bTF-t6-yGw" kind="show" id="b7K-j0-qNY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rh5-Zk-w2Y">
                                         <rect key="frame" x="162" y="0.0" width="62" height="30"/>
                                         <state key="normal" title="新規登録"/>
+                                        <connections>
+                                            <segue destination="pcd-yy-Hjh" kind="show" id="dgx-3S-xZW"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
