@@ -176,7 +176,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="新規登録"/>
                                             <connections>
-                                                <action selector="goSinupView:" destination="QN6-mm-H3i" eventType="touchUpInside" id="L4f-wo-Hj2"/>
+                                                <action selector="goSignUpView:" destination="QN6-mm-H3i" eventType="touchUpInside" id="L4f-wo-Hj2"/>
                                             </connections>
                                         </button>
                                     </barButtonItem>

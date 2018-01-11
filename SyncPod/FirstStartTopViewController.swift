@@ -14,7 +14,7 @@ class FirstStartViewController: UIViewController {
         self.present(next,animated: true, completion: nil)
     }
     
-    @IBAction func goSinupView(_ sender:UIButton) {
+    @IBAction func goSignUpView(_ sender:UIButton) {
         let next = storyboard!.instantiateViewController(withIdentifier: "SignUpView")
         self.present(next,animated: true, completion: nil)
     }
