@@ -9,13 +9,13 @@
 import UIKit
 
 class FirstStartViewController: UIViewController {
-    @IBAction func goSignInView(_ sender:UIButton) {
+    @IBAction func goSignInView(_ sender: UIButton) {
         let next = storyboard!.instantiateViewController(withIdentifier: "SignInView")
-        self.present(next,animated: true, completion: nil)
+        self.present(next, animated: true, completion: nil)
     }
-    
-    @IBAction func goSignUpView(_ sender:UIButton) {
+
+    @IBAction func goSignUpView(_ sender: UIButton) {
         let next = storyboard!.instantiateViewController(withIdentifier: "SignUpView")
-        self.present(next,animated: true, completion: nil)
+        self.present(next, animated: true, completion: nil)
     }
 }
