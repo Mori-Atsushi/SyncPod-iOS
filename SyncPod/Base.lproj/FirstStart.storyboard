@@ -36,13 +36,13 @@
         <!--View Controller-->
         <scene sceneID="S65-CM-4jq">
             <objects>
-                <viewController storyboardIdentifier="SingUpView" id="pcd-yy-Hjh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpView" id="pcd-yy-Hjh" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Y8-oF-5jJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SingUpView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWZ-VE-Pcu">
-                                <rect key="frame" x="141" y="323" width="93" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SignUpView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWZ-VE-Pcu">
+                                <rect key="frame" x="141" y="323" width="92" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="1494" y="375"/>
         </scene>
-        <!--View Controller-->
+        <!--First Start View Controller-->
         <scene sceneID="zL5-7l-TBR">
             <objects>
-                <viewController storyboardIdentifier="FirstStartTopView" id="QN6-mm-H3i" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstStartTopView" id="QN6-mm-H3i" customClass="FirstStartViewController" customModule="SyncPod" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ohf-7L-rAk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -164,7 +164,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="ログイン"/>
                                             <connections>
-                                                <segue destination="bTF-t6-yGw" kind="show" id="nGO-F6-LSo"/>
+                                                <action selector="goSignInView:" destination="QN6-mm-H3i" eventType="touchUpInside" id="M7a-aJ-U5c"/>
                                             </connections>
                                         </button>
                                     </barButtonItem>
@@ -176,7 +176,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="新規登録"/>
                                             <connections>
-                                                <segue destination="pcd-yy-Hjh" kind="show" id="24v-Mw-7Rm"/>
+                                                <action selector="goSinupView:" destination="QN6-mm-H3i" eventType="touchUpInside" id="L4f-wo-Hj2"/>
                                             </connections>
                                         </button>
                                     </barButtonItem>
