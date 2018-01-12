@@ -9,4 +9,14 @@
 import UIKit
 
 class SigninViewController: UIViewController, UINavigationBarDelegate {
+    @IBOutlet weak var navigationBar: UINavigationBar!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        navigationBar.delegate = self
+    }
+
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+        return .topAttached
+    }
 }
