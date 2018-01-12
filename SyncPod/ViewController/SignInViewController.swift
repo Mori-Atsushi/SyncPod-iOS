@@ -27,7 +27,7 @@ class SigninViewController: UIViewController, UINavigationBarDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         navigationBar.delegate = self
-        
+
         mailField.addBorderBottom(height: 1.0, color: UIColor.lightGray)
         passwordField.addBorderBottom(height: 1.0, color: UIColor.lightGray)
         submitButton.layer.cornerRadius = 5
