@@ -23,8 +23,16 @@ class HttpRequestHelper {
     init(delegate: HttpRequestDelegate) {
         self.delegate = delegate
     }
+    
+    func post(data: Parameters? = nil, endPoint: String) {
+        communicate(method: .post, data: data, endPoint: endPoint)
+    }
+    
+    func get(data: Parameters? = nil, endPoint: String) {
+        communicate(method: .get, data: data, endPoint: endPoint)
+    }
 
-    func communicate(method: HTTPMethod, data: Parameters? = nil, endPoint: String) {
+    private func communicate(method: HTTPMethod, data: Parameters?, endPoint: String) {
         let urlString = host + endPoint
         let headers: HTTPHeaders = [
             "Authorization": token ?? "",
