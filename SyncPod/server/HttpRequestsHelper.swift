@@ -15,16 +15,23 @@ protocol HttpRequestDelegate {
 }
 
 class HttpRequestHelper {
-    var delegate: HttpRequestDelegate!
     let host: String = "http://59.106.220.89:3000/api/v1/"
-    
+
+    var delegate: HttpRequestDelegate!
+    var token: String?
+
     init(delegate: HttpRequestDelegate) {
         self.delegate = delegate
     }
 
     func communicate(method: HTTPMethod, data: Parameters? = nil, endPoint: String) {
         let urlString = host + endPoint
-        Alamofire.request(urlString, method: method, parameters: data)
+        let headers: HTTPHeaders = [
+            "Authorization": token ?? "",
+            "Accept": "application/json"
+        ]
+
+        Alamofire.request(urlString, method: method, parameters: data, headers: headers)
             .validate(statusCode: 200...200)
             .responseJSON { response in
                 switch response.result {
