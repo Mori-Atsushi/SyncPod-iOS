@@ -18,4 +18,6 @@ class FirstStartViewController: UIViewController {
         let next = storyboard!.instantiateViewController(withIdentifier: "SignUpView")
         self.present(next, animated: true, completion: nil)
     }
+    
+    @IBAction func goBack(_ segue:UIStoryboardSegue) {}
 }
