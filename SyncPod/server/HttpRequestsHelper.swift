@@ -17,17 +17,17 @@ protocol HttpRequestDelegate {
 class HttpRequestHelper {
     let host: String = "http://59.106.220.89:3000/api/v1/"
 
-    var delegate: HttpRequestDelegate!
+    var httpRequestDelegate: HttpRequestDelegate
     var token: String?
 
     init(delegate: HttpRequestDelegate) {
-        self.delegate = delegate
+        self.httpRequestDelegate = delegate
     }
-    
+
     func post(data: Parameters? = nil, endPoint: String) {
         communicate(method: .post, data: data, endPoint: endPoint)
     }
-    
+
     func get(data: Parameters? = nil, endPoint: String) {
         communicate(method: .get, data: data, endPoint: endPoint)
     }
@@ -48,9 +48,9 @@ class HttpRequestHelper {
                         return
                     }
                     let json = JSON(object)
-                    self.delegate.onSuccess(data: json)
+                    self.httpRequestDelegate.onSuccess(data: json)
                 case .failure(let error):
-                    self.delegate.onFailure(error: error)
+                    self.httpRequestDelegate.onFailure(error: error)
                 }
         }
     }
