@@ -17,6 +17,7 @@
 		0D5B82851FC9A5D30055A72C /* SyncPodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B82841FC9A5D30055A72C /* SyncPodTests.swift */; };
 		0D5B82901FC9A5D30055A72C /* SyncPodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B828F1FC9A5D30055A72C /* SyncPodUITests.swift */; };
 		0D859B5A200882B8008A3672 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D859B59200882B8008A3672 /* SignInViewController.swift */; };
+		0DCA418D200C9B3500ED9B50 /* DeviceConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCA418C200C9B3500ED9B50 /* DeviceConst.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		0D5B828F1FC9A5D30055A72C /* SyncPodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncPodUITests.swift; sourceTree = "<group>"; };
 		0D5B82911FC9A5D30055A72C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D859B59200882B8008A3672 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		0DCA418C200C9B3500ED9B50 /* DeviceConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConst.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		0D5B826E1FC9A5D30055A72C /* SyncPod */ = {
 			isa = PBXGroup;
 			children = (
+				0DCA418B200C9B0600ED9B50 /* Tools */,
 				0D859B5B200882E5008A3672 /* storyboard */,
 				0D859B5820088265008A3672 /* ViewController */,
 				0D5B826F1FC9A5D30055A72C /* AppDelegate.swift */,
@@ -148,6 +151,14 @@
 				0D1646531FF24CDE0059BBDF /* FirstStart.storyboard */,
 			);
 			path = storyboard;
+			sourceTree = "<group>";
+		};
+		0DCA418B200C9B0600ED9B50 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				0DCA418C200C9B3500ED9B50 /* DeviceConst.swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DCA418D200C9B3500ED9B50 /* DeviceConst.swift in Sources */,
 				0D859B5A200882B8008A3672 /* SignInViewController.swift in Sources */,
 				0D1BDB5020073F0200DA351D /* FirstStartTopViewController.swift in Sources */,
 				0D5B82721FC9A5D30055A72C /* ViewController.swift in Sources */,

@@ -28,9 +28,9 @@ class SigninViewController: UIViewController, UINavigationBarDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         navigationBar.delegate = self
 
-        mailField.addBorderBottom(height: 1.0, color: UIColor.lightGray)
-        passwordField.addBorderBottom(height: 1.0, color: UIColor.lightGray)
-        submitButton.layer.cornerRadius = 5
+        mailField.addBorderBottom(height: DeviceConst.textFieldBorderHeight, color: UIColor.lightGray)
+        passwordField.addBorderBottom(height: DeviceConst.textFieldBorderHeight, color: UIColor.lightGray)
+        submitButton.layer.cornerRadius = DeviceConst.buttonCornerRadius
     }
 
     func position(for bar: UIBarPositioning) -> UIBarPosition {
