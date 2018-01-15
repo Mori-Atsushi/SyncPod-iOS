@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0D1646551FF24CDE0059BBDF /* FirstStart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D1646531FF24CDE0059BBDF /* FirstStart.storyboard */; };
 		0D1BDB5020073F0200DA351D /* FirstStartTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1BDB4F20073F0200DA351D /* FirstStartTopViewController.swift */; };
+		0D4B438520099E550035DF1D /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4B438320099E550035DF1D /* SwiftyJSON.framework */; };
+		0D4B438620099E550035DF1D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4B438420099E550035DF1D /* Alamofire.framework */; };
 		0D5B82701FC9A5D30055A72C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B826F1FC9A5D30055A72C /* AppDelegate.swift */; };
 		0D5B82721FC9A5D30055A72C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B82711FC9A5D30055A72C /* ViewController.swift */; };
 		0D5B82751FC9A5D30055A72C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D5B82731FC9A5D30055A72C /* Main.storyboard */; };
@@ -18,6 +20,7 @@
 		0D5B82901FC9A5D30055A72C /* SyncPodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B828F1FC9A5D30055A72C /* SyncPodUITests.swift */; };
 		0D859B5A200882B8008A3672 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D859B59200882B8008A3672 /* SignInViewController.swift */; };
 		0DCA418D200C9B3500ED9B50 /* DeviceConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCA418C200C9B3500ED9B50 /* DeviceConst.swift */; };
+		0DCD202A200CBC67001C90DA /* HttpRequestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD2029200CBC67001C90DA /* HttpRequestsHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,8 @@
 /* Begin PBXFileReference section */
 		0D1646541FF24CDE0059BBDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FirstStart.storyboard; sourceTree = "<group>"; };
 		0D1BDB4F20073F0200DA351D /* FirstStartTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstStartTopViewController.swift; sourceTree = "<group>"; };
+		0D4B438320099E550035DF1D /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		0D4B438420099E550035DF1D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		0D5B826C1FC9A5D30055A72C /* SyncPod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyncPod.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D5B826F1FC9A5D30055A72C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D5B82711FC9A5D30055A72C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +60,7 @@
 		0D5B82911FC9A5D30055A72C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D859B59200882B8008A3672 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		0DCA418C200C9B3500ED9B50 /* DeviceConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConst.swift; sourceTree = "<group>"; };
+		0DCD2029200CBC67001C90DA /* HttpRequestsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpRequestsHelper.swift; path = SyncPod/server/HttpRequestsHelper.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D4B438520099E550035DF1D /* SwiftyJSON.framework in Frameworks */,
+				0D4B438620099E550035DF1D /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D4B438220099E540035DF1D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D4B438420099E550035DF1D /* Alamofire.framework */,
+				0D4B438320099E550035DF1D /* SwiftyJSON.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0D5B82631FC9A5D30055A72C = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +106,7 @@
 				0D5B82831FC9A5D30055A72C /* SyncPodTests */,
 				0D5B828E1FC9A5D30055A72C /* SyncPodUITests */,
 				0D5B826D1FC9A5D30055A72C /* Products */,
+				0D4B438220099E540035DF1D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +123,7 @@
 		0D5B826E1FC9A5D30055A72C /* SyncPod */ = {
 			isa = PBXGroup;
 			children = (
+				0DCD2028200CBC51001C90DA /* server */,
 				0DCA418B200C9B0600ED9B50 /* Tools */,
 				0D859B5B200882E5008A3672 /* storyboard */,
 				0D859B5820088265008A3672 /* ViewController */,
@@ -161,6 +180,15 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		0DCD2028200CBC51001C90DA /* server */ = {
+			isa = PBXGroup;
+			children = (
+				0DCD2029200CBC67001C90DA /* HttpRequestsHelper.swift */,
+			);
+			name = server;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -171,6 +199,7 @@
 				0D5B82681FC9A5D30055A72C /* Sources */,
 				0D5B82691FC9A5D30055A72C /* Frameworks */,
 				0D5B826A1FC9A5D30055A72C /* Resources */,
+				0D4B438720099E680035DF1D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -291,6 +320,24 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0D4B438720099E680035DF1D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0D5B82681FC9A5D30055A72C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -301,6 +348,7 @@
 				0D1BDB5020073F0200DA351D /* FirstStartTopViewController.swift in Sources */,
 				0D5B82721FC9A5D30055A72C /* ViewController.swift in Sources */,
 				0D5B82701FC9A5D30055A72C /* AppDelegate.swift in Sources */,
+				0DCD202A200CBC67001C90DA /* HttpRequestsHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +524,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JTE9A2EM5U;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SyncPod/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Syder.SyncPod;
@@ -491,6 +543,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JTE9A2EM5U;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SyncPod/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Syder.SyncPod;
