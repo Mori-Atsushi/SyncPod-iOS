@@ -4,6 +4,7 @@ SyncPodのiOSアプリ用のリポジトリです。
 ## 必要環境
 * Xcode 9.1
 * [Swimat](https://github.com/Jintin/Swimat)
+* [Carthage](https://github.com/Carthage/Carthage)
 
 ### Xcode 9.1
 [App Store](https://itunes.apple.com/jp/app/xcode/id497799835?mt=12)からインストールする。
@@ -15,6 +16,17 @@ brew cask install swimat
 ```
 
 2. [システム設定] -> [機能拡張] -> [Xcode Source Editor] -> [Swimat]にチェックを入れる。
+
+### 
+1. 次のコマンドを実行する。
+```sh
+brew install carthage
+```
+
+2. 外部ライブラリをビルドする
+```sh
+carthage update --platform iOS
+```
 
 ## セットアップ
 1. 次のコマンドを実行する。
