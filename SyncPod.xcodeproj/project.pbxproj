@@ -21,6 +21,8 @@
 		0D859B5A200882B8008A3672 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D859B59200882B8008A3672 /* SignInViewController.swift */; };
 		0DCA418D200C9B3500ED9B50 /* DeviceConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCA418C200C9B3500ED9B50 /* DeviceConst.swift */; };
 		0DCD202A200CBC67001C90DA /* HttpRequestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD2029200CBC67001C90DA /* HttpRequestsHelper.swift */; };
+		0DCD202C200D00A5001C90DA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD202B200D00A5001C90DA /* SignUpViewController.swift */; };
+		0DCD202E200D02CB001C90DA /* ViewExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD202D200D02CB001C90DA /* ViewExtentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		0D859B59200882B8008A3672 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		0DCA418C200C9B3500ED9B50 /* DeviceConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConst.swift; sourceTree = "<group>"; };
 		0DCD2029200CBC67001C90DA /* HttpRequestsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpRequestsHelper.swift; path = SyncPod/server/HttpRequestsHelper.swift; sourceTree = SOURCE_ROOT; };
+		0DCD202B200D00A5001C90DA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		0DCD202D200D02CB001C90DA /* ViewExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtentions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,7 @@
 				0D5B82711FC9A5D30055A72C /* ViewController.swift */,
 				0D1BDB4F20073F0200DA351D /* FirstStartTopViewController.swift */,
 				0D859B59200882B8008A3672 /* SignInViewController.swift */,
+				0DCD202B200D00A5001C90DA /* SignUpViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				0DCA418C200C9B3500ED9B50 /* DeviceConst.swift */,
+				0DCD202D200D02CB001C90DA /* ViewExtentions.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -344,7 +350,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DCA418D200C9B3500ED9B50 /* DeviceConst.swift in Sources */,
+				0DCD202C200D00A5001C90DA /* SignUpViewController.swift in Sources */,
 				0D859B5A200882B8008A3672 /* SignInViewController.swift in Sources */,
+				0DCD202E200D02CB001C90DA /* ViewExtentions.swift in Sources */,
 				0D1BDB5020073F0200DA351D /* FirstStartTopViewController.swift in Sources */,
 				0D5B82721FC9A5D30055A72C /* ViewController.swift in Sources */,
 				0D5B82701FC9A5D30055A72C /* AppDelegate.swift in Sources */,
