@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Signin View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="cKF-ba-5p0">
             <objects>
-                <viewController storyboardIdentifier="SignInView" id="bTF-t6-yGw" customClass="SigninViewController" customModule="SyncPod" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInView" id="bTF-t6-yGw" customClass="SignInViewController" customModule="SyncPod" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LNp-IB-vhF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,10 +94,10 @@
             </objects>
             <point key="canvasLocation" x="793" y="375"/>
         </scene>
-        <!--Signup View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="S65-CM-4jq">
             <objects>
-                <viewController storyboardIdentifier="SignUpView" id="pcd-yy-Hjh" customClass="SignupViewController" customModule="SyncPod" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpView" id="pcd-yy-Hjh" customClass="SignUpViewController" customModule="SyncPod" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Y8-oF-5jJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

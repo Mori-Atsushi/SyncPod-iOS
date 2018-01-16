@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SigninViewController: UIViewController, UINavigationBarDelegate {
+class SignInViewController: UIViewController, UINavigationBarDelegate {
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var mailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
