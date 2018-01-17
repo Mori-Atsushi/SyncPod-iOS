@@ -44,6 +44,9 @@ class SignInViewController: UIViewController, UINavigationBarDelegate, HttpReque
     }
 
     func onFailure(error: Error) {
-        print(error)
+        let alert: UIAlertController = UIAlertController(title: "ログイン失敗", message: "ログインに失敗しました。メールアドレスとパスワードを確認してください。", preferredStyle: UIAlertControllerStyle.alert)
+        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+        alert.addAction(defaultAction)
+        present(alert, animated: true, completion: nil)
     }
 }
