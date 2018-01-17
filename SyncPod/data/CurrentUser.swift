@@ -11,9 +11,7 @@ class CurrentUser {
     static private var _userToken: String?
     static var userToken: String? {
         get {
-            if(_userToken == nil) {
-                _userToken = UserDefaults.standard.string(forKey: "userToken")
-            }
+            _userToken = _userToken ?? UserDefaults.standard.string(forKey: "userToken")
             return _userToken
         }
         set {
