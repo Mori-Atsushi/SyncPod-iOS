@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D1646551FF24CDE0059BBDF /* FirstStart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D1646531FF24CDE0059BBDF /* FirstStart.storyboard */; };
 		0D1BDB5020073F0200DA351D /* FirstStartTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1BDB4F20073F0200DA351D /* FirstStartTopViewController.swift */; };
+		0D2468AC200FC01A001348FB /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2468AB200FC01A001348FB /* TopViewController.swift */; };
 		0D4B438520099E550035DF1D /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4B438320099E550035DF1D /* SwiftyJSON.framework */; };
 		0D4B438620099E550035DF1D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4B438420099E550035DF1D /* Alamofire.framework */; };
 		0D5B82701FC9A5D30055A72C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B826F1FC9A5D30055A72C /* AppDelegate.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		0D1646541FF24CDE0059BBDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FirstStart.storyboard; sourceTree = "<group>"; };
 		0D1BDB4F20073F0200DA351D /* FirstStartTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstStartTopViewController.swift; sourceTree = "<group>"; };
+		0D2468AB200FC01A001348FB /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		0D4B438320099E550035DF1D /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		0D4B438420099E550035DF1D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		0D5B826C1FC9A5D30055A72C /* SyncPod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyncPod.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +169,7 @@
 				0D1BDB4F20073F0200DA351D /* FirstStartTopViewController.swift */,
 				0D859B59200882B8008A3672 /* SignInViewController.swift */,
 				0DCD202B200D00A5001C90DA /* SignUpViewController.swift */,
+				0D2468AB200FC01A001348FB /* TopViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				0DCD202C200D00A5001C90DA /* SignUpViewController.swift in Sources */,
 				0D859B5A200882B8008A3672 /* SignInViewController.swift in Sources */,
 				0DCD202E200D02CB001C90DA /* ViewExtentions.swift in Sources */,
+				0D2468AC200FC01A001348FB /* TopViewController.swift in Sources */,
 				0D1BDB5020073F0200DA351D /* FirstStartTopViewController.swift in Sources */,
 				0D5B82721FC9A5D30055A72C /* ViewController.swift in Sources */,
 				0D5B82701FC9A5D30055A72C /* AppDelegate.swift in Sources */,
