@@ -41,6 +41,9 @@ class SignInViewController: UIViewController, UINavigationBarDelegate, HttpReque
 
     func onSuccess(data: JSON) {
         CurrentUser.userToken = data["user"]["access_token"].string
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "TopView") as UIViewController
+        present(viewController, animated: true)
     }
 
     func onFailure(error: Error) {
