@@ -40,7 +40,7 @@ class SignInViewController: UIViewController, UINavigationBarDelegate, HttpReque
     }
 
     func onSuccess(data: JSON) {
-        print(data)
+        CurrentUser.userToken = data["user"]["access_token"].string
     }
 
     func onFailure(error: Error) {
