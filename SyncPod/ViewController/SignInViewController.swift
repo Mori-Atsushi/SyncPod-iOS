@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
-class SignInViewController: UIViewController, UINavigationBarDelegate {
+class SignInViewController: UIViewController, UINavigationBarDelegate, HttpRequestDelegate {
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var mailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -24,7 +26,24 @@ class SignInViewController: UIViewController, UINavigationBarDelegate {
         submitButton.layer.cornerRadius = DeviceConst.buttonCornerRadius
     }
 
+    @IBAction func sendSignIn(_ sender: UIButton) {
+        let Http = HttpRequestHelper(delegate: self)
+        let data: Parameters = [
+            "email": mailField.text!,
+            "password": passwordField.text!
+        ]
+        Http.post(data: data, endPoint: "login")
+    }
+
     func position(for bar: UIBarPositioning) -> UIBarPosition {
         return .topAttached
+    }
+
+    func onSuccess(data: JSON) {
+        print(data)
+    }
+
+    func onFailure(error: Error) {
+        print(error)
     }
 }
