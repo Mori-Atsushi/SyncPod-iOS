@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
-class SignUpViewController: UIViewController, UINavigationBarDelegate {
+class SignUpViewController: UIViewController, UINavigationBarDelegate, HttpRequestDelegate {
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var mailField: UITextField!
@@ -28,8 +30,34 @@ class SignUpViewController: UIViewController, UINavigationBarDelegate {
         submitButton.layer.cornerRadius = DeviceConst.buttonCornerRadius
     }
     
+    @IBAction func sendSignUp(_ sender: UIButton) {
+        let Http = HttpRequestHelper(delegate: self)
+        let data: Parameters = [
+            "user": [
+                "name": nameField.text!,
+                "email": mailField.text!,
+                "password": passwordField.text!
+            ]
+        ]
+        Http.post(data: data, endPoint: "users")
+    }
+    
     func position(for bar: UIBarPositioning) -> UIBarPosition {
         return .topAttached
+    }
+    
+    func onSuccess(data: JSON) {
+        CurrentUser.userToken = data["user"]["access_token"].string
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "TopView") as UIViewController
+        present(viewController, animated: true)
+    }
+    
+    func onFailure(error: Error) {
+        let alert = UIAlertController(title: "アカウント登録失敗", message: "アカウント登録に失敗しました。メールアドレスが既に使われている可能性があります。", preferredStyle: UIAlertControllerStyle.alert)
+        let defaultAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+        alert.addAction(defaultAction)
+        present(alert, animated: true)
     }
 }
 
