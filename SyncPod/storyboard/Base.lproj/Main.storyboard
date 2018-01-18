@@ -134,10 +134,10 @@ Cg
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="115.59220389805098"/>
         </scene>
-        <!--View Controller-->
+        <!--Room View Controller-->
         <scene sceneID="yad-h0-oHc">
             <objects>
-                <viewController storyboardIdentifier="RoomView" id="6al-Zs-kNG" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RoomView" id="6al-Zs-kNG" customClass="RoomViewController" customModule="SyncPod" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aiK-bc-sxE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
