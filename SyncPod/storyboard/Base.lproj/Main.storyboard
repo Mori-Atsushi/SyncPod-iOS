@@ -125,6 +125,9 @@ Cg
                         <viewLayoutGuide key="safeArea" id="ysh-eI-Yo7"/>
                     </view>
                     <navigationItem key="navigationItem" id="pLr-fN-FG6"/>
+                    <connections>
+                        <outlet property="JoinRoomPanel" destination="jdY-WT-thj" id="8LM-f2-riU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
