@@ -170,7 +170,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="登録"/>
                                         <connections>
-                                            <action selector="sendSignIn:" destination="pcd-yy-Hjh" eventType="touchUpInside" id="rU3-zS-dSs"/>
+                                            <action selector="sendSignUp:" destination="pcd-yy-Hjh" eventType="touchUpInside" id="rU3-zS-dSs"/>
                                         </connections>
                                     </button>
                                 </subviews>

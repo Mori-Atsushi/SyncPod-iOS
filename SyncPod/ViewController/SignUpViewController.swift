@@ -30,7 +30,7 @@ class SignUpViewController: UIViewController, UINavigationBarDelegate, HttpReque
         submitButton.layer.cornerRadius = DeviceConst.buttonCornerRadius
     }
     
-    @IBAction func sendSignIn(_ sender: UIButton) {
+    @IBAction func sendSignUp(_ sender: UIButton) {
         let Http = HttpRequestHelper(delegate: self)
         let data: Parameters = [
             "user": [
