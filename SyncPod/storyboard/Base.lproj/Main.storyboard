@@ -17,11 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SGS-19-Ndw">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SGS-19-Ndw">
                                 <rect key="frame" x="10" y="79" width="355" height="266"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jdY-WT-thj" userLabel="View1">
+                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jdY-WT-thj" userLabel="View1">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="128"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ルームに参加する" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oxe-3h-bR2">
@@ -73,7 +72,7 @@ Cg
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="owv-OT-CUC" userLabel="View2">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="owv-OT-CUC" userLabel="View2">
                                         <rect key="frame" x="0.0" y="138" width="355" height="128"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ルームを作成する" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heF-8X-Fon">
@@ -109,9 +108,20 @@ Cg
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="jdY-WT-thj" secondAttribute="trailing" id="1qH-NR-VOZ"/>
+                                    <constraint firstItem="jdY-WT-thj" firstAttribute="leading" secondItem="SGS-19-Ndw" secondAttribute="leading" id="TeA-Se-nv6"/>
+                                    <constraint firstItem="owv-OT-CUC" firstAttribute="leading" secondItem="SGS-19-Ndw" secondAttribute="leading" id="le9-y2-Q9L"/>
+                                    <constraint firstAttribute="trailing" secondItem="owv-OT-CUC" secondAttribute="trailing" id="okG-tG-WtR"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SGS-19-Ndw" firstAttribute="top" secondItem="ysh-eI-Yo7" secondAttribute="top" constant="15" id="8N4-oH-TcG"/>
+                            <constraint firstItem="SGS-19-Ndw" firstAttribute="leading" secondItem="ysh-eI-Yo7" secondAttribute="leading" constant="10" id="eeV-xP-wsm"/>
+                            <constraint firstItem="ysh-eI-Yo7" firstAttribute="trailing" secondItem="SGS-19-Ndw" secondAttribute="trailing" constant="10" id="hou-hu-diX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ysh-eI-Yo7"/>
                     </view>
                     <navigationItem key="navigationItem" id="pLr-fN-FG6"/>
