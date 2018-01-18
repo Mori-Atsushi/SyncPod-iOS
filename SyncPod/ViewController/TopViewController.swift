@@ -23,6 +23,14 @@ class TopViewController: UIViewController {
     }
     
     @objc func joinRoom(_ sender: UITapGestureRecognizer) {
-        print("joinRoomTaped");
+        let alert = UIAlertController(title: "ルームに参加する", message: "ルームキーを入力して下さい。", preferredStyle: UIAlertControllerStyle.alert)
+        let cancelAction = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.default)
+        let defaultAction = UIAlertAction(title: "送信", style: UIAlertActionStyle.default)
+        alert.addAction(cancelAction)
+        alert.addAction(defaultAction)
+        alert.addTextField(configurationHandler: {(text:UITextField!) -> Void in
+            text.placeholder = "ルームキー"
+        })
+        present(alert, animated: true)
     }
 }
