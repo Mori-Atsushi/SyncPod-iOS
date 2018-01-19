@@ -13,7 +13,8 @@ import YouTubePlayer
 class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDelegate {
     
     var roomKey: String = ""
-    var roomChannel: RoomChannel?;
+    var roomChannel: RoomChannel?
+    var videoCurrentTime: Float?
     
     @IBOutlet weak var videoPlayer: YouTubePlayerView!
 
@@ -25,8 +26,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
             "controls": "0" as AnyObject,
             "disablekb": "1" as AnyObject,
             "showinfo": "0" as AnyObject,
-            "rel": "0" as AnyObject,
-            "iv_load_policy": "3" as AnyObject
+            "rel": "0" as AnyObject
         ]
     }
     
@@ -36,13 +36,16 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     }
     
     func onReceiveNowPlayingVideo(json: JSON) {
+        print(json)
         if let videoId = json["data"]["video"]["youtube_video_id"].string {
             videoPlayer.loadVideoID(videoId)
+            videoCurrentTime = json["data"]["video"]["current_time"].float
         }
     }
     
     func playerReady(_ videoPlayer: YouTubePlayerView) {
         print("startPlay")
+        videoPlayer.seekTo(videoCurrentTime!, seekAhead: true)
         videoPlayer.play()
     }
 }
