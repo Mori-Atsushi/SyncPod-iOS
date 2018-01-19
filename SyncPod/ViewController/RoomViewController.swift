@@ -53,7 +53,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     
     func playerReady(_ videoPlayer: YouTubePlayerView) {
         print("startPlay")
-        videoPlayer.seekTo(videoCurrentTime!, seekAhead: true)
         videoPlayer.play()
+        videoPlayer.seekTo(videoCurrentTime!, seekAhead: true)
     }
 }
