@@ -27,6 +27,7 @@
 		0DCD202C200D00A5001C90DA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD202B200D00A5001C90DA /* SignUpViewController.swift */; };
 		0DCD202E200D02CB001C90DA /* ViewExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD202D200D02CB001C90DA /* ViewExtentions.swift */; };
 		0DE94BF920127D6A00E26582 /* RoomChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE94BF820127D6A00E26582 /* RoomChannel.swift */; };
+		0DE94BFD201289A700E26582 /* YouTubePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE94BFC201289A700E26582 /* YouTubePlayer.framework */; };
 		0DFDDB74200F092A009C7E56 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFDDB73200F092A009C7E56 /* CurrentUser.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,8 @@
 		0DCD202B200D00A5001C90DA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0DCD202D200D02CB001C90DA /* ViewExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtentions.swift; sourceTree = "<group>"; };
 		0DE94BF820127D6A00E26582 /* RoomChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomChannel.swift; sourceTree = "<group>"; };
+		0DE94BFA2012899600E26582 /* YouTubePlayer.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = YouTubePlayer.framework.dSYM; path = Carthage/Build/iOS/YouTubePlayer.framework.dSYM; sourceTree = "<group>"; };
+		0DE94BFC201289A700E26582 /* YouTubePlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YouTubePlayer.framework; path = Carthage/Build/iOS/YouTubePlayer.framework; sourceTree = "<group>"; };
 		0DFDDB73200F092A009C7E56 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DE94BFD201289A700E26582 /* YouTubePlayer.framework in Frameworks */,
 				0D8BB2B82010A37900C7F6A9 /* Starscream.framework in Frameworks */,
 				0D8BB2B62010A25700C7F6A9 /* ActionCableClient.framework in Frameworks */,
 				0D4B438520099E550035DF1D /* SwiftyJSON.framework in Frameworks */,
@@ -109,6 +113,8 @@
 		0D4B438220099E540035DF1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0DE94BFC201289A700E26582 /* YouTubePlayer.framework */,
+				0DE94BFA2012899600E26582 /* YouTubePlayer.framework.dSYM */,
 				0D8BB2B72010A37900C7F6A9 /* Starscream.framework */,
 				0D8BB2B52010A25700C7F6A9 /* ActionCableClient.framework */,
 				0D4B438420099E550035DF1D /* Alamofire.framework */,
@@ -370,6 +376,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ActionCableClient.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Starscream.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/YouTubePlayer.framework",
 			);
 			outputPaths = (
 			);
