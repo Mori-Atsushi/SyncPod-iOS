@@ -25,6 +25,19 @@ class RoomViewController: UIViewController {
         
         client.onConnected = {
             print("Connected")
+            let room_identifier = ["room_key" : self.roomKey]
+            let roomChannel = client.create("RoomChannel", identifier: room_identifier)
+            roomChannel.onSubscribed = {
+                print("Subscribed!")
+            }
+            
+            roomChannel.onUnsubscribed = {
+                print("Unsubscribed")
+            }
+            
+            roomChannel.onRejected = {
+                print("Rejected")
+            }
         }
         
         client.onDisconnected = {(error: ConnectionError?) in
@@ -34,20 +47,6 @@ class RoomViewController: UIViewController {
         client.willReconnect = {
             print("Reconnecting")
             return true
-        }
-        
-        let room_identifier = ["room_key" : roomKey]
-        let roomChannel = client.create("RoomChannel", identifier: room_identifier)
-        roomChannel.onSubscribed = {
-            print("Subscribed!")
-        }
-
-        roomChannel.onUnsubscribed = {
-            print("Unsubscribed")
-        }
-        
-        roomChannel.onRejected = {
-            print("Rejected")
         }
         
         client.connect()
