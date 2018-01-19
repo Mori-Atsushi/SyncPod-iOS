@@ -19,6 +19,9 @@
 		0D5B82851FC9A5D30055A72C /* SyncPodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B82841FC9A5D30055A72C /* SyncPodTests.swift */; };
 		0D5B82901FC9A5D30055A72C /* SyncPodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B828F1FC9A5D30055A72C /* SyncPodUITests.swift */; };
 		0D859B5A200882B8008A3672 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D859B59200882B8008A3672 /* SignInViewController.swift */; };
+		0D8BB2B420109DEE00C7F6A9 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BB2B320109DEE00C7F6A9 /* RoomViewController.swift */; };
+		0D8BB2B62010A25700C7F6A9 /* ActionCableClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8BB2B52010A25700C7F6A9 /* ActionCableClient.framework */; };
+		0D8BB2B82010A37900C7F6A9 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8BB2B72010A37900C7F6A9 /* Starscream.framework */; };
 		0DCA418D200C9B3500ED9B50 /* DeviceConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCA418C200C9B3500ED9B50 /* DeviceConst.swift */; };
 		0DCD202A200CBC67001C90DA /* HttpRequestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD2029200CBC67001C90DA /* HttpRequestsHelper.swift */; };
 		0DCD202C200D00A5001C90DA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD202B200D00A5001C90DA /* SignUpViewController.swift */; };
@@ -62,6 +65,9 @@
 		0D5B828F1FC9A5D30055A72C /* SyncPodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncPodUITests.swift; sourceTree = "<group>"; };
 		0D5B82911FC9A5D30055A72C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D859B59200882B8008A3672 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		0D8BB2B320109DEE00C7F6A9 /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
+		0D8BB2B52010A25700C7F6A9 /* ActionCableClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ActionCableClient.framework; path = Carthage/Build/iOS/ActionCableClient.framework; sourceTree = "<group>"; };
+		0D8BB2B72010A37900C7F6A9 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
 		0DCA418C200C9B3500ED9B50 /* DeviceConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConst.swift; sourceTree = "<group>"; };
 		0DCD2029200CBC67001C90DA /* HttpRequestsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpRequestsHelper.swift; path = SyncPod/server/HttpRequestsHelper.swift; sourceTree = SOURCE_ROOT; };
 		0DCD202B200D00A5001C90DA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D8BB2B82010A37900C7F6A9 /* Starscream.framework in Frameworks */,
+				0D8BB2B62010A25700C7F6A9 /* ActionCableClient.framework in Frameworks */,
 				0D4B438520099E550035DF1D /* SwiftyJSON.framework in Frameworks */,
 				0D4B438620099E550035DF1D /* Alamofire.framework in Frameworks */,
 			);
@@ -99,6 +107,8 @@
 		0D4B438220099E540035DF1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D8BB2B72010A37900C7F6A9 /* Starscream.framework */,
+				0D8BB2B52010A25700C7F6A9 /* ActionCableClient.framework */,
 				0D4B438420099E550035DF1D /* Alamofire.framework */,
 				0D4B438320099E550035DF1D /* SwiftyJSON.framework */,
 			);
@@ -167,6 +177,7 @@
 				0D859B59200882B8008A3672 /* SignInViewController.swift */,
 				0DCD202B200D00A5001C90DA /* SignUpViewController.swift */,
 				0D2468AB200FC01A001348FB /* TopViewController.swift */,
+				0D8BB2B320109DEE00C7F6A9 /* RoomViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -346,6 +357,8 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ActionCableClient.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Starscream.framework",
 			);
 			outputPaths = (
 			);
@@ -363,6 +376,7 @@
 				0DCA418D200C9B3500ED9B50 /* DeviceConst.swift in Sources */,
 				0DCD202C200D00A5001C90DA /* SignUpViewController.swift in Sources */,
 				0D859B5A200882B8008A3672 /* SignInViewController.swift in Sources */,
+				0D8BB2B420109DEE00C7F6A9 /* RoomViewController.swift in Sources */,
 				0DCD202E200D02CB001C90DA /* ViewExtentions.swift in Sources */,
 				0D2468AC200FC01A001348FB /* TopViewController.swift in Sources */,
 				0D1BDB5020073F0200DA351D /* FirstStartTopViewController.swift in Sources */,
