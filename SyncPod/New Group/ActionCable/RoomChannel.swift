@@ -20,49 +20,49 @@ class RoomChannel {
     let client: ActionCableClient
     var roomChannel: Channel?
     var roomChannelDelegate: RoomChannelDelegate
-    
+
     init(roomKey: String, delegate: RoomChannelDelegate) {
         self.client = ActionCableClient(url: URL(string: "\(self.host)?token=\(CurrentUser.userToken!)")!)
         self.roomChannelDelegate = delegate;
-        
-        client.willConnect = {}
-        
+
+        client.willConnect = { }
+
         client.onConnected = {
             self.setupChannel(roomKey: roomKey)
         }
-        
+
         client.onDisconnected = { (error: ConnectionError?) in
             print("Disconected with error: \(String(describing: error))")
         }
-        
+
         client.willReconnect = {
             return true
         }
-        
+
         client.connect()
     }
-    
+
     func getNowPlayingVideo() {
         self.roomChannel?.action("now_playing_video");
     }
-    
+
     private func setupChannel(roomKey: String) {
         let room_identifier = ["room_key": roomKey]
         self.roomChannel = self.client.create("RoomChannel", identifier: room_identifier)
-        
+
         self.roomChannel?.onSubscribed = {
             self.roomChannelDelegate.onSubscribed()
         }
-        
+
         self.roomChannel?.onUnsubscribed = {
             print("Unsubscribed")
         }
-        
+
         self.roomChannel?.onRejected = {
             print("Rejected")
         }
-        
-        self.roomChannel?.onReceive = { (data : Any?, error : Error?) in
+
+        self.roomChannel?.onReceive = { (data: Any?, error: Error?) in
             let json = JSON(parseJSON: data! as! String)
             switch json["data_type"] {
             case "now_playing_video":

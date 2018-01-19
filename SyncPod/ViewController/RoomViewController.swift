@@ -11,11 +11,11 @@ import SwiftyJSON
 import YouTubePlayer
 
 class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDelegate {
-    
+
     var roomKey: String = ""
     var roomChannel: RoomChannel?
     var videoCurrentTime: Float?
-    
+
     @IBOutlet weak var videoPlayer: YouTubePlayerView!
 
     override func viewDidLoad() {
@@ -30,29 +30,27 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
         ]
         videoPlayer.isUserInteractionEnabled = false
     }
-    
+
     func onSubscribed() {
         print("Subscribed!")
         roomChannel?.getNowPlayingVideo()
     }
-    
+
     func onReceiveNowPlayingVideo(json: JSON) {
-        print(json)
         if let videoId = json["data"]["video"]["youtube_video_id"].string {
             videoPlayer.loadVideoID(videoId)
             videoCurrentTime = json["data"]["video"]["current_time"].float
         }
     }
-    
+
     func onReceiveStartVideo(json: JSON) {
         if let videoId = json["data"]["video"]["youtube_video_id"].string {
             videoPlayer.loadVideoID(videoId)
             videoCurrentTime = 0
         }
     }
-    
+
     func playerReady(_ videoPlayer: YouTubePlayerView) {
-        print("startPlay")
         videoPlayer.play()
         videoPlayer.seekTo(videoCurrentTime!, seekAhead: true)
     }
