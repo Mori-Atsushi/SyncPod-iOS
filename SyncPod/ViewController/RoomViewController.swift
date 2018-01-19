@@ -28,6 +28,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
             "showinfo": "0" as AnyObject,
             "rel": "0" as AnyObject
         ]
+        videoPlayer.isUserInteractionEnabled = false
     }
     
     func onSubscribed() {
