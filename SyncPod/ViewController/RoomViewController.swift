@@ -43,6 +43,13 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
         }
     }
     
+    func onReceiveStartVideo(json: JSON) {
+        if let videoId = json["data"]["video"]["youtube_video_id"].string {
+            videoPlayer.loadVideoID(videoId)
+            videoCurrentTime = 0
+        }
+    }
+    
     func playerReady(_ videoPlayer: YouTubePlayerView) {
         print("startPlay")
         videoPlayer.seekTo(videoCurrentTime!, seekAhead: true)

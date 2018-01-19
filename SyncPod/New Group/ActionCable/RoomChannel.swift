@@ -12,6 +12,7 @@ import SwiftyJSON
 protocol RoomChannelDelegate {
     func onSubscribed() -> Void
     func onReceiveNowPlayingVideo(json: JSON) -> Void
+    func onReceiveStartVideo(json: JSON) -> Void
 }
 
 class RoomChannel {
@@ -66,6 +67,8 @@ class RoomChannel {
             switch json["data_type"] {
             case "now_playing_video":
                 self.roomChannelDelegate.onReceiveNowPlayingVideo(json: json)
+            case "start_video":
+                self.roomChannelDelegate.onReceiveStartVideo(json: json)
             default:
                 print("Received", data!)
             }
