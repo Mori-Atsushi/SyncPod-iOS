@@ -26,6 +26,7 @@
 		0DCD202A200CBC67001C90DA /* HttpRequestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD2029200CBC67001C90DA /* HttpRequestsHelper.swift */; };
 		0DCD202C200D00A5001C90DA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD202B200D00A5001C90DA /* SignUpViewController.swift */; };
 		0DCD202E200D02CB001C90DA /* ViewExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD202D200D02CB001C90DA /* ViewExtentions.swift */; };
+		0DE94BF920127D6A00E26582 /* RoomChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE94BF820127D6A00E26582 /* RoomChannel.swift */; };
 		0DFDDB74200F092A009C7E56 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFDDB73200F092A009C7E56 /* CurrentUser.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		0DCD2029200CBC67001C90DA /* HttpRequestsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpRequestsHelper.swift; path = SyncPod/server/HttpRequestsHelper.swift; sourceTree = SOURCE_ROOT; };
 		0DCD202B200D00A5001C90DA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0DCD202D200D02CB001C90DA /* ViewExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtentions.swift; sourceTree = "<group>"; };
+		0DE94BF820127D6A00E26582 /* RoomChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomChannel.swift; sourceTree = "<group>"; };
 		0DFDDB73200F092A009C7E56 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -203,10 +205,19 @@
 		0DCD2028200CBC51001C90DA /* server */ = {
 			isa = PBXGroup;
 			children = (
+				0DE94BF720127D0800E26582 /* ActionCable */,
 				0DCD2029200CBC67001C90DA /* HttpRequestsHelper.swift */,
 			);
 			name = server;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		0DE94BF720127D0800E26582 /* ActionCable */ = {
+			isa = PBXGroup;
+			children = (
+				0DE94BF820127D6A00E26582 /* RoomChannel.swift */,
+			);
+			path = ActionCable;
 			sourceTree = "<group>";
 		};
 		0DFDDB72200F0902009C7E56 /* data */ = {
@@ -382,6 +393,7 @@
 				0D1BDB5020073F0200DA351D /* FirstStartTopViewController.swift in Sources */,
 				0D5B82701FC9A5D30055A72C /* AppDelegate.swift in Sources */,
 				0DFDDB74200F092A009C7E56 /* CurrentUser.swift in Sources */,
+				0DE94BF920127D6A00E26582 /* RoomChannel.swift in Sources */,
 				0DCD202A200CBC67001C90DA /* HttpRequestsHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
