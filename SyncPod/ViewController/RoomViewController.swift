@@ -7,17 +7,23 @@
 //
 
 import UIKit
-import ActionCableClient
+import SwiftyJSON
 
 class RoomViewController: UIViewController, RoomChannelDelegate {
     
     var roomKey: String = ""
+    var roomChannel: RoomChannel?;
 
     override func viewDidLoad() {
-        var roomChannel = RoomChannel(roomKey: roomKey, delegate: self)
+        roomChannel = RoomChannel(roomKey: roomKey, delegate: self)
     }
     
     func onSubscribed() {
         print("Subscribed!")
+        roomChannel?.getNowPlayingVideo()
+    }
+    
+    func onReceiveNowPlayingVideo(json: JSON) {
+        print("now_playing_video", json)
     }
 }

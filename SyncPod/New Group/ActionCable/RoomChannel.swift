@@ -11,11 +11,13 @@ import SwiftyJSON
 
 protocol RoomChannelDelegate {
     func onSubscribed() -> Void
+    func onReceiveNowPlayingVideo(json: JSON) -> Void
 }
 
 class RoomChannel {
     let host = "ws://59.106.220.89:3000/cable/"
     let client: ActionCableClient
+    var roomChannel: Channel?
     var roomChannelDelegate: RoomChannelDelegate
     
     init(roomKey: String, delegate: RoomChannelDelegate) {
@@ -39,20 +41,34 @@ class RoomChannel {
         client.connect()
     }
     
+    func getNowPlayingVideo() {
+        self.roomChannel?.action("now_playing_video");
+    }
+    
     private func setupChannel(roomKey: String) {
         let room_identifier = ["room_key": roomKey]
-        let roomChannel = self.client.create("RoomChannel", identifier: room_identifier)
+        self.roomChannel = self.client.create("RoomChannel", identifier: room_identifier)
         
-        roomChannel.onSubscribed = {
+        self.roomChannel?.onSubscribed = {
             self.roomChannelDelegate.onSubscribed()
         }
         
-        roomChannel.onUnsubscribed = {
+        self.roomChannel?.onUnsubscribed = {
             print("Unsubscribed")
         }
         
-        roomChannel.onRejected = {
+        self.roomChannel?.onRejected = {
             print("Rejected")
+        }
+        
+        self.roomChannel?.onReceive = { (data : Any?, error : Error?) in
+            let json = JSON(parseJSON: data! as! String)
+            switch json["data_type"] {
+            case "now_playing_video":
+                self.roomChannelDelegate.onReceiveNowPlayingVideo(json: json)
+            default:
+                print("Received", data!)
+            }
         }
     }
 }
