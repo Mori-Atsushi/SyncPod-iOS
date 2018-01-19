@@ -8,14 +8,26 @@
 
 import UIKit
 import SwiftyJSON
+import YouTubePlayer
 
-class RoomViewController: UIViewController, RoomChannelDelegate {
+class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDelegate {
     
     var roomKey: String = ""
     var roomChannel: RoomChannel?;
+    
+    @IBOutlet weak var videoPlayer: YouTubePlayerView!
 
     override func viewDidLoad() {
         roomChannel = RoomChannel(roomKey: roomKey, delegate: self)
+        videoPlayer.delegate = self
+        videoPlayer.playerVars = [
+            "playsinline": "1" as AnyObject,
+            "controls": "0" as AnyObject,
+            "disablekb": "1" as AnyObject,
+            "showinfo": "0" as AnyObject,
+            "rel": "0" as AnyObject,
+            "iv_load_policy": "3" as AnyObject
+        ]
     }
     
     func onSubscribed() {
@@ -24,6 +36,13 @@ class RoomViewController: UIViewController, RoomChannelDelegate {
     }
     
     func onReceiveNowPlayingVideo(json: JSON) {
-        print("now_playing_video", json)
+        if let videoId = json["data"]["video"]["youtube_video_id"].string {
+            videoPlayer.loadVideoID(videoId)
+        }
+    }
+    
+    func playerReady(_ videoPlayer: YouTubePlayerView) {
+        print("startPlay")
+        videoPlayer.play()
     }
 }

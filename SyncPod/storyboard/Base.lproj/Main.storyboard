@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -142,21 +143,29 @@ Cg
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RoomView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGN-AM-JYa">
-                                <rect key="frame" x="147" y="323" width="81" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSj-zH-Ega" customClass="YouTubePlayerView" customModule="YouTubePlayer">
+                                <rect key="frame" x="0.0" y="64" width="375" height="211"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RSj-zH-Ega" secondAttribute="height" multiplier="16:9" id="YoK-cq-LzM"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RSj-zH-Ega" firstAttribute="trailing" secondItem="5f1-zV-e07" secondAttribute="trailing" id="HUM-12-ePB"/>
+                            <constraint firstItem="RSj-zH-Ega" firstAttribute="top" secondItem="5f1-zV-e07" secondAttribute="top" id="c5h-ti-2kw"/>
+                            <constraint firstItem="RSj-zH-Ega" firstAttribute="leading" secondItem="5f1-zV-e07" secondAttribute="leading" id="qdd-w7-clK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="5f1-zV-e07"/>
                     </view>
+                    <connections>
+                        <outlet property="videoPlayer" destination="RSj-zH-Ega" id="Lul-GM-GLX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QWm-M0-7g6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="940" y="117"/>
+            <point key="canvasLocation" x="940" y="116.49175412293854"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="W4d-Gl-Y6b">
