@@ -14,20 +14,21 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
 
     var roomKey: String = ""
     var roomChannel: RoomChannel?
-    var videoCurrentTime: Float?
+    let playerVars = [
+        "playsinline": "1" as AnyObject,
+        "controls": "0" as AnyObject,
+        "disablekb": "1" as AnyObject,
+        "showinfo": "0" as AnyObject,
+        "start": "0" as AnyObject,
+        "rel": "0" as AnyObject
+    ]
 
     @IBOutlet weak var videoPlayer: YouTubePlayerView!
 
     override func viewDidLoad() {
         roomChannel = RoomChannel(roomKey: roomKey, delegate: self)
         videoPlayer.delegate = self
-        videoPlayer.playerVars = [
-            "playsinline": "1" as AnyObject,
-            "controls": "0" as AnyObject,
-            "disablekb": "1" as AnyObject,
-            "showinfo": "0" as AnyObject,
-            "rel": "0" as AnyObject
-        ]
+        videoPlayer.playerVars = playerVars
         videoPlayer.isUserInteractionEnabled = false
     }
 
@@ -37,21 +38,22 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     }
 
     func onReceiveNowPlayingVideo(json: JSON) {
+        print(json)
         if let videoId = json["data"]["video"]["youtube_video_id"].string {
+            let videoCurrentTime = json["data"]["video"]["current_time"].float
+            videoPlayer.playerVars["start"] = videoCurrentTime as AnyObject
             videoPlayer.loadVideoID(videoId)
-            videoCurrentTime = json["data"]["video"]["current_time"].float
         }
     }
 
     func onReceiveStartVideo(json: JSON) {
         if let videoId = json["data"]["video"]["youtube_video_id"].string {
+            videoPlayer.playerVars["start"] = "0" as AnyObject
             videoPlayer.loadVideoID(videoId)
-            videoCurrentTime = 0
         }
     }
 
     func playerReady(_ videoPlayer: YouTubePlayerView) {
         videoPlayer.play()
-        videoPlayer.seekTo(videoCurrentTime!, seekAhead: true)
     }
 }
