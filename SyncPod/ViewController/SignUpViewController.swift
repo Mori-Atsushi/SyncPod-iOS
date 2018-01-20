@@ -31,15 +31,14 @@ class SignUpViewController: UIViewController, UINavigationBarDelegate, HttpReque
     }
     
     @IBAction func sendSignUp(_ sender: UIButton) {
-        let Http = HttpRequestHelper(delegate: self)
-        let data: Parameters = [
-            "user": [
-                "name": nameField.text!,
-                "email": mailField.text!,
-                "password": passwordField.text!
-            ]
-        ]
-        Http.post(data: data, endPoint: "users")
+        let name = nameField.text!
+        let email = mailField.text!
+        let password = passwordField.text!
+        let passwordConfirm = passwordConfirmField.text!
+        
+        if validate(name: name, email: email, password: password, passwordConfirm: passwordConfirm) {
+            sendSignUpHttp(name: name, email: email, password: password)
+        }
     }
     
     func position(for bar: UIBarPositioning) -> UIBarPosition {
@@ -55,6 +54,41 @@ class SignUpViewController: UIViewController, UINavigationBarDelegate, HttpReque
     
     func onFailure(error: Error) {
         ErrorAlart(viewController: self, title: "アカウント登録失敗", message: "アカウント登録に失敗しました。メールアドレスが既に使われている可能性があります。").show()
+    }
+    
+    private func validate(name: String, email: String, password: String, passwordConfirm: String) -> Bool {
+        if (email == "" || name == "" || password == "" || passwordConfirm == "") {
+            ErrorAlart(viewController: self, title: "アカウント登録失敗", message: "全てのフォームを入力して下さい。").show()
+            return false;
+        }
+        if password != passwordConfirm {
+            ErrorAlart(viewController: self, title: "アカウント登録失敗", message: "2つのパスワードが異なります。").show()
+            return false;
+        }
+        if password.count < 6 {
+            ErrorAlart(viewController: self, title: "アカウント登録失敗", message: "パスワードが短すぎます。").show()
+            return false;
+        }
+
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+        let emailTest = NSPredicate(format:"SELF MATCHES[c] %@", emailRegEx)
+        if !emailTest.evaluate(with: email) {
+            ErrorAlart(viewController: self, title: "アカウント登録失敗", message: "メールが正しくありません。").show()
+            return false;
+        }
+        return true;
+    }
+    
+    private func sendSignUpHttp(name: String, email: String, password: String) {
+        let Http = HttpRequestHelper(delegate: self)
+        let data: Parameters = [
+            "user": [
+                "name": name,
+                "email": email,
+                "password": password
+            ]
+        ]
+        Http.post(data: data, endPoint: "users")
     }
 }
 
