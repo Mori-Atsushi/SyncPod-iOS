@@ -54,10 +54,7 @@ class SignUpViewController: UIViewController, UINavigationBarDelegate, HttpReque
     }
     
     func onFailure(error: Error) {
-        let alert = UIAlertController(title: "アカウント登録失敗", message: "アカウント登録に失敗しました。メールアドレスが既に使われている可能性があります。", preferredStyle: UIAlertControllerStyle.alert)
-        let defaultAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
-        alert.addAction(defaultAction)
-        present(alert, animated: true)
+        ErrorAlart(viewController: self, title: "アカウント登録失敗", message: "アカウント登録に失敗しました。メールアドレスが既に使われている可能性があります。").show()
     }
 }
 
