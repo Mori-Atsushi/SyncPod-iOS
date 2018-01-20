@@ -12,13 +12,13 @@ class ErrorAlart {
     let alert: UIAlertController;
     let defaultAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
     var viewController: UIViewController
-    
+
     init(viewController: UIViewController, title: String, message: String) {
         self.viewController = viewController
         alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(defaultAction)
     }
-    
+
     func show() {
         viewController.present(alert, animated: true)
     }

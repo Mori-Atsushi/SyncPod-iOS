@@ -17,45 +17,45 @@ class SignUpViewController: UIViewController, UINavigationBarDelegate, HttpReque
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var passwordConfirmField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         navigationBar.delegate = self
-        
+
         nameField.addBorderBottom(height: DeviceConst.textFieldBorderHeight, color: UIColor.lightGray)
         mailField.addBorderBottom(height: DeviceConst.textFieldBorderHeight, color: UIColor.lightGray)
         passwordField.addBorderBottom(height: DeviceConst.textFieldBorderHeight, color: UIColor.lightGray)
         passwordConfirmField.addBorderBottom(height: DeviceConst.textFieldBorderHeight, color: UIColor.lightGray)
         submitButton.layer.cornerRadius = DeviceConst.buttonCornerRadius
     }
-    
+
     @IBAction func sendSignUp(_ sender: UIButton) {
         let name = nameField.text!
         let email = mailField.text!
         let password = passwordField.text!
         let passwordConfirm = passwordConfirmField.text!
-        
+
         if validate(name: name, email: email, password: password, passwordConfirm: passwordConfirm) {
             sendSignUpHttp(name: name, email: email, password: password)
         }
     }
-    
+
     func position(for bar: UIBarPositioning) -> UIBarPosition {
         return .topAttached
     }
-    
+
     func onSuccess(data: JSON) {
         CurrentUser.userToken = data["user"]["access_token"].string
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "TopView") as UIViewController
         present(viewController, animated: true)
     }
-    
+
     func onFailure(error: Error) {
         ErrorAlart(viewController: self, title: "アカウント登録失敗", message: "アカウント登録に失敗しました。メールアドレスが既に使われている可能性があります。").show()
     }
-    
+
     private func validate(name: String, email: String, password: String, passwordConfirm: String) -> Bool {
         if (email == "" || name == "" || password == "" || passwordConfirm == "") {
             ErrorAlart(viewController: self, title: "アカウント登録失敗", message: "全てのフォームを入力して下さい。").show()
@@ -71,14 +71,14 @@ class SignUpViewController: UIViewController, UINavigationBarDelegate, HttpReque
         }
 
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
-        let emailTest = NSPredicate(format:"SELF MATCHES[c] %@", emailRegEx)
+        let emailTest = NSPredicate(format: "SELF MATCHES[c] %@", emailRegEx)
         if !emailTest.evaluate(with: email) {
             ErrorAlart(viewController: self, title: "アカウント登録失敗", message: "メールが正しくありません。").show()
             return false;
         }
         return true;
     }
-    
+
     private func sendSignUpHttp(name: String, email: String, password: String) {
         let Http = HttpRequestHelper(delegate: self)
         let data: Parameters = [
