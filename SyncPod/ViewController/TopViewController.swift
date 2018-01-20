@@ -9,10 +9,12 @@
 import UIKit
 import SwiftyJSON
 
-class TopViewController: UIViewController {
-class TopViewController: UIViewController, HttpRequestDelegate {
+class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataSource {
     @IBOutlet weak var JoinRoomPanel: UIView!
-
+    @IBOutlet weak var TableView: UITableView!
+    
+    var joinedRooms: JSON = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -54,9 +56,23 @@ class TopViewController: UIViewController, HttpRequestDelegate {
     
     func onSuccess(data: JSON) {
         print(data)
+        joinedRooms = data["joined_rooms"]
+        self.TableView.reloadData()
     }
     
     func onFailure(error: Error) {
         print(error)
+    }
+    
+    //データを返すメソッド（スクロールなどでページを更新する必要が出るたびに呼び出される）
+    func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Room", for:indexPath as IndexPath) as UITableViewCell
+        cell.textLabel?.text = joinedRooms[indexPath.row]["name"].string
+        return cell
+    }
+    
+    //データの個数を返すメソッド
+    func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int) -> Int {
+        return joinedRooms.count
     }
 }
