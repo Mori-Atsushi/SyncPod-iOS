@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class TopViewController: UIViewController {
+class TopViewController: UIViewController, HttpRequestDelegate {
     @IBOutlet weak var JoinRoomPanel: UIView!
 
     override func viewDidLoad() {
@@ -20,6 +22,10 @@ class TopViewController: UIViewController {
         //タッチ制御
         let joinRoomTap = UITapGestureRecognizer(target: self, action: #selector(TopViewController.joinRoom(_:)))
         self.JoinRoomPanel.addGestureRecognizer(joinRoomTap)
+        
+        //最近入室したルームの取得
+        let Http = HttpRequestHelper(delegate: self)
+        Http.get(data: nil, endPoint: "joined_rooms")
     }
 
     @objc func joinRoom(_ sender: UITapGestureRecognizer) {
@@ -44,5 +50,13 @@ class TopViewController: UIViewController {
             let roomViewController = segue.destination as! RoomViewController
             roomViewController.roomKey = sender as! String
         }
+    }
+    
+    func onSuccess(data: JSON) {
+        print(data)
+    }
+    
+    func onFailure(error: Error) {
+        print(error)
     }
 }
