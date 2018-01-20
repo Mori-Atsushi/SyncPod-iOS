@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataSource {
+class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var JoinRoomPanel: UIView!
     @IBOutlet weak var TableView: UITableView!
     
@@ -74,5 +74,10 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
     //データの個数を返すメソッド
     func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int) -> Int {
         return joinedRooms.count
+    }
+    
+    //タッチされた時の挙動
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "JoinRoomSegue", sender: joinedRooms[indexPath.row]["key"].string)
     }
 }
