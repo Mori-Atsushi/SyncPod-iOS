@@ -31,12 +31,12 @@ class SignInViewController: UIViewController, UINavigationBarDelegate, HttpReque
     }
 
     @IBAction func sendSignIn(_ sender: UIButton) {
-        let Http = HttpRequestHelper(delegate: self)
-        let data: Parameters = [
-            "email": mailField.text!,
-            "password": passwordField.text!
-        ]
-        Http.post(data: data, endPoint: "login")
+        let email = mailField.text!
+        let password = passwordField.text!
+
+        if validate(email: email, password: password) {
+            sendSignInHttp(email: email, password: password)
+        }
     }
 
     func position(for bar: UIBarPositioning) -> UIBarPosition {
@@ -51,9 +51,24 @@ class SignInViewController: UIViewController, UINavigationBarDelegate, HttpReque
     }
 
     func onFailure(error: Error) {
-        let alert = UIAlertController(title: "ログイン失敗", message: "ログインに失敗しました。メールアドレスとパスワードを確認してください。", preferredStyle: UIAlertControllerStyle.alert)
-        let defaultAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
-        alert.addAction(defaultAction)
-        present(alert, animated: true)
+        ErrorAlart(viewController: self, title: "ログイン失敗", message: "ログインに失敗しました。メールアドレスとパスワードを確認してください。").show()
+    }
+
+    private func validate(email: String, password: String) -> Bool {
+        if (email == "" || password == "") {
+            ErrorAlart(viewController: self, title: "ログイン失敗", message: "全てのフォームを入力して下さい。").show()
+            return false;
+        }
+
+        return true;
+    }
+
+    private func sendSignInHttp(email: String, password: String) {
+        let Http = HttpRequestHelper(delegate: self)
+        let data: Parameters = [
+            "email": email,
+            "password": password
+        ]
+        Http.post(data: data, endPoint: "login")
     }
 }
