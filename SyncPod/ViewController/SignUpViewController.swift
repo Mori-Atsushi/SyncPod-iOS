@@ -22,12 +22,16 @@ class SignUpViewController: UIViewController, UINavigationBarDelegate, HttpReque
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         navigationBar.delegate = self
-
+        
+        submitButton.layer.cornerRadius = DeviceConst.buttonCornerRadius
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         nameField.addBorderBottom(height: DeviceConst.textFieldBorderHeight, color: UIColor.lightGray)
         mailField.addBorderBottom(height: DeviceConst.textFieldBorderHeight, color: UIColor.lightGray)
         passwordField.addBorderBottom(height: DeviceConst.textFieldBorderHeight, color: UIColor.lightGray)
         passwordConfirmField.addBorderBottom(height: DeviceConst.textFieldBorderHeight, color: UIColor.lightGray)
-        submitButton.layer.cornerRadius = DeviceConst.buttonCornerRadius
     }
 
     @IBAction func sendSignUp(_ sender: UIButton) {

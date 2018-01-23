@@ -7,48 +7,53 @@
 //
 
 import UIKit
-import ActionCableClient
+import SwiftyJSON
+import YouTubePlayer
 
-class RoomViewController: UIViewController {
+class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDelegate {
+
     var roomKey: String = ""
+    var roomChannel: RoomChannel?
+    let playerVars = [
+        "playsinline": "1" as AnyObject,
+        "controls": "0" as AnyObject,
+        "disablekb": "1" as AnyObject,
+        "showinfo": "0" as AnyObject,
+        "start": "0" as AnyObject,
+        "rel": "0" as AnyObject
+    ]
+
+    @IBOutlet weak var videoPlayer: YouTubePlayerView!
 
     override func viewDidLoad() {
-        setupWebSocket()
+        roomChannel = RoomChannel(roomKey: roomKey, delegate: self)
+        videoPlayer.delegate = self
+        videoPlayer.playerVars = playerVars
+        videoPlayer.isUserInteractionEnabled = false
     }
 
-    private func setupWebSocket() {
-        let client = ActionCableClient(url: URL(string: "ws://59.106.220.89:3000/cable/?token=\(CurrentUser.userToken!)")!)
+    func onSubscribed() {
+        print("Subscribed!")
+        roomChannel?.getNowPlayingVideo()
+    }
 
-        client.willConnect = {
-            print("Will Connect")
+    func onReceiveNowPlayingVideo(json: JSON) {
+        print(json)
+        if let videoId = json["data"]["video"]["youtube_video_id"].string {
+            let videoCurrentTime = json["data"]["video"]["current_time"].float
+            videoPlayer.playerVars["start"] = videoCurrentTime as AnyObject
+            videoPlayer.loadVideoID(videoId)
         }
+    }
 
-        client.onConnected = {
-            print("Connected")
-            let room_identifier = ["room_key": self.roomKey]
-            let roomChannel = client.create("RoomChannel", identifier: room_identifier)
-            roomChannel.onSubscribed = {
-                print("Subscribed!")
-            }
-
-            roomChannel.onUnsubscribed = {
-                print("Unsubscribed")
-            }
-
-            roomChannel.onRejected = {
-                print("Rejected")
-            }
+    func onReceiveStartVideo(json: JSON) {
+        if let videoId = json["data"]["video"]["youtube_video_id"].string {
+            videoPlayer.playerVars["start"] = "0" as AnyObject
+            videoPlayer.loadVideoID(videoId)
         }
+    }
 
-        client.onDisconnected = { (error: ConnectionError?) in
-            print("Disconected with error: \(String(describing: error))")
-        }
-
-        client.willReconnect = {
-            print("Reconnecting")
-            return true
-        }
-
-        client.connect()
+    func playerReady(_ videoPlayer: YouTubePlayerView) {
+        videoPlayer.play()
     }
 }

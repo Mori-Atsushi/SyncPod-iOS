@@ -18,7 +18,6 @@ class HttpRequestHelper {
     let host: String = "http://59.106.220.89:3000/api/v1/"
 
     var httpRequestDelegate: HttpRequestDelegate
-    var token: String?
 
     init(delegate: HttpRequestDelegate) {
         self.httpRequestDelegate = delegate
@@ -35,7 +34,7 @@ class HttpRequestHelper {
     private func communicate(method: HTTPMethod, data: Parameters?, endPoint: String) {
         let urlString = host + endPoint
         let headers: HTTPHeaders = [
-            "Authorization": token ?? "",
+            "Authorization": CurrentUser.userToken ?? "",
             "Accept": "application/json"
         ]
 

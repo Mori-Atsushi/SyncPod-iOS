@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -115,18 +116,50 @@ Cg
                                     <constraint firstAttribute="trailing" secondItem="owv-OT-CUC" secondAttribute="trailing" id="okG-tG-WtR"/>
                                 </constraints>
                             </stackView>
+                            <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c2d-Ez-jF8">
+                                <rect key="frame" x="0.0" y="395.5" width="375" height="271.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Room" id="JYK-5e-NEI">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JYK-5e-NEI" id="41T-ON-MPn">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="3KV-Hp-SRi"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="t1i-ke-ZJh"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最近入室したルーム" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCk-dS-KK6">
+                                <rect key="frame" x="10" y="365" width="355" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="SGS-19-Ndw" firstAttribute="top" secondItem="ysh-eI-Yo7" secondAttribute="top" constant="15" id="8N4-oH-TcG"/>
+                            <constraint firstItem="ysh-eI-Yo7" firstAttribute="trailing" secondItem="XCk-dS-KK6" secondAttribute="trailing" constant="10" id="C78-vA-JKm"/>
+                            <constraint firstItem="c2d-Ez-jF8" firstAttribute="bottom" secondItem="ysh-eI-Yo7" secondAttribute="bottom" id="Fmy-dK-NXv"/>
+                            <constraint firstItem="c2d-Ez-jF8" firstAttribute="top" secondItem="XCk-dS-KK6" secondAttribute="bottom" constant="10" id="W20-NH-lGw"/>
+                            <constraint firstItem="c2d-Ez-jF8" firstAttribute="leading" secondItem="ysh-eI-Yo7" secondAttribute="leading" id="XMg-Kg-579"/>
+                            <constraint firstItem="XCk-dS-KK6" firstAttribute="leading" secondItem="ysh-eI-Yo7" secondAttribute="leading" constant="10" id="d9v-11-oSM"/>
                             <constraint firstItem="SGS-19-Ndw" firstAttribute="leading" secondItem="ysh-eI-Yo7" secondAttribute="leading" constant="10" id="eeV-xP-wsm"/>
                             <constraint firstItem="ysh-eI-Yo7" firstAttribute="trailing" secondItem="SGS-19-Ndw" secondAttribute="trailing" constant="10" id="hou-hu-diX"/>
+                            <constraint firstItem="XCk-dS-KK6" firstAttribute="top" secondItem="SGS-19-Ndw" secondAttribute="bottom" constant="20" id="ogn-Sb-45r"/>
+                            <constraint firstItem="c2d-Ez-jF8" firstAttribute="trailing" secondItem="ysh-eI-Yo7" secondAttribute="trailing" id="vvP-3t-PMy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ysh-eI-Yo7"/>
                     </view>
                     <navigationItem key="navigationItem" id="pLr-fN-FG6"/>
                     <connections>
                         <outlet property="JoinRoomPanel" destination="jdY-WT-thj" id="8LM-f2-riU"/>
+                        <outlet property="TableView" destination="c2d-Ez-jF8" id="8ux-P7-awd"/>
                         <segue destination="6al-Zs-kNG" kind="show" identifier="JoinRoomSegue" id="NMh-oi-6gp"/>
                     </connections>
                 </viewController>
@@ -142,21 +175,29 @@ Cg
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RoomView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGN-AM-JYa">
-                                <rect key="frame" x="147" y="323" width="81" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSj-zH-Ega" customClass="YouTubePlayerView" customModule="YouTubePlayer">
+                                <rect key="frame" x="0.0" y="64" width="375" height="211"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RSj-zH-Ega" secondAttribute="height" multiplier="16:9" id="YoK-cq-LzM"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RSj-zH-Ega" firstAttribute="trailing" secondItem="5f1-zV-e07" secondAttribute="trailing" id="HUM-12-ePB"/>
+                            <constraint firstItem="RSj-zH-Ega" firstAttribute="top" secondItem="5f1-zV-e07" secondAttribute="top" id="c5h-ti-2kw"/>
+                            <constraint firstItem="RSj-zH-Ega" firstAttribute="leading" secondItem="5f1-zV-e07" secondAttribute="leading" id="qdd-w7-clK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="5f1-zV-e07"/>
                     </view>
+                    <connections>
+                        <outlet property="videoPlayer" destination="RSj-zH-Ega" id="Lul-GM-GLX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QWm-M0-7g6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="940" y="117"/>
+            <point key="canvasLocation" x="940" y="116.49175412293854"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="W4d-Gl-Y6b">

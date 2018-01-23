@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D0D51B22017511300B02F8B /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0D51B12017511300B02F8B /* Alert.swift */; };
+		0D0D51B92017513F00B02F8B /* RoomChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0D51B72017513F00B02F8B /* RoomChannel.swift */; };
+		0D0D51BA2017513F00B02F8B /* HttpRequestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0D51B82017513F00B02F8B /* HttpRequestsHelper.swift */; };
 		0D1646551FF24CDE0059BBDF /* FirstStart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D1646531FF24CDE0059BBDF /* FirstStart.storyboard */; };
 		0D1BDB5020073F0200DA351D /* FirstStartTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1BDB4F20073F0200DA351D /* FirstStartTopViewController.swift */; };
 		0D2468AC200FC01A001348FB /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2468AB200FC01A001348FB /* TopViewController.swift */; };
@@ -23,10 +26,9 @@
 		0D8BB2B62010A25700C7F6A9 /* ActionCableClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8BB2B52010A25700C7F6A9 /* ActionCableClient.framework */; };
 		0D8BB2B82010A37900C7F6A9 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8BB2B72010A37900C7F6A9 /* Starscream.framework */; };
 		0DCA418D200C9B3500ED9B50 /* DeviceConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCA418C200C9B3500ED9B50 /* DeviceConst.swift */; };
-		0DCD202A200CBC67001C90DA /* HttpRequestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD2029200CBC67001C90DA /* HttpRequestsHelper.swift */; };
 		0DCD202C200D00A5001C90DA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD202B200D00A5001C90DA /* SignUpViewController.swift */; };
 		0DCD202E200D02CB001C90DA /* ViewExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD202D200D02CB001C90DA /* ViewExtentions.swift */; };
-		0DE94C022013761900E26582 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE94C012013761900E26582 /* Alert.swift */; };
+		0DE94BFD201289A700E26582 /* YouTubePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE94BFC201289A700E26582 /* YouTubePlayer.framework */; };
 		0DFDDB74200F092A009C7E56 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFDDB73200F092A009C7E56 /* CurrentUser.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D0D51B12017511300B02F8B /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		0D0D51B72017513F00B02F8B /* RoomChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomChannel.swift; sourceTree = "<group>"; };
+		0D0D51B82017513F00B02F8B /* HttpRequestsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequestsHelper.swift; sourceTree = "<group>"; };
 		0D1646541FF24CDE0059BBDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FirstStart.storyboard; sourceTree = "<group>"; };
 		0D1BDB4F20073F0200DA351D /* FirstStartTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstStartTopViewController.swift; sourceTree = "<group>"; };
 		0D2468AB200FC01A001348FB /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
@@ -70,10 +75,10 @@
 		0D8BB2B52010A25700C7F6A9 /* ActionCableClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ActionCableClient.framework; path = Carthage/Build/iOS/ActionCableClient.framework; sourceTree = "<group>"; };
 		0D8BB2B72010A37900C7F6A9 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
 		0DCA418C200C9B3500ED9B50 /* DeviceConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConst.swift; sourceTree = "<group>"; };
-		0DCD2029200CBC67001C90DA /* HttpRequestsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpRequestsHelper.swift; path = SyncPod/server/HttpRequestsHelper.swift; sourceTree = SOURCE_ROOT; };
 		0DCD202B200D00A5001C90DA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0DCD202D200D02CB001C90DA /* ViewExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtentions.swift; sourceTree = "<group>"; };
-		0DE94C012013761900E26582 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		0DE94BFA2012899600E26582 /* YouTubePlayer.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = YouTubePlayer.framework.dSYM; path = Carthage/Build/iOS/YouTubePlayer.framework.dSYM; sourceTree = "<group>"; };
+		0DE94BFC201289A700E26582 /* YouTubePlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YouTubePlayer.framework; path = Carthage/Build/iOS/YouTubePlayer.framework; sourceTree = "<group>"; };
 		0DFDDB73200F092A009C7E56 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DE94BFD201289A700E26582 /* YouTubePlayer.framework in Frameworks */,
 				0D8BB2B82010A37900C7F6A9 /* Starscream.framework in Frameworks */,
 				0D8BB2B62010A25700C7F6A9 /* ActionCableClient.framework in Frameworks */,
 				0D4B438520099E550035DF1D /* SwiftyJSON.framework in Frameworks */,
@@ -106,9 +112,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D0D51B52017513F00B02F8B /* server */ = {
+			isa = PBXGroup;
+			children = (
+				0D0D51B62017513F00B02F8B /* ActionCable */,
+				0D0D51B82017513F00B02F8B /* HttpRequestsHelper.swift */,
+			);
+			path = server;
+			sourceTree = "<group>";
+		};
+		0D0D51B62017513F00B02F8B /* ActionCable */ = {
+			isa = PBXGroup;
+			children = (
+				0D0D51B72017513F00B02F8B /* RoomChannel.swift */,
+			);
+			path = ActionCable;
+			sourceTree = "<group>";
+		};
 		0D4B438220099E540035DF1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0DE94BFC201289A700E26582 /* YouTubePlayer.framework */,
+				0DE94BFA2012899600E26582 /* YouTubePlayer.framework.dSYM */,
 				0D8BB2B72010A37900C7F6A9 /* Starscream.framework */,
 				0D8BB2B52010A25700C7F6A9 /* ActionCableClient.framework */,
 				0D4B438420099E550035DF1D /* Alamofire.framework */,
@@ -142,7 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				0DFDDB72200F0902009C7E56 /* data */,
-				0DCD2028200CBC51001C90DA /* server */,
+				0D0D51B52017513F00B02F8B /* server */,
 				0DCA418B200C9B0600ED9B50 /* Tools */,
 				0D859B5B200882E5008A3672 /* storyboard */,
 				0D859B5820088265008A3672 /* ViewController */,
@@ -198,18 +223,9 @@
 			children = (
 				0DCA418C200C9B3500ED9B50 /* DeviceConst.swift */,
 				0DCD202D200D02CB001C90DA /* ViewExtentions.swift */,
-				0DE94C012013761900E26582 /* Alert.swift */,
+				0D0D51B12017511300B02F8B /* Alert.swift */,
 			);
 			path = Tools;
-			sourceTree = "<group>";
-		};
-		0DCD2028200CBC51001C90DA /* server */ = {
-			isa = PBXGroup;
-			children = (
-				0DCD2029200CBC67001C90DA /* HttpRequestsHelper.swift */,
-			);
-			name = server;
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		0DFDDB72200F0902009C7E56 /* data */ = {
@@ -362,6 +378,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ActionCableClient.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Starscream.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/YouTubePlayer.framework",
 			);
 			outputPaths = (
 			);
@@ -382,11 +399,12 @@
 				0D8BB2B420109DEE00C7F6A9 /* RoomViewController.swift in Sources */,
 				0DCD202E200D02CB001C90DA /* ViewExtentions.swift in Sources */,
 				0D2468AC200FC01A001348FB /* TopViewController.swift in Sources */,
+				0D0D51B22017511300B02F8B /* Alert.swift in Sources */,
 				0D1BDB5020073F0200DA351D /* FirstStartTopViewController.swift in Sources */,
 				0D5B82701FC9A5D30055A72C /* AppDelegate.swift in Sources */,
-				0DE94C022013761900E26582 /* Alert.swift in Sources */,
+				0D0D51B92017513F00B02F8B /* RoomChannel.swift in Sources */,
 				0DFDDB74200F092A009C7E56 /* CurrentUser.swift in Sources */,
-				0DCD202A200CBC67001C90DA /* HttpRequestsHelper.swift in Sources */,
+				0D0D51BA2017513F00B02F8B /* HttpRequestsHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
