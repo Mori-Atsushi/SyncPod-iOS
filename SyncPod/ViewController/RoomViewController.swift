@@ -31,6 +31,11 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
         videoPlayer.playerVars = playerVars
         videoPlayer.isUserInteractionEnabled = false
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        videoPlayer.delegate = nil
+    }
 
     func onSubscribed() {
         print("Subscribed!")
