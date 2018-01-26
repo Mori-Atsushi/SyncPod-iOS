@@ -233,6 +233,9 @@ Cg
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="ルーム作成"/>
+                                        <connections>
+                                            <action selector="sendCreateRoom:" destination="p9L-PJ-jLy" eventType="touchUpInside" id="TP7-oN-zM6"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
