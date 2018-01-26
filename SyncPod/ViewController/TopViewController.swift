@@ -12,7 +12,8 @@ import SwiftyJSON
 class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var JoinRoomPanel: UIView!
     @IBOutlet weak var TableView: UITableView!
-    
+    @IBOutlet weak var ScrollView: UIScrollView!
+
     var joinedRooms: JSON = []
     
     override func viewDidLoad() {
@@ -58,6 +59,7 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
         print(data)
         joinedRooms = data["joined_rooms"]
         self.TableView.reloadData()
+        TableView.translatesAutoresizingMaskIntoConstraints = true
         self.TableView.frame = CGRect(x: TableView.frame.origin.x,
                                       y: TableView.frame.origin.y,
                                       width: TableView.contentSize.width,
