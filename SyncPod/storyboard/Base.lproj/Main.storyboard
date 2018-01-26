@@ -176,7 +176,72 @@ Cg
                     <view key="view" contentMode="scaleToFill" id="eKs-kM-kO9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="U8Z-te-kkC">
+                                <rect key="frame" x="30" y="94" width="315" height="331"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9Lf-gV-Vh3" userLabel="Field Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="251"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ルーム名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbS-hT-gu0">
+                                                <rect key="frame" x="0.0" y="0.0" width="315" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ルーム名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cL1-Ha-mDa" userLabel="name">
+                                                <rect key="frame" x="0.0" y="40.5" width="315" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="KNc-tx-g4F"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ルーム説明" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DD1-TL-fnv">
+                                                <rect key="frame" x="0.0" y="90.5" width="315" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="abcabcabc" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uom-Kb-IY6">
+                                                <rect key="frame" x="0.0" y="131" width="315" height="120"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="120" id="FwW-0y-0yr"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="cL1-Ha-mDa" firstAttribute="leading" secondItem="9Lf-gV-Vh3" secondAttribute="leading" id="5nb-hE-Fyv"/>
+                                            <constraint firstAttribute="trailing" secondItem="cL1-Ha-mDa" secondAttribute="trailing" id="ye1-gK-jSi"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qix-39-e3R">
+                                        <rect key="frame" x="0.0" y="281" width="315" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.43137254899999999" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="k0e-g3-zXw"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="ルーム作成"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="9Lf-gV-Vh3" firstAttribute="leading" secondItem="U8Z-te-kkC" secondAttribute="leading" id="ZE9-J0-C18"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Lf-gV-Vh3" secondAttribute="trailing" id="p9E-Zc-wPh"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="bT5-jw-erv"/>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WU0-YL-xzc" firstAttribute="trailing" secondItem="U8Z-te-kkC" secondAttribute="trailing" constant="30" id="15t-Ik-CTM"/>
+                            <constraint firstItem="U8Z-te-kkC" firstAttribute="top" secondItem="WU0-YL-xzc" secondAttribute="top" constant="30" id="3Ls-MQ-Zqe"/>
+                            <constraint firstItem="U8Z-te-kkC" firstAttribute="leading" secondItem="WU0-YL-xzc" secondAttribute="leading" constant="30" id="hKs-nk-U2x"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WU0-YL-xzc"/>
                     </view>
                     <navigationItem key="navigationItem" title="新規ルーム作成" id="RB0-vd-HPt"/>
