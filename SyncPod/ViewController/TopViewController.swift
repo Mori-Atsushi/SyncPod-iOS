@@ -58,6 +58,10 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
         print(data)
         joinedRooms = data["joined_rooms"]
         self.TableView.reloadData()
+        self.TableView.frame = CGRect(x: TableView.frame.origin.x,
+                                      y: TableView.frame.origin.y,
+                                      width: TableView.contentSize.width,
+                                      height: TableView.contentSize.height);
     }
     
     func onFailure(error: Error) {
