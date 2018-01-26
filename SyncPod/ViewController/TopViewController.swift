@@ -12,7 +12,6 @@ import SwiftyJSON
 class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var JoinRoomPanel: UIView!
     @IBOutlet weak var TableView: UITableView!
-    @IBOutlet weak var ScrollView: UIScrollView!
 
     var joinedRooms: JSON = []
     
@@ -29,8 +28,15 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
         //最近入室したルームの取得
         let Http = HttpRequestHelper(delegate: self)
         Http.get(data: nil, endPoint: "joined_rooms")
+        
+        self.TableView.translatesAutoresizingMaskIntoConstraints = true
     }
-
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        print(TableView.contentSize.height)
+    }
+    
     @objc func joinRoom(_ sender: UITapGestureRecognizer) {
         let alert = UIAlertController(title: "ルームに参加する", message: "ルームキーを入力して下さい。", preferredStyle: UIAlertControllerStyle.alert)
         let cancelAction = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.default)
@@ -59,7 +65,7 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
         print(data)
         joinedRooms = data["joined_rooms"]
         self.TableView.reloadData()
-        TableView.translatesAutoresizingMaskIntoConstraints = true
+        self.TableView.layoutIfNeeded()
         self.TableView.frame = CGRect(x: TableView.frame.origin.x,
                                       y: TableView.frame.origin.y,
                                       width: TableView.contentSize.width,
@@ -72,8 +78,8 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
     
     //データを返すメソッド（スクロールなどでページを更新する必要が出るたびに呼び出される）
     func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Room", for:indexPath as IndexPath) as UITableViewCell
-        cell.textLabel?.text = joinedRooms[indexPath.row]["name"].string
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Room", for:indexPath as IndexPath) as! JoinedRoomsTabledViewCell
+        cell.setCell(room: joinedRooms[indexPath.row])
         return cell
     }
     
