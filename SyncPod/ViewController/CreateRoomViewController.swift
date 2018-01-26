@@ -43,6 +43,10 @@ class CreateRoomViewController: UIViewController, HttpRequestDelegate {
     
     func onSuccess(data: JSON) {
         print(data)
+        let index = (self.navigationController?.viewControllers.count)! - 1
+        let top =  self.navigationController?.viewControllers[index - 1] as? TopViewController
+        navigationController?.popViewController(animated: true)
+        top?.joinRoom(roomKey: data["room"]["key"].string!)
     }
     
     func onFailure(error: Error) {
