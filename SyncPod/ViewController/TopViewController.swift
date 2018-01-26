@@ -11,6 +11,7 @@ import SwiftyJSON
 
 class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var JoinRoomPanel: UIView!
+    @IBOutlet weak var CreateRoomPanel: UIView!
     @IBOutlet weak var TableView: UITableView!
     
     var joinedRooms: JSON = []
@@ -24,6 +25,9 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
         //タッチ制御
         let joinRoomTap = UITapGestureRecognizer(target: self, action: #selector(TopViewController.joinRoom(_:)))
         self.JoinRoomPanel.addGestureRecognizer(joinRoomTap)
+        
+        let createRoomTap = UITapGestureRecognizer(target: self, action: #selector(TopViewController.createRoom(_:)))
+        self.CreateRoomPanel.addGestureRecognizer(createRoomTap)
         
         //最近入室したルームの取得
         let Http = HttpRequestHelper(delegate: self)
@@ -45,6 +49,10 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
             text.placeholder = "ルームキー"
         })
         present(alert, animated: true)
+    }
+    
+    @objc func createRoom(_ sender: UITapGestureRecognizer) {
+        self.performSegue(withIdentifier: "CreateRoomSegue", sender: nil)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
