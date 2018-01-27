@@ -263,10 +263,10 @@ Cg
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="392"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DrT-LP-NwZ" customClass="ButtonBarView" customModule="XLPagerTabStrip">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="0VV-3H-TEf"/>
+                                            <constraint firstAttribute="height" constant="45" id="0VV-3H-TEf"/>
                                         </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wwg-uN-ITl">
                                             <size key="itemSize" width="50" height="50"/>
@@ -277,7 +277,7 @@ Cg
                                         <cells/>
                                     </collectionView>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tu7-MY-DiM">
-                                        <rect key="frame" x="0.0" y="50" width="375" height="342"/>
+                                        <rect key="frame" x="0.0" y="45" width="375" height="347"/>
                                     </scrollView>
                                 </subviews>
                             </stackView>
