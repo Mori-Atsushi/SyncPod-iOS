@@ -30,6 +30,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
         videoPlayer.delegate = self
         videoPlayer.playerVars = playerVars
         videoPlayer.isUserInteractionEnabled = false
+        videoPlayer.isHidden = true
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -45,17 +46,22 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     func onReceiveNowPlayingVideo(json: JSON) {
         print(json)
         if let videoId = json["data"]["video"]["youtube_video_id"].string {
-            let videoCurrentTime = json["data"]["video"]["current_time"].float
-            videoPlayer.playerVars["start"] = videoCurrentTime as AnyObject
-            videoPlayer.loadVideoID(videoId)
+            let videoCurrentTime = json["data"]["video"]["current_time"].float!
+            readyVideo(videoId: videoId, time: videoCurrentTime)
         }
     }
 
     func onReceiveStartVideo(json: JSON) {
         if let videoId = json["data"]["video"]["youtube_video_id"].string {
-            videoPlayer.playerVars["start"] = "0" as AnyObject
-            videoPlayer.loadVideoID(videoId)
+            readyVideo(videoId: videoId, time: 0)
         }
+    }
+    
+    private func readyVideo(videoId: String, time: Float) {
+        videoPlayer.playerVars["start"] = time as AnyObject
+        videoPlayer.loadVideoID(videoId)
+        videoPlayer.isHidden = false
+        self.navigationController?.navigationBar.isHidden = true
     }
 
     func playerReady(_ videoPlayer: YouTubePlayerView) {
