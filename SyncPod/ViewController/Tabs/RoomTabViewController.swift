@@ -11,6 +11,25 @@ import XLPagerTabStrip
 
 class RoomTabViewController: ButtonBarPagerTabStripViewController {
     
+    override func viewDidLoad() {
+        settings.style.buttonBarItemBackgroundColor = DeviceConst.lightGray
+        settings.style.selectedBarBackgroundColor = DeviceConst.greenColor
+        settings.style.selectedBarHeight = 2.0
+        settings.style.buttonBarMinimumLineSpacing = 0
+        settings.style.buttonBarItemTitleColor = .black
+        settings.style.buttonBarItemsShouldFillAvailableWidth = true
+        settings.style.buttonBarLeftContentInset = 0
+        settings.style.buttonBarRightContentInset = 0
+        
+        changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
+            guard changeCurrentIndex == true else { return }
+            oldCell?.label.textColor = .gray
+            newCell?.label.textColor = .black
+        }
+        
+        super.viewDidLoad()
+    }
+    
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         //管理されるViewControllerを返す処理
         let firstVC = UIStoryboard(name: "Tabs", bundle: nil).instantiateViewController(withIdentifier: "PlayListTab")

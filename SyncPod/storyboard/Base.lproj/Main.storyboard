@@ -292,6 +292,7 @@ Cg
                         <viewLayoutGuide key="safeArea" id="rsg-EI-bJ7"/>
                     </view>
                     <connections>
+                        <outlet property="buttonBarView" destination="DrT-LP-NwZ" id="wSV-Ky-gyF"/>
                         <outlet property="containerView" destination="tu7-MY-DiM" id="8eI-kP-LWI"/>
                     </connections>
                 </viewController>
