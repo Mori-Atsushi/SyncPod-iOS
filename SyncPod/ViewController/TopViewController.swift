@@ -68,7 +68,7 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
         self.TableView.layoutIfNeeded()
         self.TableView.frame = CGRect(x: TableView.frame.origin.x,
                                       y: TableView.frame.origin.y,
-                                      width: TableView.contentSize.width,
+                                      width: TableView.superview!.frame.width,
                                       height: TableView.contentSize.height);
     }
     
