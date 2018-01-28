@@ -35,6 +35,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        roomChannel?.disconnect()
         videoPlayer.delegate = nil
     }
 

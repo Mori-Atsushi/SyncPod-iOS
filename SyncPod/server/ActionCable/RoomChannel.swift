@@ -45,6 +45,10 @@ class RoomChannel {
     func getNowPlayingVideo() {
         self.roomChannel?.action("now_playing_video");
     }
+    
+    func disconnect() {
+        client.disconnect()
+    }
 
     private func setupChannel(roomKey: String) {
         let room_identifier = ["room_key": roomKey]
