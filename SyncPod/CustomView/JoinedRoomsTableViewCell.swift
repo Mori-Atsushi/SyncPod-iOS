@@ -27,8 +27,8 @@ class JoinedRoomsTabledViewCell: UITableViewCell {
     }
     
     func setCell(room: JSON) {
-        self.name.text = room["name"].string!
-        self.roomDescription.text = room["description"].string!
+        self.name.text = room["name"].string ?? ""
+        self.roomDescription.text = room["description"].string ?? ""
         self.onlineMemberNum.text = "オンライン: " + room["online_users"].count.description + "人"
         var urlString: String?
         if(room["now_playing_video"]["title"].exists()) {
