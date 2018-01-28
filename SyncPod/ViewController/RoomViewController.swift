@@ -22,6 +22,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
         "start": "0" as AnyObject,
         "rel": "0" as AnyObject
     ]
+    let center = NotificationCenter.default
 
     @IBOutlet weak var videoPlayer: YouTubePlayerView!
 
@@ -31,11 +32,23 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
         videoPlayer.playerVars = playerVars
         videoPlayer.isUserInteractionEnabled = false
         videoPlayer.isHidden = true
+        
+        center.addObserver(
+            self,
+            selector: #selector(RoomViewController.restartApp(notification:)),
+            name: .UIApplicationDidBecomeActive,
+            object: nil)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         videoPlayer.delegate = nil
+        center.removeObserver(self)
+    }
+    
+    @objc func restartApp(notification: Notification) {
+        print("restart")
+        roomChannel?.getNowPlayingVideo()
     }
 
     func onSubscribed() {
