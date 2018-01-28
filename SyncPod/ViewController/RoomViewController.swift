@@ -27,6 +27,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     @IBOutlet weak var videoPlayer: YouTubePlayerView!
 
     override func viewDidLoad() {
+        super.viewDidLoad()
         roomChannel = RoomChannel(roomKey: roomKey, delegate: self)
         videoPlayer.delegate = self
         videoPlayer.playerVars = playerVars
