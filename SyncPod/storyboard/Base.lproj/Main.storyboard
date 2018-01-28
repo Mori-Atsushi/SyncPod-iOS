@@ -158,14 +158,111 @@ Cg
                     </view>
                     <navigationItem key="navigationItem" id="pLr-fN-FG6"/>
                     <connections>
+                        <outlet property="CreateRoomPanel" destination="owv-OT-CUC" id="f6b-qE-1fx"/>
                         <outlet property="JoinRoomPanel" destination="jdY-WT-thj" id="8LM-f2-riU"/>
                         <outlet property="TableView" destination="c2d-Ez-jF8" id="8ux-P7-awd"/>
                         <segue destination="6al-Zs-kNG" kind="show" identifier="JoinRoomSegue" id="NMh-oi-6gp"/>
+                        <segue destination="p9L-PJ-jLy" kind="show" identifier="CreateRoomSegue" id="XeR-AB-Y3i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="115.59220389805098"/>
+        </scene>
+        <!--新規ルーム作成-->
+        <scene sceneID="pFs-mc-Zgt">
+            <objects>
+                <viewController id="p9L-PJ-jLy" customClass="CreateRoomViewController" customModule="SyncPod" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eKs-kM-kO9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="U8Z-te-kkC">
+                                <rect key="frame" x="0.0" y="94" width="0.0" height="241"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9Lf-gV-Vh3" userLabel="Field Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="161"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6Pr-Yk-8Mm">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="55.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ルーム名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbS-hT-gu0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cL1-Ha-mDa" userLabel="name">
+                                                        <rect key="frame" x="0.0" y="25.5" width="0.0" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="KNc-tx-g4F"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gAS-2c-brU">
+                                                <rect key="frame" x="0.0" y="75.5" width="0.0" height="85.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ルーム説明" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DD1-TL-fnv">
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uom-Kb-IY6">
+                                                        <rect key="frame" x="0.0" y="25.5" width="0.0" height="60"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="FwW-0y-0yr"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qix-39-e3R">
+                                        <rect key="frame" x="0.0" y="191" width="0.0" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.43137254899999999" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="k0e-g3-zXw"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="ルーム作成"/>
+                                        <connections>
+                                            <action selector="sendCreateRoom:" destination="p9L-PJ-jLy" eventType="touchUpInside" id="TP7-oN-zM6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="9Lf-gV-Vh3" firstAttribute="leading" secondItem="U8Z-te-kkC" secondAttribute="leading" id="ZE9-J0-C18"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Lf-gV-Vh3" secondAttribute="trailing" id="p9E-Zc-wPh"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="bT5-jw-erv"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WU0-YL-xzc" firstAttribute="trailing" secondItem="U8Z-te-kkC" secondAttribute="trailing" constant="30" id="15t-Ik-CTM"/>
+                            <constraint firstItem="U8Z-te-kkC" firstAttribute="top" secondItem="WU0-YL-xzc" secondAttribute="top" constant="30" id="3Ls-MQ-Zqe"/>
+                            <constraint firstItem="U8Z-te-kkC" firstAttribute="leading" secondItem="WU0-YL-xzc" secondAttribute="leading" constant="30" id="hKs-nk-U2x"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WU0-YL-xzc"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="新規ルーム作成" id="RB0-vd-HPt"/>
+                    <connections>
+                        <outlet property="descriptionField" destination="uom-Kb-IY6" id="ESu-Di-DBx"/>
+                        <outlet property="nameField" destination="cL1-Ha-mDa" id="3X7-NP-Zaw"/>
+                        <outlet property="submitButton" destination="Qix-39-e3R" id="HFh-lJ-6eW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lpa-c3-yxm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="848"/>
         </scene>
         <!--Room View Controller-->
         <scene sceneID="yad-h0-oHc">

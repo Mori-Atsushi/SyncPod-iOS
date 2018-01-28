@@ -11,6 +11,7 @@ import SwiftyJSON
 
 class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var JoinRoomPanel: UIView!
+    @IBOutlet weak var CreateRoomPanel: UIView!
     @IBOutlet weak var TableView: UITableView!
     
     var joinedRooms: JSON = []
@@ -22,22 +23,25 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "title"))
 
         //タッチ制御
-        let joinRoomTap = UITapGestureRecognizer(target: self, action: #selector(TopViewController.joinRoom(_:)))
+        let joinRoomTap = UITapGestureRecognizer(target: self, action: #selector(TopViewController.showJoinRoomAlert(_:)))
         self.JoinRoomPanel.addGestureRecognizer(joinRoomTap)
+        
+        let createRoomTap = UITapGestureRecognizer(target: self, action: #selector(TopViewController.createRoom(_:)))
+        self.CreateRoomPanel.addGestureRecognizer(createRoomTap)
         
         //最近入室したルームの取得
         let Http = HttpRequestHelper(delegate: self)
         Http.get(data: nil, endPoint: "joined_rooms")
     }
 
-    @objc func joinRoom(_ sender: UITapGestureRecognizer) {
+    @objc func showJoinRoomAlert(_ sender: UITapGestureRecognizer) {
         let alert = UIAlertController(title: "ルームに参加する", message: "ルームキーを入力して下さい。", preferredStyle: UIAlertControllerStyle.alert)
         let cancelAction = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.default)
         let defaultAction = UIAlertAction(title: "送信", style: UIAlertActionStyle.default, handler: {
             (action: UIAlertAction!) -> Void in
             let textFields: Array<UITextField>? = alert.textFields as Array<UITextField>?
             let roomKey: String = textFields![0].text!
-            self.performSegue(withIdentifier: "JoinRoomSegue", sender: roomKey)
+            self.joinRoom(roomKey: roomKey)
         })
         alert.addAction(cancelAction)
         alert.addAction(defaultAction)
@@ -45,6 +49,14 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
             text.placeholder = "ルームキー"
         })
         present(alert, animated: true)
+    }
+    
+    func joinRoom(roomKey: String) {
+        self.performSegue(withIdentifier: "JoinRoomSegue", sender: roomKey)
+    }
+    
+    @objc func createRoom(_ sender: UITapGestureRecognizer) {
+        self.performSegue(withIdentifier: "CreateRoomSegue", sender: nil)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -78,6 +90,6 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
     
     //タッチされた時の挙動
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "JoinRoomSegue", sender: joinedRooms[indexPath.row]["key"].string)
+        self.joinRoom(roomKey: joinedRooms[indexPath.row]["key"].string!)
     }
 }

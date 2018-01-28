@@ -16,3 +16,14 @@ extension UITextField {
         self.layer.addSublayer(border)
     }
 }
+
+extension UITextView {
+    func addBorderBottom(height: CGFloat, color: UIColor) -> CALayer {
+        let border = CALayer()
+        border.frame = CGRect(x: 0, y: self.frame.height - height, width: self.frame.width, height: height)
+        border.backgroundColor = color.cgColor
+        self.layer.addSublayer(border)
+        self.layer.masksToBounds = false
+        return border
+    }
+}

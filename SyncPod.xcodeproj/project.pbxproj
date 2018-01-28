@@ -30,6 +30,7 @@
 		0D8BB2B420109DEE00C7F6A9 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BB2B320109DEE00C7F6A9 /* RoomViewController.swift */; };
 		0D8BB2B62010A25700C7F6A9 /* ActionCableClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8BB2B52010A25700C7F6A9 /* ActionCableClient.framework */; };
 		0D8BB2B82010A37900C7F6A9 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8BB2B72010A37900C7F6A9 /* Starscream.framework */; };
+		0D939F41201B6A0200014633 /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D939F40201B6A0200014633 /* CreateRoomViewController.swift */; };
 		0DA2FB49201C700A00292BFE /* RoomTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA2FB48201C700A00292BFE /* RoomTabViewController.swift */; };
 		0DCA418D200C9B3500ED9B50 /* DeviceConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCA418C200C9B3500ED9B50 /* DeviceConst.swift */; };
 		0DCD202C200D00A5001C90DA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD202B200D00A5001C90DA /* SignUpViewController.swift */; };
@@ -85,6 +86,7 @@
 		0D8BB2B320109DEE00C7F6A9 /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		0D8BB2B52010A25700C7F6A9 /* ActionCableClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ActionCableClient.framework; path = Carthage/Build/iOS/ActionCableClient.framework; sourceTree = "<group>"; };
 		0D8BB2B72010A37900C7F6A9 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
+		0D939F40201B6A0200014633 /* CreateRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomViewController.swift; sourceTree = "<group>"; };
 		0DA2FB48201C700A00292BFE /* RoomTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTabViewController.swift; sourceTree = "<group>"; };
 		0DCA418C200C9B3500ED9B50 /* DeviceConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConst.swift; sourceTree = "<group>"; };
 		0DCD202B200D00A5001C90DA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				0DCD202B200D00A5001C90DA /* SignUpViewController.swift */,
 				0D2468AB200FC01A001348FB /* TopViewController.swift */,
 				0D8BB2B320109DEE00C7F6A9 /* RoomViewController.swift */,
+				0D939F40201B6A0200014633 /* CreateRoomViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				0DCA418D200C9B3500ED9B50 /* DeviceConst.swift in Sources */,
 				0DCD202C200D00A5001C90DA /* SignUpViewController.swift in Sources */,
 				0D859B5A200882B8008A3672 /* SignInViewController.swift in Sources */,
+				0D939F41201B6A0200014633 /* CreateRoomViewController.swift in Sources */,
 				0D67B73E201C3D1D00CCB84C /* ChatTab.swift in Sources */,
 				0D8BB2B420109DEE00C7F6A9 /* RoomViewController.swift in Sources */,
 				0DCD202E200D02CB001C90DA /* ViewExtentions.swift in Sources */,
