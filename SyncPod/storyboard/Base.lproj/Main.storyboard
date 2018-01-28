@@ -175,24 +175,36 @@ Cg
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSj-zH-Ega" customClass="YouTubePlayerView" customModule="YouTubePlayer">
-                                <rect key="frame" x="0.0" y="64" width="375" height="211"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="RSj-zH-Ega" secondAttribute="height" multiplier="16:9" id="YoK-cq-LzM"/>
-                                </constraints>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="t2X-lj-cWc">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSj-zH-Ega" customClass="YouTubePlayerView" customModule="YouTubePlayer">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="RSj-zH-Ega" secondAttribute="height" multiplier="16:9" id="YoK-cq-LzM"/>
+                                        </constraints>
+                                    </view>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhf-9a-OPg">
+                                        <rect key="frame" x="0.0" y="211" width="375" height="392"/>
+                                        <connections>
+                                            <segue destination="74G-Gn-eza" kind="embed" id="ro2-AR-9ct"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="RSj-zH-Ega" firstAttribute="trailing" secondItem="5f1-zV-e07" secondAttribute="trailing" id="HUM-12-ePB"/>
-                            <constraint firstItem="RSj-zH-Ega" firstAttribute="top" secondItem="5f1-zV-e07" secondAttribute="top" id="c5h-ti-2kw"/>
-                            <constraint firstItem="RSj-zH-Ega" firstAttribute="leading" secondItem="5f1-zV-e07" secondAttribute="leading" id="qdd-w7-clK"/>
+                            <constraint firstItem="t2X-lj-cWc" firstAttribute="trailing" secondItem="5f1-zV-e07" secondAttribute="trailing" id="Pku-jm-Jdc"/>
+                            <constraint firstItem="5f1-zV-e07" firstAttribute="bottom" secondItem="t2X-lj-cWc" secondAttribute="bottom" id="PuI-jF-7qQ"/>
+                            <constraint firstItem="t2X-lj-cWc" firstAttribute="top" secondItem="5f1-zV-e07" secondAttribute="top" id="clZ-cp-6E8"/>
+                            <constraint firstItem="t2X-lj-cWc" firstAttribute="leading" secondItem="5f1-zV-e07" secondAttribute="leading" id="p0x-l6-htu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5f1-zV-e07"/>
                     </view>
                     <connections>
-                        <outlet property="videoPlayer" destination="RSj-zH-Ega" id="Lul-GM-GLX"/>
+                        <outlet property="videoPlayer" destination="RSj-zH-Ega" id="Mc4-Yu-YSO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QWm-M0-7g6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -238,6 +250,55 @@ Cg
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NmR-J2-1s3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-758" y="116"/>
+        </scene>
+        <!--Room Tab View Controller-->
+        <scene sceneID="bDy-QK-oFV">
+            <objects>
+                <viewController id="74G-Gn-eza" customClass="RoomTabViewController" customModule="SyncPod" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GxH-bT-0Vy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="392"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SFc-gJ-9ex">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="392"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DrT-LP-NwZ" customClass="ButtonBarView" customModule="XLPagerTabStrip">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="0VV-3H-TEf"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wwg-uN-ITl">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tu7-MY-DiM">
+                                        <rect key="frame" x="0.0" y="45" width="375" height="347"/>
+                                    </scrollView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rsg-EI-bJ7" firstAttribute="trailing" secondItem="SFc-gJ-9ex" secondAttribute="trailing" id="0XF-u7-tTm"/>
+                            <constraint firstItem="SFc-gJ-9ex" firstAttribute="top" secondItem="rsg-EI-bJ7" secondAttribute="top" id="O7U-BZ-XlU"/>
+                            <constraint firstItem="SFc-gJ-9ex" firstAttribute="leading" secondItem="rsg-EI-bJ7" secondAttribute="leading" id="jVe-vs-Ba4"/>
+                            <constraint firstItem="SFc-gJ-9ex" firstAttribute="bottom" secondItem="rsg-EI-bJ7" secondAttribute="bottom" id="uGG-Lz-0X1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rsg-EI-bJ7"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonBarView" destination="DrT-LP-NwZ" id="wSV-Ky-gyF"/>
+                        <outlet property="containerView" destination="tu7-MY-DiM" id="8eI-kP-LWI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iiF-0h-98O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="940" y="-467.76611694152928"/>
         </scene>
     </scenes>
 </document>
