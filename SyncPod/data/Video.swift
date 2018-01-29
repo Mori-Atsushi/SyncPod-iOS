@@ -9,13 +9,19 @@
 import Foundation
 import SwiftyJSON
 
+protocol VideoDataDelegate {
+    func update()
+}
+
 class Video {
     private var _youtubeVideoId: String? = nil
     private var _currentTime: Float?
+    var delegate: VideoDataDelegate?
     
     func set(video: JSON) {
         self._youtubeVideoId = video["youtube_video_id"].string
         self._currentTime = video["current_time"].float
+        delegate?.update()
     }
     
     var youtubeVideoId: String? {
