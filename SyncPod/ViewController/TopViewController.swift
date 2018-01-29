@@ -13,8 +13,10 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
     @IBOutlet weak var JoinRoomPanel: UIView!
     @IBOutlet weak var CreateRoomPanel: UIView!
     @IBOutlet weak var TableView: UITableView!
+    @IBOutlet weak var ScrillView: UIScrollView!
 
     var joinedRooms: JSON = []
+    private let refreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +32,21 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
         self.CreateRoomPanel.addGestureRecognizer(createRoomTap)
 
         self.TableView.translatesAutoresizingMaskIntoConstraints = true
+        
+        //引っ張って更新
+        self.ScrillView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(TopViewController.refresh(sender:)), for: .valueChanged)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        //最近入室したルームの取得
+        let Http = HttpRequestHelper(delegate: self)
+        Http.get(data: nil, endPoint: "joined_rooms")
+    }
+    
+    @objc func refresh(sender: UIRefreshControl) {
         //最近入室したルームの取得
         let Http = HttpRequestHelper(delegate: self)
         Http.get(data: nil, endPoint: "joined_rooms")
@@ -74,6 +86,7 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
 
     func onSuccess(data: JSON) {
         print(data)
+        refreshControl.endRefreshing()
         joinedRooms = data["joined_rooms"]
         self.TableView.reloadData()
         self.TableView.layoutIfNeeded()
