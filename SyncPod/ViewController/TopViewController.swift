@@ -28,12 +28,16 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
         
         let createRoomTap = UITapGestureRecognizer(target: self, action: #selector(TopViewController.createRoom(_:)))
         self.CreateRoomPanel.addGestureRecognizer(createRoomTap)
+
+        self.TableView.translatesAutoresizingMaskIntoConstraints = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         //最近入室したルームの取得
         let Http = HttpRequestHelper(delegate: self)
         Http.get(data: nil, endPoint: "joined_rooms")
-
-        self.TableView.translatesAutoresizingMaskIntoConstraints = true
     }
 
     @objc func showJoinRoomAlert(_ sender: UITapGestureRecognizer) {
