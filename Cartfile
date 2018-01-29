@@ -3,4 +3,5 @@ github "SwiftyJSON/SwiftyJSON"
 github "danielrhodes/Swift-ActionCableClient"
 github "daltoniam/starscream" == 2.0.1
 github "gilesvangruisen/Swift-YouTube-Player"
+github "Alamofire/AlamofireImage" ~> 3.3
 github "xmartlabs/XLPagerTabStrip" ~> 8.0

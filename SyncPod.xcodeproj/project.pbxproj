@@ -15,6 +15,7 @@
 		0D2468AC200FC01A001348FB /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2468AB200FC01A001348FB /* TopViewController.swift */; };
 		0D4B438520099E550035DF1D /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4B438320099E550035DF1D /* SwiftyJSON.framework */; };
 		0D4B438620099E550035DF1D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4B438420099E550035DF1D /* Alamofire.framework */; };
+		0D578C7C201E03C0004BF2EE /* JoinedRoomsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D578C7B201E03C0004BF2EE /* JoinedRoomsTableViewCell.swift */; };
 		0D5B82701FC9A5D30055A72C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B826F1FC9A5D30055A72C /* AppDelegate.swift */; };
 		0D5B82751FC9A5D30055A72C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D5B82731FC9A5D30055A72C /* Main.storyboard */; };
 		0D5B82771FC9A5D30055A72C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D5B82761FC9A5D30055A72C /* Assets.xcassets */; };
@@ -65,6 +66,7 @@
 		0D2468AB200FC01A001348FB /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		0D4B438320099E550035DF1D /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		0D4B438420099E550035DF1D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		0D578C7B201E03C0004BF2EE /* JoinedRoomsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinedRoomsTableViewCell.swift; sourceTree = "<group>"; };
 		0D5B826C1FC9A5D30055A72C /* SyncPod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyncPod.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D5B826F1FC9A5D30055A72C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D5B82741FC9A5D30055A72C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 		0D5B826E1FC9A5D30055A72C /* SyncPod */ = {
 			isa = PBXGroup;
 			children = (
+				0D939F3B201B143A00014633 /* CustomView */,
 				0DFDDB72200F0902009C7E56 /* data */,
 				0D0D51B52017513F00B02F8B /* server */,
 				0DCA418B200C9B0600ED9B50 /* Tools */,
@@ -246,6 +249,14 @@
 				0D67B739201C3BD900CCB84C /* Tabs.storyboard */,
 			);
 			path = storyboard;
+			sourceTree = "<group>";
+		};
+		0D939F3B201B143A00014633 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				0D578C7B201E03C0004BF2EE /* JoinedRoomsTableViewCell.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 		0DCA418B200C9B0600ED9B50 /* Tools */ = {
@@ -434,6 +445,7 @@
 				0DCD202E200D02CB001C90DA /* ViewExtentions.swift in Sources */,
 				0D2468AC200FC01A001348FB /* TopViewController.swift in Sources */,
 				0D67B73C201C3D1300CCB84C /* PlayListTab.swift in Sources */,
+				0D578C7C201E03C0004BF2EE /* JoinedRoomsTableViewCell.swift in Sources */,
 				0D0D51B22017511300B02F8B /* Alert.swift in Sources */,
 				0DA2FB49201C700A00292BFE /* RoomTabViewController.swift in Sources */,
 				0D1BDB5020073F0200DA351D /* FirstStartTopViewController.swift in Sources */,

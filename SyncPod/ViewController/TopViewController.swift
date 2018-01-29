@@ -13,9 +13,9 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
     @IBOutlet weak var JoinRoomPanel: UIView!
     @IBOutlet weak var CreateRoomPanel: UIView!
     @IBOutlet weak var TableView: UITableView!
-    
+
     var joinedRooms: JSON = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,6 +32,8 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
         //最近入室したルームの取得
         let Http = HttpRequestHelper(delegate: self)
         Http.get(data: nil, endPoint: "joined_rooms")
+
+        self.TableView.translatesAutoresizingMaskIntoConstraints = true
     }
 
     @objc func showJoinRoomAlert(_ sender: UITapGestureRecognizer) {
@@ -65,29 +67,34 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
             roomViewController.roomKey = sender as! String
         }
     }
-    
+
     func onSuccess(data: JSON) {
         print(data)
         joinedRooms = data["joined_rooms"]
         self.TableView.reloadData()
+        self.TableView.layoutIfNeeded()
+        self.TableView.frame = CGRect(x: TableView.frame.origin.x,
+            y: TableView.frame.origin.y,
+            width: TableView.superview!.frame.width,
+            height: TableView.contentSize.height)
     }
-    
+
     func onFailure(error: Error) {
         print(error)
     }
-    
+
     //データを返すメソッド（スクロールなどでページを更新する必要が出るたびに呼び出される）
-    func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Room", for:indexPath as IndexPath) as UITableViewCell
-        cell.textLabel?.text = joinedRooms[indexPath.row]["name"].string
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Room", for: indexPath as IndexPath) as! JoinedRoomsTabledViewCell
+        cell.setCell(room: joinedRooms[indexPath.row])
         return cell
     }
-    
+
     //データの個数を返すメソッド
-    func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return joinedRooms.count
     }
-    
+
     //タッチされた時の挙動
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.joinRoom(roomKey: joinedRooms[indexPath.row]["key"].string!)
