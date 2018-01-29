@@ -10,6 +10,11 @@ import Foundation
 import SwiftyJSON
 
 class Room {
-    var nowPlayingVideo: Video?
+    var nowPlayingVideo = Video()
     var playList = PlayList()
+    var key: String
+    
+    init(key: String) {
+        self.key = key
+    }
 }

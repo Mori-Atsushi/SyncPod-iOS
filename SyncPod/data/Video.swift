@@ -10,7 +10,23 @@ import Foundation
 import SwiftyJSON
 
 class Video {
-    init(video: JSON) {
-        
+    private var _youtubeVideoId: String? = nil
+    private var _currentTime: Float?
+    
+    func set(video: JSON) {
+        self._youtubeVideoId = video["youtube_video_id"].string
+        self._currentTime = video["current_time"].float
+    }
+    
+    var youtubeVideoId: String? {
+        get {
+            return _youtubeVideoId
+        }
+    }
+
+    var currentTime: Float? {
+        get {
+            return _currentTime
+        }
     }
 }
