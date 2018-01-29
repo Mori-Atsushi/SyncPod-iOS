@@ -9,5 +9,5 @@
 import Foundation
 
 class DataStore {
-    static var CurrentRoom: Room?
+    static var CurrentRoom = Room()
 }

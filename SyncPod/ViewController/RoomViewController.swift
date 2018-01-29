@@ -14,7 +14,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
 
     var roomKey: String = ""
     var roomChannel: RoomChannel?
-    var room: Room?
+    var room = DataStore.CurrentRoom
 
     let playerVars = [
         "playsinline": "1" as AnyObject,
@@ -29,8 +29,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
 
     override func viewDidLoad() {
         roomChannel = RoomChannel(roomKey: roomKey, delegate: self)
-        DataStore.CurrentRoom = Room(key: roomKey)
-        room = DataStore.CurrentRoom
+        room.key = roomKey
         videoPlayer.delegate = self
         videoPlayer.playerVars = playerVars
         videoPlayer.isUserInteractionEnabled = false
@@ -50,17 +49,17 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
 
     func onReceiveNowPlayingVideo(json: JSON) {
         if(json["data"]["video"] != JSON.null) {
-            room!.nowPlayingVideo.set(video: json["data"]["video"])
-            let videoId = room!.nowPlayingVideo.youtubeVideoId!
-            let videoCurrentTime = room!.nowPlayingVideo.currentTime!
+            room.nowPlayingVideo.set(video: json["data"]["video"])
+            let videoId = room.nowPlayingVideo.youtubeVideoId!
+            let videoCurrentTime = room.nowPlayingVideo.currentTime!
             readyVideo(videoId: videoId, time: videoCurrentTime)
         }
     }
 
     func onReceiveStartVideo(json: JSON) {
         if(json["data"]["video"] != JSON.null) {
-            room!.nowPlayingVideo.set(video: json["data"]["video"])
-            let videoId = room!.nowPlayingVideo.youtubeVideoId!
+            room.nowPlayingVideo.set(video: json["data"]["video"])
+            let videoId = room.nowPlayingVideo.youtubeVideoId!
             readyVideo(videoId: videoId, time: 0)
         }
     }

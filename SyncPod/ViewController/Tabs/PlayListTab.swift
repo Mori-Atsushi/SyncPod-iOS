@@ -9,14 +9,20 @@
 import UIKit
 import XLPagerTabStrip
 
-class PlayListTab: UIViewController, IndicatorInfoProvider {
+class PlayListTab: UIViewController, IndicatorInfoProvider, VideoDataDelegate {
     var itemInfo: IndicatorInfo = "プレイリスト"
+    let nowPlyaingVideo = DataStore.CurrentRoom.nowPlayingVideo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nowPlyaingVideo.delegate = self
     }
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return itemInfo
+    }
+    
+    func update() {
+        print("updated")
     }
 }
