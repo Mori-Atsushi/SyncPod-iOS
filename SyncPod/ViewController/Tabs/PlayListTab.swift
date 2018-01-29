@@ -11,11 +11,15 @@ import XLPagerTabStrip
 
 class PlayListTab: UIViewController, IndicatorInfoProvider, VideoDataDelegate {
     var itemInfo: IndicatorInfo = "プレイリスト"
-    let nowPlyaingVideo = DataStore.CurrentRoom.nowPlayingVideo
+    let nowPlayingVideo = DataStore.CurrentRoom.nowPlayingVideo
+    
+    @IBOutlet weak var nowPlayingVideoTitle: UILabel!
+    @IBOutlet weak var nowPlayingVideoChannel: UILabel!
+    @IBOutlet weak var nowPlayingVideoInfo: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nowPlyaingVideo.delegate = self
+        nowPlayingVideo.delegate = self
     }
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -23,6 +27,9 @@ class PlayListTab: UIViewController, IndicatorInfoProvider, VideoDataDelegate {
     }
     
     func update() {
+        nowPlayingVideoTitle.text = nowPlayingVideo.title
+        nowPlayingVideoChannel.text = nowPlayingVideo.channelTitle
+        nowPlayingVideoInfo.text = "公開: " + (nowPlayingVideo.published ?? "") + " 視聴回数: " + (nowPlayingVideo.viewCountString ?? "0")
         print("updated")
     }
 }
