@@ -31,6 +31,16 @@ class Video {
         self._viewCount = video["view_count"].int
         delegate?.update()
     }
+    
+    func clear() {
+        self._youtubeVideoId = nil
+        self._currentTime = nil
+        self._title = nil
+        self._channelTitle = nil
+        self._published = nil
+        self._viewCount = nil
+        delegate?.update()
+    }
 
     var youtubeVideoId: String? {
         get { return _youtubeVideoId }

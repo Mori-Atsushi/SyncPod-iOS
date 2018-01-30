@@ -49,6 +49,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
         roomChannel?.disconnect()
         videoPlayer.delegate = nil
         center.removeObserver(self)
+        room.nowPlayingVideo.clear()
     }
     
     @objc func restartApp(notification: Notification) {
