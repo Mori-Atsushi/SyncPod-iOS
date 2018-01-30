@@ -29,7 +29,8 @@ class PlayListTab: UIViewController, IndicatorInfoProvider, VideoDataDelegate {
     func update() {
         nowPlayingVideoTitle.text = nowPlayingVideo.title
         nowPlayingVideoChannel.text = nowPlayingVideo.channelTitle
-        nowPlayingVideoInfo.text = "公開: " + (nowPlayingVideo.published ?? "") + " 視聴回数: " + (nowPlayingVideo.viewCountString ?? "0")
-        print("updated")
+        let published = nowPlayingVideo.published ?? ""
+        let viewCount = nowPlayingVideo.viewCountString ?? "0"
+        nowPlayingVideoInfo.text = "公開: " + published + " 視聴回数: " + viewCount + " 回"
     }
 }
