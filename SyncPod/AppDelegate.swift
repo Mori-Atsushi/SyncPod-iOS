@@ -12,18 +12,27 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var roomKey: String?
 
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         // Override point for customization after application launch.
+
+        self.roomKey = nil
 
         // ユーザがいない場合、初回起動画面に遷移
         if(CurrentUser.userToken == nil) {
             let storyboard: UIStoryboard = UIStoryboard(name: "FirstStart", bundle: nil)
             let viewController: UIViewController = storyboard.instantiateViewController(withIdentifier: "FirstStartTopView") as UIViewController
             window?.rootViewController = viewController
+        } else if(url.path == "/room") {
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let navigationController: UIViewController = storyboard.instantiateViewController(withIdentifier: "NavigationController") as UIViewController
+            window?.rootViewController = navigationController
+            if let roomKey = url.fragments["room_key"] {
+                self.roomKey = roomKey
+            }
         }
-
+        
         return true
     }
 
