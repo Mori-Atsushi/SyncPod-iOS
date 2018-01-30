@@ -24,22 +24,36 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
         "start": "0" as AnyObject,
         "rel": "0" as AnyObject
     ]
+    let center = NotificationCenter.default
 
     @IBOutlet weak var videoPlayer: YouTubePlayerView!
 
     override func viewDidLoad() {
+        super.viewDidLoad()
         roomChannel = RoomChannel(roomKey: roomKey, delegate: self)
         room.key = roomKey
         videoPlayer.delegate = self
         videoPlayer.playerVars = playerVars
         videoPlayer.isUserInteractionEnabled = false
         videoPlayer.isHidden = true
+        
+        center.addObserver(
+            self,
+            selector: #selector(RoomViewController.restartApp(notification:)),
+            name: .UIApplicationDidBecomeActive,
+            object: nil)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         roomChannel?.disconnect()
         videoPlayer.delegate = nil
+        center.removeObserver(self)
+    }
+    
+    @objc func restartApp(notification: Notification) {
+        print("restart")
+        roomChannel?.getNowPlayingVideo()
     }
 
     func onSubscribed() {
@@ -49,10 +63,15 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
 
     func onReceiveNowPlayingVideo(json: JSON) {
         if(json["data"]["video"] != JSON.null) {
+            let lastVideoYoutubeVideoId = room.nowPlayingVideo.youtubeVideoId
             room.nowPlayingVideo.set(video: json["data"]["video"])
             let videoId = room.nowPlayingVideo.youtubeVideoId!
             let videoCurrentTime = room.nowPlayingVideo.currentTime!
-            readyVideo(videoId: videoId, time: videoCurrentTime)
+            if(lastVideoYoutubeVideoId == videoId) {
+                videoPlayer.seekTo(videoCurrentTime, seekAhead: true)
+            } else {
+                readyVideo(videoId: videoId, time: videoCurrentTime)
+            }
         }
     }
 
