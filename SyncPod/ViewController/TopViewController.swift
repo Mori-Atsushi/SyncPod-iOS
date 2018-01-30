@@ -34,6 +34,12 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
         Http.get(data: nil, endPoint: "joined_rooms")
 
         self.TableView.translatesAutoresizingMaskIntoConstraints = true
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        if let roomKey = appDelegate.roomKey {
+            self.joinRoom(roomKey: roomKey)
+            appDelegate.roomKey = nil
+        }
     }
 
     @objc func showJoinRoomAlert(_ sender: UITapGestureRecognizer) {
