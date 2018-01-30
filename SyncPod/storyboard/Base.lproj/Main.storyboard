@@ -13,7 +13,7 @@
         <!--Top View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TopViewController" customModule="SyncPod" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TopView" id="BYZ-38-t0r" customClass="TopViewController" customModule="SyncPod" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f71-FB-Iin">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -445,7 +445,7 @@ Cg
         <!--Navigation Controller-->
         <scene sceneID="faR-t6-3R7">
             <objects>
-                <navigationController storyboardIdentifier="TopView" id="OA4-VJ-xIh" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationController" id="OA4-VJ-xIh" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wPw-Co-IXf">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
