@@ -14,7 +14,8 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
 
     var roomKey: String = ""
     var roomChannel: RoomChannel?
-    var nowPlayingVideoId: String?
+    var room = DataStore.CurrentRoom
+
     let playerVars = [
         "playsinline": "1" as AnyObject,
         "controls": "0" as AnyObject,
@@ -30,6 +31,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         roomChannel = RoomChannel(roomKey: roomKey, delegate: self)
+        room.key = roomKey
         videoPlayer.delegate = self
         videoPlayer.playerVars = playerVars
         videoPlayer.isUserInteractionEnabled = false
@@ -47,6 +49,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
         roomChannel?.disconnect()
         videoPlayer.delegate = nil
         center.removeObserver(self)
+        room.nowPlayingVideo.clear()
     }
     
     @objc func restartApp(notification: Notification) {
@@ -60,20 +63,23 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     }
 
     func onReceiveNowPlayingVideo(json: JSON) {
-        print(json)
-        if let videoId = json["data"]["video"]["youtube_video_id"].string {
-            let videoCurrentTime = json["data"]["video"]["current_time"].float!
-            if(nowPlayingVideoId == videoId) {
+        if(json["data"]["video"] != JSON.null) {
+            let lastVideoYoutubeVideoId = room.nowPlayingVideo.youtubeVideoId
+            room.nowPlayingVideo.set(video: json["data"]["video"])
+            let videoId = room.nowPlayingVideo.youtubeVideoId!
+            let videoCurrentTime = room.nowPlayingVideo.currentTime!
+            if(lastVideoYoutubeVideoId == videoId) {
                 videoPlayer.seekTo(videoCurrentTime, seekAhead: true)
             } else {
                 readyVideo(videoId: videoId, time: videoCurrentTime)
-                self.nowPlayingVideoId = videoId
             }
         }
     }
 
     func onReceiveStartVideo(json: JSON) {
-        if let videoId = json["data"]["video"]["youtube_video_id"].string {
+        if(json["data"]["video"] != JSON.null) {
+            room.nowPlayingVideo.set(video: json["data"]["video"])
+            let videoId = room.nowPlayingVideo.youtubeVideoId!
             readyVideo(videoId: videoId, time: 0)
         }
     }

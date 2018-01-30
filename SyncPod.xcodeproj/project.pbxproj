@@ -16,6 +16,10 @@
 		0D4B438520099E550035DF1D /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4B438320099E550035DF1D /* SwiftyJSON.framework */; };
 		0D4B438620099E550035DF1D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4B438420099E550035DF1D /* Alamofire.framework */; };
 		0D578C7C201E03C0004BF2EE /* JoinedRoomsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D578C7B201E03C0004BF2EE /* JoinedRoomsTableViewCell.swift */; };
+		0D578C7E201F1EDC004BF2EE /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D578C7D201F1EDC004BF2EE /* DataStore.swift */; };
+		0D578C80201F1F23004BF2EE /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D578C7F201F1F23004BF2EE /* Room.swift */; };
+		0D578C82201F20FF004BF2EE /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D578C81201F20FF004BF2EE /* Video.swift */; };
+		0D578C86201F2203004BF2EE /* PlayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D578C85201F2203004BF2EE /* PlayList.swift */; };
 		0D5B82701FC9A5D30055A72C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B826F1FC9A5D30055A72C /* AppDelegate.swift */; };
 		0D5B82751FC9A5D30055A72C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D5B82731FC9A5D30055A72C /* Main.storyboard */; };
 		0D5B82771FC9A5D30055A72C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D5B82761FC9A5D30055A72C /* Assets.xcassets */; };
@@ -68,6 +72,10 @@
 		0D4B438320099E550035DF1D /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		0D4B438420099E550035DF1D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		0D578C7B201E03C0004BF2EE /* JoinedRoomsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinedRoomsTableViewCell.swift; sourceTree = "<group>"; };
+		0D578C7D201F1EDC004BF2EE /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		0D578C7F201F1F23004BF2EE /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		0D578C81201F20FF004BF2EE /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		0D578C85201F2203004BF2EE /* PlayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayList.swift; sourceTree = "<group>"; };
 		0D5B826C1FC9A5D30055A72C /* SyncPod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyncPod.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D5B826F1FC9A5D30055A72C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D5B82741FC9A5D30055A72C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -276,6 +284,10 @@
 			isa = PBXGroup;
 			children = (
 				0DFDDB73200F092A009C7E56 /* CurrentUser.swift */,
+				0D578C7D201F1EDC004BF2EE /* DataStore.swift */,
+				0D578C7F201F1F23004BF2EE /* Room.swift */,
+				0D578C81201F20FF004BF2EE /* Video.swift */,
+				0D578C85201F2203004BF2EE /* PlayList.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -439,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D578C7E201F1EDC004BF2EE /* DataStore.swift in Sources */,
 				0DCA418D200C9B3500ED9B50 /* DeviceConst.swift in Sources */,
 				0DCD202C200D00A5001C90DA /* SignUpViewController.swift in Sources */,
 				0D859B5A200882B8008A3672 /* SignInViewController.swift in Sources */,
@@ -451,12 +464,15 @@
 				0D578C7C201E03C0004BF2EE /* JoinedRoomsTableViewCell.swift in Sources */,
 				0D0D51B22017511300B02F8B /* Alert.swift in Sources */,
 				0DA2FB49201C700A00292BFE /* RoomTabViewController.swift in Sources */,
+				0D578C86201F2203004BF2EE /* PlayList.swift in Sources */,
 				0D1BDB5020073F0200DA351D /* FirstStartTopViewController.swift in Sources */,
 				0DE76208202031D8000A0838 /* UrlExtention.swift in Sources */,
+				0D578C80201F1F23004BF2EE /* Room.swift in Sources */,
 				0D5B82701FC9A5D30055A72C /* AppDelegate.swift in Sources */,
 				0D0D51B92017513F00B02F8B /* RoomChannel.swift in Sources */,
 				0DFDDB74200F092A009C7E56 /* CurrentUser.swift in Sources */,
 				0D67B740201C3D7200CCB84C /* RoomInfoTab.swift in Sources */,
+				0D578C82201F20FF004BF2EE /* Video.swift in Sources */,
 				0D0D51BA2017513F00B02F8B /* HttpRequestsHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
