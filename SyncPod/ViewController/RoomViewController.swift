@@ -14,6 +14,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
 
     var roomKey: String = ""
     var roomChannel: RoomChannel?
+    var nowPlayingVideoId: String?
     let playerVars = [
         "playsinline": "1" as AnyObject,
         "controls": "0" as AnyObject,
@@ -22,21 +23,35 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
         "start": "0" as AnyObject,
         "rel": "0" as AnyObject
     ]
+    let center = NotificationCenter.default
 
     @IBOutlet weak var videoPlayer: YouTubePlayerView!
 
     override func viewDidLoad() {
+        super.viewDidLoad()
         roomChannel = RoomChannel(roomKey: roomKey, delegate: self)
         videoPlayer.delegate = self
         videoPlayer.playerVars = playerVars
         videoPlayer.isUserInteractionEnabled = false
         videoPlayer.isHidden = true
+        
+        center.addObserver(
+            self,
+            selector: #selector(RoomViewController.restartApp(notification:)),
+            name: .UIApplicationDidBecomeActive,
+            object: nil)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         roomChannel?.disconnect()
         videoPlayer.delegate = nil
+        center.removeObserver(self)
+    }
+    
+    @objc func restartApp(notification: Notification) {
+        print("restart")
+        roomChannel?.getNowPlayingVideo()
     }
 
     func onSubscribed() {
@@ -48,7 +63,12 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
         print(json)
         if let videoId = json["data"]["video"]["youtube_video_id"].string {
             let videoCurrentTime = json["data"]["video"]["current_time"].float!
-            readyVideo(videoId: videoId, time: videoCurrentTime)
+            if(nowPlayingVideoId == videoId) {
+                videoPlayer.seekTo(videoCurrentTime, seekAhead: true)
+            } else {
+                readyVideo(videoId: videoId, time: videoCurrentTime)
+                self.nowPlayingVideoId = videoId
+            }
         }
     }
 
