@@ -27,14 +27,19 @@ class JoinedRoomsTabledViewCell: UITableViewCell {
     }
     
     func setCell(room: JSON) {
+        self.recentVideo.isHidden = true
+        self.thumbnailImage.isHidden = true
+        
         self.name.text = room["name"].string ?? ""
         self.roomDescription.text = room["description"].string ?? ""
         self.onlineMemberNum.text = "オンライン: " + room["online_users"].count.description + "人"
         var urlString: String?
         if(room["now_playing_video"]["title"].exists()) {
+            self.recentVideo.isHidden = false
             self.recentVideo.text = "再生中: " + room["now_playing_video"]["title"].string!
             urlString = room["now_playing_video"]["thumbnail_url"].string
         } else if(room["last_played_video"]["title"].exists()) {
+            self.recentVideo.isHidden = false
             self.recentVideo.text = "再生終了: " + room["last_played_video"]["title"].string!
             urlString = room["last_played_video"]["thumbnail_url"].string
         }
@@ -42,6 +47,7 @@ class JoinedRoomsTabledViewCell: UITableViewCell {
         if(urlString != nil) {
             Alamofire.request(urlString!).responseImage { response in
                 if let image = response.result.value {
+                    self.thumbnailImage.isHidden = false
                     self.thumbnailImage.image = image
                 }
             }
