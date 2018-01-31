@@ -17,6 +17,7 @@ class ChatTab: UIViewController, IndicatorInfoProvider, ChatListDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         chatList.delegate = self
+        TableView.transform = CGAffineTransform(rotationAngle: -(CGFloat)(Double.pi))
     }
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -31,7 +32,8 @@ class ChatTab: UIViewController, IndicatorInfoProvider, ChatListDelegate, UITabl
     //データを返すメソッド（スクロールなどでページを更新する必要が出るたびに呼び出される）
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Chat", for: indexPath as IndexPath) as! ChatTableViewCell
-        cell.setCell(chat: chatList.get(index: indexPath.row))
+        cell.setCell(chat: chatList.get(index: chatList.count - indexPath.row - 1))
+        cell.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi));
         return cell
     }
     
