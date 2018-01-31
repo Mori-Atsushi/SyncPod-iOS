@@ -81,6 +81,7 @@
                         <viewLayoutGuide key="safeArea" id="t9U-t1-jyY"/>
                     </view>
                     <connections>
+                        <outlet property="nowPlaingVideoView" destination="GJE-qZ-S2m" id="pjt-ba-OeD"/>
                         <outlet property="nowPlayingVideoChannel" destination="Tq4-IV-TYo" id="kMv-5f-UDW"/>
                         <outlet property="nowPlayingVideoInfo" destination="4uv-cb-jGw" id="93z-el-E3a"/>
                         <outlet property="nowPlayingVideoTitle" destination="YII-fV-BUz" id="DqT-FL-HO3"/>
