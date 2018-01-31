@@ -101,4 +101,10 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     func playerReady(_ videoPlayer: YouTubePlayerView) {
         videoPlayer.play()
     }
+    
+    func playerStateChanged(_ videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
+        if(playerState == .Ended) {
+            endVideo()
+        }
+    }
 }
