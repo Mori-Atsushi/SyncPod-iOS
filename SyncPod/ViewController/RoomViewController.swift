@@ -93,6 +93,10 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
         room.chatList.set(list: json["data"]["past_chats"])
     }
     
+    func onReceiveChat(json: JSON) {
+        room.chatList.add(chat: json["data"]["chat"])
+    }
+    
     private func readyVideo(videoId: String, time: Float) {
         videoPlayer.playerVars["start"] = time as AnyObject
         videoPlayer.loadVideoID(videoId)

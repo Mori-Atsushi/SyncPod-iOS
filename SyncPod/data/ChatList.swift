@@ -26,6 +26,11 @@ class ChatList {
         return list[index]
     }
     
+    func add(chat: JSON) {
+        list.append(Chat(chat: chat))
+        delegate?.update()
+    }
+    
     var count: Int {
         get {
             return list.count
