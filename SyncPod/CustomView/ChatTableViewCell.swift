@@ -25,7 +25,7 @@ class ChatTableViewCell: UITableViewCell {
     
     func setCell(chat: Chat) {
         name.text = chat.user?.name ?? "お知らせ"
-        time.text = chat.created_at
+        time.text = chat.formatedTime
         message.text = chat.message
         
         if chat.chat_type != "user" {
