@@ -11,14 +11,14 @@ import SwiftyJSON
 
 struct Chat {
     let id: Int
-    let chat_type: String
+    let chatType: String
     let message: String
     let date: Date
     var user: User?
     
     init(chat: JSON) {
         id = chat["id"].int!
-        chat_type = chat["chat_type"].string!
+        chatType = chat["chat_type"].string!
         message = chat["message"].string!
 
         let f = DateFormatter()
@@ -26,7 +26,7 @@ struct Chat {
         f.timeZone = TimeZone(secondsFromGMT: 0)
         date = f.date(from: chat["created_at"].string!)!
 
-        if chat_type == "user" {
+        if chatType == "user" {
             user = User(user: chat["user"])
         }
     }

@@ -28,7 +28,7 @@ class ChatTableViewCell: UITableViewCell {
         time.text = chat.formatedTime
         message.text = chat.message
         
-        if chat.chat_type != "user" {
+        if chat.chatType != "user" {
             name.textColor = DeviceConst.blueTextColor
             message.textColor = DeviceConst.grayTextColor
         }
