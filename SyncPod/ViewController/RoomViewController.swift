@@ -54,12 +54,17 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     
     @objc func restartApp(notification: Notification) {
         print("restart")
-        roomChannel?.getNowPlayingVideo()
+        startRoom()
     }
 
     func onSubscribed() {
         print("Subscribed!")
+        startRoom()
+    }
+    
+    func startRoom() {
         roomChannel?.getNowPlayingVideo()
+        roomChannel?.getChatList()
     }
 
     func onReceiveNowPlayingVideo(json: JSON) {
@@ -82,6 +87,10 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
             let videoId = room.nowPlayingVideo.youtubeVideoId!
             readyVideo(videoId: videoId, time: 0)
         }
+    }
+    
+    func onReceivePastChats(json: JSON) {
+        print(json)
     }
     
     private func readyVideo(videoId: String, time: Float) {

@@ -13,6 +13,7 @@ protocol RoomChannelDelegate {
     func onSubscribed() -> Void
     func onReceiveNowPlayingVideo(json: JSON) -> Void
     func onReceiveStartVideo(json: JSON) -> Void
+    func onReceivePastChats(json: JSON) -> Void
 }
 
 class RoomChannel {
@@ -46,6 +47,10 @@ class RoomChannel {
         self.roomChannel?.action("now_playing_video");
     }
     
+    func getChatList() {
+        self.roomChannel?.action("past_chats");
+    }
+    
     func disconnect() {
         client.disconnect()
     }
@@ -73,6 +78,8 @@ class RoomChannel {
                 self.roomChannelDelegate.onReceiveNowPlayingVideo(json: json)
             case "start_video":
                 self.roomChannelDelegate.onReceiveStartVideo(json: json)
+            case "past_chats":
+                self.roomChannelDelegate.onReceivePastChats(json: json)
             default:
                 print("Received", data!)
             }
