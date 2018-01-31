@@ -73,6 +73,8 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
             } else {
                 readyVideo(videoId: videoId, time: videoCurrentTime)
             }
+        } else {
+            endVideo()
         }
     }
 
@@ -89,6 +91,11 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
         videoPlayer.loadVideoID(videoId)
         videoPlayer.isHidden = false
         self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    private func endVideo() {
+        room.nowPlayingVideo.clear()
+        self.videoPlayer.isHidden = true
     }
 
     func playerReady(_ videoPlayer: YouTubePlayerView) {
