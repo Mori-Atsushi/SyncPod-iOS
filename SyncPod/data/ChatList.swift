@@ -18,8 +18,17 @@ class ChatList {
     var delegate: ChatListDelegate?
     
     func set(list: JSON) {
-        print(list)
         self.list = list.arrayValue.map { Chat(chat: $0) }
         delegate?.update()
+    }
+    
+    func get(index: Int) -> Chat {
+        return list[index]
+    }
+    
+    var count: Int {
+        get {
+            return list.count
+        }
     }
 }
