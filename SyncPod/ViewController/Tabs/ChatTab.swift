@@ -20,6 +20,12 @@ class ChatTab: UIViewController, IndicatorInfoProvider, ChatListDelegate, UITabl
         TableView.transform = CGAffineTransform(rotationAngle: -(CGFloat)(Double.pi))
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let innerOffset:CGFloat = 9.0
+        TableView.scrollIndicatorInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: TableView.frame.width - innerOffset)
+    }
+    
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return itemInfo
     }
