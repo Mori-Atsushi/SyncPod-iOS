@@ -16,6 +16,7 @@ class PlayListTab: UIViewController, IndicatorInfoProvider, VideoDataDelegate {
     @IBOutlet weak var nowPlayingVideoTitle: UILabel!
     @IBOutlet weak var nowPlayingVideoChannel: UILabel!
     @IBOutlet weak var nowPlayingVideoInfo: UILabel!
+    @IBOutlet weak var nowPlaingVideoView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +28,15 @@ class PlayListTab: UIViewController, IndicatorInfoProvider, VideoDataDelegate {
     }
     
     func update() {
-        nowPlayingVideoTitle.text = nowPlayingVideo.title
-        nowPlayingVideoChannel.text = nowPlayingVideo.channelTitle
-        let published = nowPlayingVideo.published ?? ""
-        let viewCount = nowPlayingVideo.viewCountString ?? "0"
-        nowPlayingVideoInfo.text = "公開: " + published + " 視聴回数: " + viewCount + " 回"
+        if nowPlayingVideo.youtubeVideoId != nil {
+            nowPlaingVideoView.isHidden = false
+            nowPlayingVideoTitle.text = nowPlayingVideo.title
+            nowPlayingVideoChannel.text = nowPlayingVideo.channelTitle
+            let published = nowPlayingVideo.published ?? ""
+            let viewCount = nowPlayingVideo.viewCountString ?? "0"
+            nowPlayingVideoInfo.text = "公開: " + published + " 視聴回数: " + viewCount + " 回"
+        } else {
+            nowPlaingVideoView.isHidden = true
+        }
     }
 }
