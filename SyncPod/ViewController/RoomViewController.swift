@@ -96,6 +96,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     private func endVideo() {
         room.nowPlayingVideo.clear()
         self.videoPlayer.isHidden = true
+        self.navigationController?.navigationBar.isHidden = false
     }
 
     func playerReady(_ videoPlayer: YouTubePlayerView) {
