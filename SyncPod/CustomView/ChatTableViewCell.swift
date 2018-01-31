@@ -27,5 +27,10 @@ class ChatTableViewCell: UITableViewCell {
         name.text = chat.user?.name ?? "お知らせ"
         time.text = chat.created_at
         message.text = chat.message
+        
+        if chat.chat_type != "user" {
+            name.textColor = DeviceConst.blueTextColor
+            message.textColor = DeviceConst.grayTextColor
+        }
     }
 }
