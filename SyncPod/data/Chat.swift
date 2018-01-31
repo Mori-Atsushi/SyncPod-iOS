@@ -14,13 +14,15 @@ struct Chat {
     let chat_type: String
     let message: String
     let created_at: String
-    let user: User
+    var user: User?
     
     init(chat: JSON) {
         id = chat["id"].int!
         chat_type = chat["chat_type"].string!
         message = chat["message"].string!
-        created_at = chat["created_ad"].string!
-        user = User(user: chat["user"])
+        created_at = chat["created_at"].string!
+        if chat_type == "user" {
+            user = User(user: chat["user"])
+        }
     }
 }
