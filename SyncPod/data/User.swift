@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-struct User {
+class User {
     let id: Int
     let name: String
     
