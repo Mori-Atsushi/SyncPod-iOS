@@ -89,6 +89,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
             room.nowPlayingVideo.set(video: json["data"]["video"])
             let videoId = room.nowPlayingVideo.video!.youtubeVideoId
             readyVideo(videoId: videoId, time: 0)
+            room.playList.remove(video: json["data"]["video"])
         }
     }
     

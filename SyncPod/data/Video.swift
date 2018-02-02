@@ -10,6 +10,7 @@ import Foundation
 import SwiftyJSON
 
 class Video {
+    let id: Int
     let youtubeVideoId: String
     let currentTime: Float
     let title: String
@@ -20,6 +21,7 @@ class Video {
     let thumbnailUrl: String?
 
     init(video: JSON) {
+        id = video["id"].int!
         youtubeVideoId = video["youtube_video_id"].string!
         currentTime = video["current_time"].float!
         title = video["title"].string!
