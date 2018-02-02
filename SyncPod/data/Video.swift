@@ -16,6 +16,8 @@ class Video {
     let channelTitle: String?
     let published: String?
     let viewCount: Int?
+    let duration: String
+    let thumbnailUrl: String?
 
     init(video: JSON) {
         youtubeVideoId = video["youtube_video_id"].string!
@@ -24,6 +26,8 @@ class Video {
         channelTitle = video["channel_title"].string
         published = video["published"].string
         viewCount = video["view_count"].int
+        duration = video["duration"].string!
+        thumbnailUrl = video["thumbnail_url"].string
     }
     
     var viewCountString: String? {
