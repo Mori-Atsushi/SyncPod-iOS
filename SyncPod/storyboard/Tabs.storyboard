@@ -224,6 +224,7 @@
                     </view>
                     <connections>
                         <outlet property="TableView" destination="KL6-T9-jCJ" id="rOO-j6-XqH"/>
+                        <outlet property="emptyMessage" destination="5Kf-bw-ZzY" id="qdS-VT-nQa"/>
                         <outlet property="nowPlaingVideoView" destination="2Mi-uB-lYb" id="FgV-uJ-Men"/>
                         <outlet property="nowPlayingVideoChannel" destination="nrL-OZ-OL4" id="I3a-3t-XGW"/>
                         <outlet property="nowPlayingVideoInfo" destination="EWB-cA-bhQ" id="8mu-k0-yEP"/>

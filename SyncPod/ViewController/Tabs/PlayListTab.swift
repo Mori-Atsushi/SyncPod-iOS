@@ -19,7 +19,8 @@ class PlayListTab: UIViewController, IndicatorInfoProvider, VideoDataDelegate, P
     @IBOutlet weak var nowPlayingVideoChannel: UILabel!
     @IBOutlet weak var nowPlayingVideoInfo: UILabel!
     @IBOutlet weak var nowPlaingVideoView: UIView!
-
+    @IBOutlet weak var emptyMessage: UILabel!
+    
     override func viewDidLoad() {
         nowPlayingVideo.delegate = self
         playList.delegate = self
@@ -58,6 +59,11 @@ class PlayListTab: UIViewController, IndicatorInfoProvider, VideoDataDelegate, P
     }
 
     func updatedPlayList() {
+        if(playList.count == 0) {
+            self.emptyMessage.isHidden = false
+        } else {
+            self.emptyMessage.isHidden = true
+        }
         self.TableView.reloadData()
     }
 
