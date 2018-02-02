@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D0BB2492021A8C000DD977C /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0BB2482021A8C000DD977C /* Chat.swift */; };
+		0D0BB24B2021A92200DD977C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0BB24A2021A92200DD977C /* User.swift */; };
+		0D0BB24D2021AAB600DD977C /* ChatList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0BB24C2021AAB600DD977C /* ChatList.swift */; };
+		0D0BB24F2021B10E00DD977C /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0BB24E2021B10E00DD977C /* ChatTableViewCell.swift */; };
 		0D0D51B22017511300B02F8B /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0D51B12017511300B02F8B /* Alert.swift */; };
 		0D0D51B92017513F00B02F8B /* RoomChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0D51B72017513F00B02F8B /* RoomChannel.swift */; };
 		0D0D51BA2017513F00B02F8B /* HttpRequestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0D51B82017513F00B02F8B /* HttpRequestsHelper.swift */; };
@@ -63,6 +67,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D0BB2482021A8C000DD977C /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		0D0BB24A2021A92200DD977C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0D0BB24C2021AAB600DD977C /* ChatList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatList.swift; sourceTree = "<group>"; };
+		0D0BB24E2021B10E00DD977C /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		0D0D51B12017511300B02F8B /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		0D0D51B72017513F00B02F8B /* RoomChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomChannel.swift; sourceTree = "<group>"; };
 		0D0D51B82017513F00B02F8B /* HttpRequestsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequestsHelper.swift; sourceTree = "<group>"; };
@@ -265,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				0D578C7B201E03C0004BF2EE /* JoinedRoomsTableViewCell.swift */,
+				0D0BB24E2021B10E00DD977C /* ChatTableViewCell.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -288,6 +297,9 @@
 				0D578C7F201F1F23004BF2EE /* Room.swift */,
 				0D578C81201F20FF004BF2EE /* Video.swift */,
 				0D578C85201F2203004BF2EE /* PlayList.swift */,
+				0D0BB2482021A8C000DD977C /* Chat.swift */,
+				0D0BB24A2021A92200DD977C /* User.swift */,
+				0D0BB24C2021AAB600DD977C /* ChatList.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -454,6 +466,7 @@
 				0D578C7E201F1EDC004BF2EE /* DataStore.swift in Sources */,
 				0DCA418D200C9B3500ED9B50 /* DeviceConst.swift in Sources */,
 				0DCD202C200D00A5001C90DA /* SignUpViewController.swift in Sources */,
+				0D0BB24B2021A92200DD977C /* User.swift in Sources */,
 				0D859B5A200882B8008A3672 /* SignInViewController.swift in Sources */,
 				0D939F41201B6A0200014633 /* CreateRoomViewController.swift in Sources */,
 				0D67B73E201C3D1D00CCB84C /* ChatTab.swift in Sources */,
@@ -464,11 +477,14 @@
 				0D578C7C201E03C0004BF2EE /* JoinedRoomsTableViewCell.swift in Sources */,
 				0D0D51B22017511300B02F8B /* Alert.swift in Sources */,
 				0DA2FB49201C700A00292BFE /* RoomTabViewController.swift in Sources */,
+				0D0BB2492021A8C000DD977C /* Chat.swift in Sources */,
 				0D578C86201F2203004BF2EE /* PlayList.swift in Sources */,
 				0D1BDB5020073F0200DA351D /* FirstStartTopViewController.swift in Sources */,
 				0DE76208202031D8000A0838 /* UrlExtention.swift in Sources */,
 				0D578C80201F1F23004BF2EE /* Room.swift in Sources */,
+				0D0BB24D2021AAB600DD977C /* ChatList.swift in Sources */,
 				0D5B82701FC9A5D30055A72C /* AppDelegate.swift in Sources */,
+				0D0BB24F2021B10E00DD977C /* ChatTableViewCell.swift in Sources */,
 				0D0D51B92017513F00B02F8B /* RoomChannel.swift in Sources */,
 				0DFDDB74200F092A009C7E56 /* CurrentUser.swift in Sources */,
 				0D67B740201C3D7200CCB84C /* RoomInfoTab.swift in Sources */,

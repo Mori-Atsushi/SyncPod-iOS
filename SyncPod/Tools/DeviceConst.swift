@@ -14,4 +14,7 @@ final class DeviceConst {
     static let blueColor = UIColor(red: 42/255.0, green: 56/255.0, blue: 149/255.0, alpha: 1.0)
     static let greenColor = UIColor(red: 0/255.0, green: 110/255.0, blue: 96/255.0, alpha: 1.0)
     static let lightGray = UIColor(red: 249/255.0, green: 249/255.0, blue: 249/255.0, alpha: 1.0)
+    static let blackTextColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
+    static let grayTextColor = UIColor(red: 154/255.0, green: 154/255.0, blue: 154/255.0, alpha: 1.0)
+    static let blueTextColor = UIColor(red: 144/255.0, green: 202/255.0, blue: 249/255.0, alpha: 1.0)
 }
