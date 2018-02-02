@@ -28,7 +28,7 @@ class PlayListTab: UIViewController, IndicatorInfoProvider, VideoDataDelegate {
     }
     
     func updatedVideoData() {
-        if nowPlayingVideo.video?.youtubeVideoId != nil {
+        if nowPlayingVideo.video != nil {
             nowPlaingVideoView.isHidden = false
             nowPlayingVideoTitle.text = nowPlayingVideo.video?.title
             nowPlayingVideoChannel.text = nowPlayingVideo.video?.channelTitle
