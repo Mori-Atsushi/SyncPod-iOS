@@ -23,8 +23,25 @@ class PlayListTab: UIViewController, IndicatorInfoProvider, VideoDataDelegate, P
     override func viewDidLoad() {
         nowPlayingVideo.delegate = self
         playList.delegate = self
-        self.TableView.translatesAutoresizingMaskIntoConstraints = true
+        self.TableView.sectionHeaderHeight = UITableViewAutomaticDimension;
+        self.TableView.estimatedSectionHeaderHeight = 25;
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        guard let headerView = TableView.tableHeaderView else {
+            return
+        }
+        
+        let size = headerView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+        
+        if headerView.frame.size.height != size.height {
+            headerView.frame.size.height = size.height
+            TableView.tableHeaderView = headerView
+        }
+    }
+        
 
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return itemInfo
@@ -46,11 +63,6 @@ class PlayListTab: UIViewController, IndicatorInfoProvider, VideoDataDelegate, P
     func updatedPlayList() {
         print("update chat list")
         self.TableView.reloadData()
-        self.TableView.layoutIfNeeded()
-        self.TableView.frame = CGRect(x: TableView.frame.origin.x,
-            y: TableView.frame.origin.y,
-            width: TableView.superview!.frame.width,
-            height: TableView.contentSize.height)
     }
 
     //データを返すメソッド（スクロールなどでページを更新する必要が出るたびに呼び出される）
