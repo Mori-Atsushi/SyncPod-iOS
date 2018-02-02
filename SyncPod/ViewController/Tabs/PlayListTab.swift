@@ -23,8 +23,6 @@ class PlayListTab: UIViewController, IndicatorInfoProvider, VideoDataDelegate, P
     override func viewDidLoad() {
         nowPlayingVideo.delegate = self
         playList.delegate = self
-        self.TableView.sectionHeaderHeight = UITableViewAutomaticDimension;
-        self.TableView.estimatedSectionHeaderHeight = 25;
     }
     
     override func viewDidLayoutSubviews() {
@@ -41,7 +39,6 @@ class PlayListTab: UIViewController, IndicatorInfoProvider, VideoDataDelegate, P
             TableView.tableHeaderView = headerView
         }
     }
-        
 
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return itemInfo

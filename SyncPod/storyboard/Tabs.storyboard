@@ -28,7 +28,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="112.5"/>
                                             <subviews>
                                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Mi-uB-lYb">
-                                                    <rect key="frame" x="0.0" y="-15" width="375" height="30"/>
+                                                    <rect key="frame" x="0.0" y="-10" width="375" height="30"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="AWi-wb-LFX">
                                                             <rect key="frame" x="10" y="10" width="355" height="10"/>
@@ -111,7 +111,7 @@
                                             </subviews>
                                         </stackView>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" white="0.1457248263888889" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="C6g-Sg-cyR" secondAttribute="bottom" id="EtJ-87-Jpe"/>
                                         <constraint firstAttribute="trailing" secondItem="C6g-Sg-cyR" secondAttribute="trailing" id="L9e-OW-QtB"/>
