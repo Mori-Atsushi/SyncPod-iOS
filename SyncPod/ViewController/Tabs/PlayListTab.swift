@@ -61,13 +61,12 @@ class PlayListTab: UIViewController, IndicatorInfoProvider, VideoDataDelegate, P
     }
 
     func updatedPlayList() {
-        print("update chat list")
         self.TableView.reloadData()
     }
 
     //データを返すメソッド（スクロールなどでページを更新する必要が出るたびに呼び出される）
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Chat", for: indexPath as IndexPath) as! VideoTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Video", for: indexPath as IndexPath) as! VideoTableViewCell
         cell.setCell(video: playList.get(index: indexPath.row))
         return cell
     }
