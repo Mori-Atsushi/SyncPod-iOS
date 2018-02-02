@@ -9,71 +9,31 @@
 import Foundation
 import SwiftyJSON
 
-protocol VideoDataDelegate {
-    func update()
-}
-
 class Video {
-    private var _youtubeVideoId: String?
-    private var _currentTime: Float?
-    private var _title: String?
-    private var _channelTitle: String?
-    private var _published: String?
-    private var _viewCount: Int?
-    var delegate: VideoDataDelegate?
+    let youtubeVideoId: String
+    let currentTime: Float
+    let title: String
+    let channelTitle: String?
+    let published: String?
+    let viewCount: Int?
 
-    func set(video: JSON) {
-        self._youtubeVideoId = video["youtube_video_id"].string
-        self._currentTime = video["current_time"].float
-        self._title = video["title"].string
-        self._channelTitle = video["channel_title"].string
-        self._published = video["published"].string
-        self._viewCount = video["view_count"].int
-        delegate?.update()
+    init(video: JSON) {
+        youtubeVideoId = video["youtube_video_id"].string!
+        currentTime = video["current_time"].float!
+        title = video["title"].string!
+        channelTitle = video["channel_title"].string
+        published = video["published"].string
+        viewCount = video["view_count"].int
     }
     
-    func clear() {
-        self._youtubeVideoId = nil
-        self._currentTime = nil
-        self._title = nil
-        self._channelTitle = nil
-        self._published = nil
-        self._viewCount = nil
-        delegate?.update()
-    }
-
-    var youtubeVideoId: String? {
-        get { return _youtubeVideoId }
-    }
-
-    var currentTime: Float? {
-        get { return _currentTime }
-    }
-
-    var title: String? {
-        get { return _title }
-    }
-
-    var channelTitle: String? {
-        get { return _channelTitle }
-    }
-    
-    var published: String? {
-        get { return _published }
-    }
-    
-    var viewCount: Int? {
-        get { return _viewCount }
-    }
-
     var viewCountString: String? {
         get {
-            if(self._viewCount != nil) {
+            if(self.viewCount != nil) {
                 let formatter = NumberFormatter()
                 formatter.numberStyle = NumberFormatter.Style.decimal
                 formatter.groupingSeparator = ","
                 formatter.groupingSize = 3
-                return formatter.string(from: self._viewCount! as NSNumber)
+                return formatter.string(from: self.viewCount! as NSNumber)
             } else {
                 return nil
             }
