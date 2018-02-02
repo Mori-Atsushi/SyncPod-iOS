@@ -31,6 +31,9 @@ class ChatTableViewCell: UITableViewCell {
         if chat.chatType != "user" {
             name.textColor = DeviceConst.blueTextColor
             message.textColor = DeviceConst.grayTextColor
+        } else {
+            name.textColor = DeviceConst.blackTextColor
+            message.textColor = DeviceConst.blackTextColor
         }
     }
 }
