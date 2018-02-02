@@ -45,11 +45,11 @@ class RoomChannel {
     }
 
     func getNowPlayingVideo() {
-        self.roomChannel?.action("now_playing_video");
+        self.roomChannel?.action("now_playing_video")
     }
     
     func getChatList() {
-        self.roomChannel?.action("past_chats");
+        self.roomChannel?.action("past_chats")
     }
     
     func disconnect() {
