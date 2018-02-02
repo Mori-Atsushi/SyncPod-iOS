@@ -98,6 +98,10 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
         }
     }
     
+    func onReceiveAddVideo(json: JSON) {
+        room.playList.add(video: json["data"]["video"])
+    }
+    
     func onReceivePastChats(json: JSON) {
         room.chatList.set(list: json["data"]["past_chats"])
     }

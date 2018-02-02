@@ -22,6 +22,11 @@ class PlayList {
         delegate?.updatedPlayList()
     }
     
+    func add(video: JSON) {
+        self.list.append(Video(video: video))
+        delegate?.updatedPlayList()
+    }
+    
     func get(index: Int) -> Video {
         return list[index]
     }

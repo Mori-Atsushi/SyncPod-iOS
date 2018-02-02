@@ -14,6 +14,7 @@ protocol RoomChannelDelegate {
     func onReceiveNowPlayingVideo(json: JSON) -> Void
     func onReceiveStartVideo(json: JSON) -> Void
     func onReceivePlayList(json: JSON) -> Void
+    func onReceiveAddVideo(json: JSON) -> Void
     func onReceivePastChats(json: JSON) -> Void
     func onReceiveChat(json: JSON) -> Void
 }
@@ -84,6 +85,8 @@ class RoomChannel {
                 self.roomChannelDelegate.onReceiveNowPlayingVideo(json: json)
             case "start_video":
                 self.roomChannelDelegate.onReceiveStartVideo(json: json)
+            case "add_video":
+                self.roomChannelDelegate.onReceiveAddVideo(json: json)
             case "play_list":
                 self.roomChannelDelegate.onReceivePlayList(json: json)
             case "past_chats":
