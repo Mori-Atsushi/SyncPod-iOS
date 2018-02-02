@@ -65,6 +65,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     func startRoom() {
         roomChannel?.getNowPlayingVideo()
         roomChannel?.getChatList()
+        roomChannel?.getPlayList()
     }
 
     func onReceiveNowPlayingVideo(json: JSON) {
@@ -89,6 +90,10 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
             let videoId = room.nowPlayingVideo.youtubeVideoId!
             readyVideo(videoId: videoId, time: 0)
         }
+    }
+    
+    func onReceivePlayList(json: JSON) {
+        print(json)
     }
     
     func onReceivePastChats(json: JSON) {
