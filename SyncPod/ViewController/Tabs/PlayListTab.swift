@@ -16,7 +16,7 @@ class PlayListTab: UIViewController, IndicatorInfoProvider, VideoDataDelegate {
     @IBOutlet weak var nowPlayingVideoTitle: UILabel!
     @IBOutlet weak var nowPlayingVideoChannel: UILabel!
     @IBOutlet weak var nowPlayingVideoInfo: UILabel!
-    @IBOutlet weak var nowPlaingVideoView: UIStackView!
+    @IBOutlet weak var nowPlaingVideoView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
