@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 
 protocol VideoDataDelegate {
-    func update()
+    func updatedVideoData()
 }
 
 class NowPlayingVideo {
@@ -19,11 +19,11 @@ class NowPlayingVideo {
     
     func set(video: JSON) {
         self.video = Video(video: video)
-        delegate?.update()
+        delegate?.updatedVideoData()
     }
     
     func clear() {
         self.video = nil
-        delegate?.update()
+        delegate?.updatedVideoData()
     }
 }

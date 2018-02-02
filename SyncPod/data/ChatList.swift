@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 
 protocol ChatListDelegate {
-    func update()
+    func updatedChatList()
 }
 
 class ChatList {
@@ -19,7 +19,7 @@ class ChatList {
     
     func set(list: JSON) {
         self.list = list.arrayValue.map { Chat(chat: $0) }
-        delegate?.update()
+        delegate?.updatedChatList()
     }
     
     func get(index: Int) -> Chat {
@@ -28,7 +28,7 @@ class ChatList {
     
     func add(chat: JSON) {
         list.append(Chat(chat: chat))
-        delegate?.update()
+        delegate?.updatedChatList()
     }
     
     var count: Int {

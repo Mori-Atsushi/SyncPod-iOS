@@ -30,7 +30,7 @@ class ChatTab: UIViewController, IndicatorInfoProvider, ChatListDelegate, UITabl
         return itemInfo
     }
     
-    func update() {
+    func updatedChatList() {
         print("chat updated")
         self.TableView.reloadData()
     }

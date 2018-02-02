@@ -27,13 +27,13 @@ class PlayListTab: UIViewController, IndicatorInfoProvider, VideoDataDelegate {
         return itemInfo
     }
     
-    func update() {
-        if nowPlayingVideo.youtubeVideoId != nil {
+    func updatedVideoData() {
+        if nowPlayingVideo.video?.youtubeVideoId != nil {
             nowPlaingVideoView.isHidden = false
-            nowPlayingVideoTitle.text = nowPlayingVideo.title
-            nowPlayingVideoChannel.text = nowPlayingVideo.channelTitle
-            let published = nowPlayingVideo.published ?? ""
-            let viewCount = nowPlayingVideo.viewCountString ?? "0"
+            nowPlayingVideoTitle.text = nowPlayingVideo.video?.title
+            nowPlayingVideoChannel.text = nowPlayingVideo.video?.channelTitle
+            let published = nowPlayingVideo.video?.published ?? ""
+            let viewCount = nowPlayingVideo.video?.viewCountString ?? "0"
             nowPlayingVideoInfo.text = "公開: " + published + " 視聴回数: " + viewCount + " 回"
         } else {
             nowPlaingVideoView.isHidden = true
