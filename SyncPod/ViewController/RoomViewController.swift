@@ -52,6 +52,18 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
         room.nowPlayingVideo.clear()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if(!videoPlayer.isHidden) {
+            self.navigationController?.navigationBar.isHidden = true
+        }
+    }
+    
     @objc func restartApp(notification: Notification) {
         print("restart")
         startRoom()
