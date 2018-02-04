@@ -35,7 +35,9 @@
 		0D67B73C201C3D1300CCB84C /* PlayListTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D67B73B201C3D1300CCB84C /* PlayListTab.swift */; };
 		0D67B73E201C3D1D00CCB84C /* ChatTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D67B73D201C3D1D00CCB84C /* ChatTab.swift */; };
 		0D67B740201C3D7200CCB84C /* RoomInfoTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D67B73F201C3D7200CCB84C /* RoomInfoTab.swift */; };
+		0D6B3ED320244F85006D509B /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6B3ED220244F85006D509B /* VideoTableViewCell.swift */; };
 		0D859B5A200882B8008A3672 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D859B59200882B8008A3672 /* SignInViewController.swift */; };
+		0D86D757202457BF002EFF99 /* NowPlayingVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D86D756202457BF002EFF99 /* NowPlayingVideo.swift */; };
 		0D8BB2B420109DEE00C7F6A9 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BB2B320109DEE00C7F6A9 /* RoomViewController.swift */; };
 		0D8BB2B62010A25700C7F6A9 /* ActionCableClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8BB2B52010A25700C7F6A9 /* ActionCableClient.framework */; };
 		0D8BB2B82010A37900C7F6A9 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8BB2B72010A37900C7F6A9 /* Starscream.framework */; };
@@ -102,7 +104,9 @@
 		0D67B73B201C3D1300CCB84C /* PlayListTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListTab.swift; sourceTree = "<group>"; };
 		0D67B73D201C3D1D00CCB84C /* ChatTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTab.swift; sourceTree = "<group>"; };
 		0D67B73F201C3D7200CCB84C /* RoomInfoTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfoTab.swift; sourceTree = "<group>"; };
+		0D6B3ED220244F85006D509B /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		0D859B59200882B8008A3672 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		0D86D756202457BF002EFF99 /* NowPlayingVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingVideo.swift; sourceTree = "<group>"; };
 		0D8BB2B320109DEE00C7F6A9 /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		0D8BB2B52010A25700C7F6A9 /* ActionCableClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ActionCableClient.framework; path = Carthage/Build/iOS/ActionCableClient.framework; sourceTree = "<group>"; };
 		0D8BB2B72010A37900C7F6A9 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
@@ -278,6 +282,7 @@
 			children = (
 				0D578C7B201E03C0004BF2EE /* JoinedRoomsTableViewCell.swift */,
 				0D0BB24E2021B10E00DD977C /* ChatTableViewCell.swift */,
+				0D6B3ED220244F85006D509B /* VideoTableViewCell.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -304,6 +309,7 @@
 				0D0BB2482021A8C000DD977C /* Chat.swift */,
 				0D0BB24A2021A92200DD977C /* User.swift */,
 				0D0BB24C2021AAB600DD977C /* ChatList.swift */,
+				0D86D756202457BF002EFF99 /* NowPlayingVideo.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -477,9 +483,11 @@
 				0D67B73E201C3D1D00CCB84C /* ChatTab.swift in Sources */,
 				0D8BB2B420109DEE00C7F6A9 /* RoomViewController.swift in Sources */,
 				0DCD202E200D02CB001C90DA /* ViewExtentions.swift in Sources */,
+				0D6B3ED320244F85006D509B /* VideoTableViewCell.swift in Sources */,
 				0D2468AC200FC01A001348FB /* TopViewController.swift in Sources */,
 				0D67B73C201C3D1300CCB84C /* PlayListTab.swift in Sources */,
 				0D578C7C201E03C0004BF2EE /* JoinedRoomsTableViewCell.swift in Sources */,
+				0D86D757202457BF002EFF99 /* NowPlayingVideo.swift in Sources */,
 				0D0D51B22017511300B02F8B /* Alert.swift in Sources */,
 				0DA2FB49201C700A00292BFE /* RoomTabViewController.swift in Sources */,
 				0D0BB2492021A8C000DD977C /* Chat.swift in Sources */,

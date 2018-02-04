@@ -65,14 +65,15 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     func startRoom() {
         roomChannel?.getNowPlayingVideo()
         roomChannel?.getChatList()
+        roomChannel?.getPlayList()
     }
 
     func onReceiveNowPlayingVideo(json: JSON) {
         if(json["data"]["video"] != JSON.null) {
-            let lastVideoYoutubeVideoId = room.nowPlayingVideo.youtubeVideoId
+            let lastVideoYoutubeVideoId = room.nowPlayingVideo.video?.youtubeVideoId
             room.nowPlayingVideo.set(video: json["data"]["video"])
-            let videoId = room.nowPlayingVideo.youtubeVideoId!
-            let videoCurrentTime = room.nowPlayingVideo.currentTime!
+            let videoId = room.nowPlayingVideo.video!.youtubeVideoId
+            let videoCurrentTime = room.nowPlayingVideo.video!.currentTime
             if(lastVideoYoutubeVideoId == videoId) {
                 videoPlayer.seekTo(videoCurrentTime, seekAhead: true)
             } else {
@@ -86,9 +87,20 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     func onReceiveStartVideo(json: JSON) {
         if(json["data"]["video"] != JSON.null) {
             room.nowPlayingVideo.set(video: json["data"]["video"])
-            let videoId = room.nowPlayingVideo.youtubeVideoId!
+            let videoId = room.nowPlayingVideo.video!.youtubeVideoId
             readyVideo(videoId: videoId, time: 0)
+            room.playList.remove(video: json["data"]["video"])
         }
+    }
+    
+    func onReceivePlayList(json: JSON) {
+        if(json["data"]["play_list"] != JSON.null) {
+            room.playList.set(list: json["data"]["play_list"])
+        }
+    }
+    
+    func onReceiveAddVideo(json: JSON) {
+        room.playList.add(video: json["data"]["video"])
     }
     
     func onReceivePastChats(json: JSON) {
