@@ -17,9 +17,11 @@ class RoomInfoTab: UIViewController, IndicatorInfoProvider, HttpRequestDelegate 
     
     @IBOutlet weak var roomName: UILabel!
     @IBOutlet weak var roomDescription: UILabel!
-
+    @IBOutlet weak var shareButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        shareButton.layer.cornerRadius = DeviceConst.buttonCornerRadius
     }
     
     override func viewWillAppear(_ animated: Bool) {
