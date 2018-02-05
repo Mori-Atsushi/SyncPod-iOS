@@ -338,6 +338,9 @@
                                                         <state key="normal" title="送信">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="postChat:" destination="mUx-3K-GFi" eventType="touchUpInside" id="LAT-ar-aKU"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -375,6 +378,7 @@
                     <connections>
                         <outlet property="MainView" destination="Jbi-UC-hRQ" id="Ra0-VV-8dW"/>
                         <outlet property="TableView" destination="CRx-Eg-21R" id="okI-3M-kWy"/>
+                        <outlet property="messageField" destination="dhy-SQ-DJ6" id="Gi7-Ts-G5U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wdD-uo-Kev" userLabel="First Responder" sceneMemberID="firstResponder"/>

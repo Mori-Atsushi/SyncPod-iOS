@@ -14,8 +14,15 @@ class ChatTab: UIViewController, IndicatorInfoProvider, ChatListDelegate, UITabl
     let chatList = DataStore.CurrentRoom.chatList
     let center = NotificationCenter.default
     var isInitMainViewSize = false
+    
     @IBOutlet weak var TableView: UITableView!
     @IBOutlet weak var MainView: UIStackView!
+    @IBOutlet weak var messageField: UITextField!
+    
+    @IBAction func postChat(_ sender: UIButton) {
+        let message = messageField.text!
+        DataStore.roomChannel?.sendChat(message)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

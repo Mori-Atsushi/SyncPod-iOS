@@ -58,7 +58,10 @@ class RoomChannel {
     func getChatList() {
         self.roomChannel?.action("past_chats")
     }
-    
+    func sendChat(_ message: String) {
+        self.roomChannel?.action("message", with: ["message": message])
+    }
+
     func disconnect() {
         client.disconnect()
     }
