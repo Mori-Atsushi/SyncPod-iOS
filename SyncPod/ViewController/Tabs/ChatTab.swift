@@ -12,18 +12,63 @@ import XLPagerTabStrip
 class ChatTab: UIViewController, IndicatorInfoProvider, ChatListDelegate, UITableViewDataSource, UITableViewDelegate {
     var itemInfo: IndicatorInfo = "チャット"
     let chatList = DataStore.CurrentRoom.chatList
+    let center = NotificationCenter.default
     @IBOutlet weak var TableView: UITableView!
+    @IBOutlet weak var MainView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         chatList.delegate = self
         TableView.transform = CGAffineTransform(rotationAngle: -(CGFloat)(Double.pi))
+        MainView.translatesAutoresizingMaskIntoConstraints = true
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         let innerOffset:CGFloat = 9.0
         TableView.scrollIndicatorInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: TableView.frame.width - innerOffset)
+        MainView.frame = CGRect(x: 0,
+                                y: 0,
+                                width: MainView.superview!.frame.width,
+                                height: MainView.superview!.frame.height)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        center.addObserver(
+            self,
+            selector: #selector(ChatTab.showKeyboard(notification:)),
+            name: .UIKeyboardWillShow,
+            object: nil)
+        center.addObserver(
+            self,
+            selector: #selector(ChatTab.hideKeyboard(notification:)),
+            name: .UIKeyboardWillHide,
+            object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        center.removeObserver(self)
+    }
+    
+    @objc func showKeyboard(notification: Notification) {
+        let info = notification.userInfo!
+        let keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        MainView.frame = CGRect(x: 0,
+                                y: 0,
+                                width: MainView.superview!.frame.width,
+                                height: MainView.superview!.frame.height - keyboardFrame.height)
+    }
+    
+    @objc func hideKeyboard(notification: Notification) {
+        
+        MainView.frame = CGRect(x: 0,
+                                y: 0,
+                                width: MainView.superview!.frame.width,
+                                height: MainView.superview!.frame.height)
     }
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {

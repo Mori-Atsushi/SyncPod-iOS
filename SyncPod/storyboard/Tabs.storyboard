@@ -372,6 +372,7 @@
                         <viewLayoutGuide key="safeArea" id="Ssb-tw-ucV"/>
                     </view>
                     <connections>
+                        <outlet property="MainView" destination="Jbi-UC-hRQ" id="Ra0-VV-8dW"/>
                         <outlet property="TableView" destination="CRx-Eg-21R" id="okI-3M-kWy"/>
                     </connections>
                 </viewController>
