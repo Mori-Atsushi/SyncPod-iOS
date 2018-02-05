@@ -13,6 +13,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var roomKey: String?
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        if(CurrentUser.userToken == nil) {
+            let storyboard: UIStoryboard = UIStoryboard(name: "FirstStart", bundle: nil)
+            let viewController: UIViewController = storyboard.instantiateViewController(withIdentifier: "FirstStartTopView") as UIViewController
+            window?.rootViewController = viewController
+        }
+        
+        return true
+    }
 
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         // Override point for customization after application launch.
