@@ -21,8 +21,10 @@ class ChatTab: UIViewController, IndicatorInfoProvider, ChatListDelegate, UITabl
     
     @IBAction func postChat(_ sender: UIButton) {
         let message = messageField.text!
-        DataStore.roomChannel?.sendChat(message)
-        messageField.text = ""
+        if message != "" {
+            DataStore.roomChannel?.sendChat(message)
+            messageField.text = ""
+        }
     }
     
     override func viewDidLoad() {
