@@ -36,6 +36,12 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
         //引っ張って更新
         self.ScrillView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(TopViewController.refresh(sender:)), for: .valueChanged)
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        if let roomKey = appDelegate.roomKey {
+            self.joinRoom(roomKey: roomKey)
+            appDelegate.roomKey = nil
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,12 +57,6 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
         let Http = HttpRequestHelper(delegate: self)
         Http.get(data: nil, endPoint: "joined_rooms")
         self.TableView.translatesAutoresizingMaskIntoConstraints = true
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        if let roomKey = appDelegate.roomKey {
-            self.joinRoom(roomKey: roomKey)
-            appDelegate.roomKey = nil
-        }
     }
 
     @objc func showJoinRoomAlert(_ sender: UITapGestureRecognizer) {
