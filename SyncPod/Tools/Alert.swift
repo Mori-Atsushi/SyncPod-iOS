@@ -13,9 +13,9 @@ class ErrorAlart {
     var viewController: UIViewController
 
     init(viewController: UIViewController, title: String, message: String, callback: (() -> Void)? = nil) {
-        let title = "OK"
-        let style = UIAlertActionStyle.default
-        let defaultAction = UIAlertAction(title: title, style: style, handler: { (action: UIAlertAction!) -> Void in callback?() })
+        let buttonTitle = "OK"
+        let buttonStyle = UIAlertActionStyle.default
+        let defaultAction = UIAlertAction(title: buttonTitle, style: buttonStyle, handler: { (action: UIAlertAction!) -> Void in callback?() })
 
         self.viewController = viewController
         alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
