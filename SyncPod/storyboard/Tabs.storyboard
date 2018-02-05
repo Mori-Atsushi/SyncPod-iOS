@@ -361,6 +361,9 @@
                                                         </constraints>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="ルームに招待する"/>
+                                                        <connections>
+                                                            <action selector="share:" destination="JuI-Xp-U1W" eventType="touchUpInside" id="x7f-vh-p8O"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
