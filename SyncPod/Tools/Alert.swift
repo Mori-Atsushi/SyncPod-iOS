@@ -9,11 +9,14 @@
 import UIKit
 
 class ErrorAlart {
-    let alert: UIAlertController;
-    let defaultAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+    let alert: UIAlertController
     var viewController: UIViewController
 
-    init(viewController: UIViewController, title: String, message: String) {
+    init(viewController: UIViewController, title: String, message: String, callback: (() -> Void)? = nil) {
+        let buttonTitle = "OK"
+        let buttonStyle = UIAlertActionStyle.default
+        let defaultAction = UIAlertAction(title: buttonTitle, style: buttonStyle, handler: { (action: UIAlertAction!) -> Void in callback?() })
+
         self.viewController = viewController
         alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(defaultAction)

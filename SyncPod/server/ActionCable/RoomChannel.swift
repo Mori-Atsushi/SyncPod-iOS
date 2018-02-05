@@ -11,6 +11,7 @@ import SwiftyJSON
 
 protocol RoomChannelDelegate {
     func onSubscribed() -> Void
+    func onRejected() -> Void
     func onReceiveNowPlayingVideo(json: JSON) -> Void
     func onReceiveStartVideo(json: JSON) -> Void
     func onReceivePlayList(json: JSON) -> Void
@@ -75,7 +76,7 @@ class RoomChannel {
         }
 
         self.roomChannel?.onRejected = {
-            print("Rejected")
+            self.roomChannelDelegate.onRejected()
         }
 
         self.roomChannel?.onReceive = { (data: Any?, error: Error?) in
