@@ -26,8 +26,8 @@ class RoomInfoTab: UIViewController, IndicatorInfoProvider, HttpRequestDelegate 
         super.viewWillAppear(animated)
         
         if(self.room.key != nil) {
-            let Http = HttpRequestHelper(delegate: self)
-            Http.get(data: ["room_key": self.room.key!], endPoint: "rooms")
+            let http = HttpRequestHelper(delegate: self)
+            http.get(data: ["room_key": self.room.key!], endPoint: "rooms")
         }
     }
     
