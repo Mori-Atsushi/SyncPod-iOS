@@ -62,7 +62,8 @@ class ChatTab: UIViewController, IndicatorInfoProvider, ChatListDelegate, UITabl
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+
+        isInitMainViewSize = false
         center.removeObserver(self)
     }
     
