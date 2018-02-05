@@ -19,6 +19,7 @@ class ChatTab: UIViewController, IndicatorInfoProvider, ChatListDelegate, UITabl
     @IBOutlet weak var TableView: UITableView!
     @IBOutlet weak var MainView: UIStackView!
     @IBOutlet weak var messageField: UITextField!
+    @IBOutlet weak var chatButton: UIButton!
     
     @IBAction func postChat(_ sender: UIButton) {
         let message = messageField.text!
@@ -33,6 +34,7 @@ class ChatTab: UIViewController, IndicatorInfoProvider, ChatListDelegate, UITabl
         chatList.delegate = self
         TableView.transform = CGAffineTransform(rotationAngle: -(CGFloat)(Double.pi))
         MainView.translatesAutoresizingMaskIntoConstraints = true
+        chatButton.layer.cornerRadius = DeviceConst.buttonCornerRadius
     }
     
     override func viewDidLayoutSubviews() {

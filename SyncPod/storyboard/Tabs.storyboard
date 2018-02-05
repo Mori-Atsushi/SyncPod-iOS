@@ -329,13 +329,13 @@
                                                             <constraint firstItem="dhy-SQ-DJ6" firstAttribute="top" secondItem="yQ5-i6-Qxk" secondAttribute="top" id="uQv-JS-rEy"/>
                                                         </constraints>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RrB-zF-yaW">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RrB-zF-yaW">
                                                         <rect key="frame" x="325" y="0.0" width="40" height="40"/>
                                                         <color key="backgroundColor" red="0.16470588235294117" green="0.2196078431372549" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="RrB-zF-yaW" secondAttribute="height" multiplier="1:1" id="S3N-QX-475"/>
                                                         </constraints>
-                                                        <state key="normal" title="送信">
+                                                        <state key="normal" image="send-icon">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -378,6 +378,7 @@
                     <connections>
                         <outlet property="MainView" destination="Jbi-UC-hRQ" id="Ra0-VV-8dW"/>
                         <outlet property="TableView" destination="CRx-Eg-21R" id="okI-3M-kWy"/>
+                        <outlet property="chatButton" destination="RrB-zF-yaW" id="FeV-9J-t8b"/>
                         <outlet property="messageField" destination="dhy-SQ-DJ6" id="Gi7-Ts-G5U"/>
                     </connections>
                 </viewController>
@@ -468,4 +469,7 @@
             <point key="canvasLocation" x="1432.8" y="11.244377811094454"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="send-icon" width="24" height="24"/>
+    </resources>
 </document>
