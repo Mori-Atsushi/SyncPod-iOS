@@ -39,7 +39,7 @@ class ChatTab: UIViewController, IndicatorInfoProvider, ChatListDelegate, UITabl
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        let innerOffset:CGFloat = 9.0
+        let innerOffset: CGFloat = 9.0
         TableView.scrollIndicatorInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: TableView.frame.width - innerOffset)
         
         checkViewSize()
@@ -81,14 +81,13 @@ class ChatTab: UIViewController, IndicatorInfoProvider, ChatListDelegate, UITabl
     
     func checkViewSize() {
         let width = MainView.superview!.frame.width
-        let height = isShowKeyboard ?
-            MainView.superview!.frame.height - (keyboardFrame?.height ?? 0) :
+        let height = isShowKeyboard ? MainView.superview!.frame.height - (keyboardFrame?.height ?? 0):
             MainView.superview!.frame.height
         
         MainView.frame = CGRect(x: 0,
-                                y: 0,
-                                width: width,
-                                height: height)
+            y: 0,
+            width: width,
+            height: height)
     }
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
