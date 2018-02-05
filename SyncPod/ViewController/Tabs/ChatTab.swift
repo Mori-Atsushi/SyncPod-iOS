@@ -13,6 +13,7 @@ class ChatTab: UIViewController, IndicatorInfoProvider, ChatListDelegate, UITabl
     var itemInfo: IndicatorInfo = "チャット"
     let chatList = DataStore.CurrentRoom.chatList
     let center = NotificationCenter.default
+    var isInitMainViewSize = false
     @IBOutlet weak var TableView: UITableView!
     @IBOutlet weak var MainView: UIStackView!
     
@@ -27,10 +28,14 @@ class ChatTab: UIViewController, IndicatorInfoProvider, ChatListDelegate, UITabl
         super.viewDidLayoutSubviews()
         let innerOffset:CGFloat = 9.0
         TableView.scrollIndicatorInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: TableView.frame.width - innerOffset)
-        MainView.frame = CGRect(x: 0,
-                                y: 0,
-                                width: MainView.superview!.frame.width,
-                                height: MainView.superview!.frame.height)
+        
+        if(!isInitMainViewSize) {
+            MainView.frame = CGRect(x: 0,
+                                    y: 0,
+                                    width: MainView.superview!.frame.width,
+                                    height: MainView.superview!.frame.height)
+            isInitMainViewSize = true
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
