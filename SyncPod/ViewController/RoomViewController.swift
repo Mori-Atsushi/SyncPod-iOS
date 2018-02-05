@@ -75,7 +75,10 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     }
     
     func onRejected() {
-        let alart = ErrorAlart(viewController: self, title: "入室エラー", message: "入室できませんでした。ルームキーが間違ってる可能性があります。", callback: {self.navigationController?.popViewController(animated: true)})
+        let alart = ErrorAlart(viewController: self,
+            title: "入室エラー",
+            message: "入室できませんでした。ルームキーが間違ってる可能性があります。",
+            callback: { self.navigationController?.popViewController(animated: true) })
         alart.show()
     }
     
