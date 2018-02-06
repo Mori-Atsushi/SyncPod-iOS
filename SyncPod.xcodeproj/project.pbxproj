@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D0507E4202A22C400791EA9 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0507E3202A22C300791EA9 /* AlamofireImage.framework */; };
 		0D0BB2492021A8C000DD977C /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0BB2482021A8C000DD977C /* Chat.swift */; };
 		0D0BB24B2021A92200DD977C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0BB24A2021A92200DD977C /* User.swift */; };
 		0D0BB24D2021AAB600DD977C /* ChatList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0BB24C2021AAB600DD977C /* ChatList.swift */; };
@@ -70,6 +71,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D0507E3202A22C300791EA9 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		0D0BB2482021A8C000DD977C /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		0D0BB24A2021A92200DD977C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0D0BB24C2021AAB600DD977C /* ChatList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatList.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D0507E4202A22C400791EA9 /* AlamofireImage.framework in Frameworks */,
 				0DF8BF762024D7BD00F250E1 /* ScrollingStackContainer.framework in Frameworks */,
 				0D67B738201C3B6D00CCB84C /* XLPagerTabStrip.framework in Frameworks */,
 				0DE94BFD201289A700E26582 /* YouTubePlayer.framework in Frameworks */,
@@ -174,6 +177,7 @@
 		0D4B438220099E540035DF1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D0507E3202A22C300791EA9 /* AlamofireImage.framework */,
 				0DF8BF752024D7BD00F250E1 /* ScrollingStackContainer.framework */,
 				0D67B737201C3B6D00CCB84C /* XLPagerTabStrip.framework */,
 				0DE94BFC201289A700E26582 /* YouTubePlayer.framework */,
@@ -460,6 +464,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/YouTubePlayer.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/XLPagerTabStrip.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ScrollingStackContainer.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
 			);
 			outputPaths = (
 			);
