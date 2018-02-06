@@ -23,7 +23,9 @@ class PlayListTab: UIViewController, IndicatorInfoProvider, VideoDataDelegate, P
     @IBOutlet weak var addButton: UIButton!
     
     @IBAction func postChat(_ sender: UIButton) {
-        self.parent?.parent?.performSegue(withIdentifier: "SearchVideoSegue", sender: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let next = storyboard.instantiateViewController(withIdentifier: "SearchVideoView")
+        self.present(next, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
