@@ -11,12 +11,20 @@ import UIKit
 class  SeachVideoViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBAction func back(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
     }
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.dismiss(animated: true, completion: nil)
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.view.endEditing(true)
+        if !searchBar.text!.isEmpty {
+            DataStore.roomChannel?.addVideo(searchBar.text!)
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }

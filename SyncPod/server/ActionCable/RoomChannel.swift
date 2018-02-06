@@ -61,6 +61,10 @@ class RoomChannel {
     func sendChat(_ message: String) {
         self.roomChannel?.action("message", with: ["message": message])
     }
+    
+    func addVideo(_ videoId: String) {
+        self.roomChannel?.action("add_video", with: ["youtube_video_id": videoId])
+    }
 
     func disconnect() {
         client.disconnect()
