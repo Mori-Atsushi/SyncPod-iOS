@@ -399,6 +399,9 @@ Cg
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvD-5o-MbR">
                                                 <rect key="frame" x="2" y="2" width="38" height="38"/>
                                                 <state key="normal" image="video-back-icon"/>
+                                                <connections>
+                                                    <action selector="backButton:" destination="6al-Zs-kNG" eventType="touchUpInside" id="AhZ-HI-peu"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

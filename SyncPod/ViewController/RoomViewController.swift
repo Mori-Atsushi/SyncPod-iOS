@@ -27,6 +27,10 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
 
     @IBOutlet weak var videoPlayer: YouTubePlayerView!
 
+    @IBAction func backButton(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         DataStore.roomChannel = RoomChannel(roomKey: roomKey, delegate: self)
