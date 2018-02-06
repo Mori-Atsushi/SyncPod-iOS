@@ -22,6 +22,10 @@ class PlayListTab: UIViewController, IndicatorInfoProvider, VideoDataDelegate, P
     @IBOutlet weak var emptyMessage: UILabel!
     @IBOutlet weak var addButton: UIButton!
     
+    @IBAction func postChat(_ sender: UIButton) {
+        self.parent?.parent?.performSegue(withIdentifier: "SearchVideoSegue", sender: nil)
+    }
+    
     override func viewDidLoad() {
         nowPlayingVideo.delegate = self
         playList.delegate = self
