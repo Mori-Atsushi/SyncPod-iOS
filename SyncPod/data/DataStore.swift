@@ -10,4 +10,5 @@ import Foundation
 
 class DataStore {
     static var CurrentRoom = Room()
+    static var roomChannel: RoomChannel?
 }

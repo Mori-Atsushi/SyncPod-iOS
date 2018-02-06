@@ -13,7 +13,6 @@ import YouTubePlayer
 class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDelegate {
 
     var roomKey: String = ""
-    var roomChannel: RoomChannel?
     var room = DataStore.CurrentRoom
 
     let playerVars = [
@@ -30,7 +29,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        roomChannel = RoomChannel(roomKey: roomKey, delegate: self)
+        DataStore.roomChannel = RoomChannel(roomKey: roomKey, delegate: self)
         room.key = roomKey
         videoPlayer.delegate = self
         videoPlayer.playerVars = playerVars
@@ -46,7 +45,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        roomChannel?.disconnect()
+        DataStore.roomChannel?.disconnect()
         videoPlayer.delegate = nil
         center.removeObserver(self)
         room.nowPlayingVideo.clear()
@@ -83,9 +82,9 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     }
     
     func startRoom() {
-        roomChannel?.getNowPlayingVideo()
-        roomChannel?.getChatList()
-        roomChannel?.getPlayList()
+        DataStore.roomChannel?.getNowPlayingVideo()
+        DataStore.roomChannel?.getChatList()
+        DataStore.roomChannel?.getPlayList()
     }
 
     func onReceiveNowPlayingVideo(json: JSON) {
