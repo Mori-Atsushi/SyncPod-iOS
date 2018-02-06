@@ -434,6 +434,7 @@ Cg
                     </view>
                     <connections>
                         <outlet property="videoPlayer" destination="RSj-zH-Ega" id="Mc4-Yu-YSO"/>
+                        <outlet property="videoPlayerContainer" destination="5Jy-67-sPJ" id="VjJ-89-kdd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QWm-M0-7g6" userLabel="First Responder" sceneMemberID="firstResponder"/>

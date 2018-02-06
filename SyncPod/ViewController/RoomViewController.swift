@@ -26,7 +26,8 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     let center = NotificationCenter.default
 
     @IBOutlet weak var videoPlayer: YouTubePlayerView!
-
+    @IBOutlet weak var videoPlayerContainer: UIView!
+    
     @IBAction func backButton(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -38,7 +39,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
         videoPlayer.delegate = self
         videoPlayer.playerVars = playerVars
         videoPlayer.isUserInteractionEnabled = false
-        videoPlayer.isHidden = true
+        videoPlayerContainer.isHidden = true
         
         center.addObserver(
             self,
@@ -62,7 +63,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if(!videoPlayer.isHidden) {
+        if(!videoPlayerContainer.isHidden) {
             self.navigationController?.navigationBar.isHidden = true
         }
     }
@@ -137,13 +138,13 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     private func readyVideo(videoId: String, time: Float) {
         videoPlayer.playerVars["start"] = time as AnyObject
         videoPlayer.loadVideoID(videoId)
-        videoPlayer.isHidden = false
+        videoPlayerContainer.isHidden = false
         self.navigationController?.navigationBar.isHidden = true
     }
     
     private func endVideo() {
         room.nowPlayingVideo.clear()
-        self.videoPlayer.isHidden = true
+        self.videoPlayerContainer.isHidden = true
         self.navigationController?.navigationBar.isHidden = false
     }
 
