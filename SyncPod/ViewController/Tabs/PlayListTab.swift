@@ -20,10 +20,17 @@ class PlayListTab: UIViewController, IndicatorInfoProvider, VideoDataDelegate, P
     @IBOutlet weak var nowPlayingVideoInfo: UILabel!
     @IBOutlet weak var nowPlaingVideoView: UIView!
     @IBOutlet weak var emptyMessage: UILabel!
+    @IBOutlet weak var addButton: UIButton!
     
     override func viewDidLoad() {
         nowPlayingVideo.delegate = self
         playList.delegate = self
+        addButton.layer.cornerRadius = addButton.frame.width / 2
+        addButton.layer.masksToBounds = false
+        addButton.layer.shadowColor = UIColor.black.cgColor
+        addButton.layer.shadowOpacity = 0.3
+        addButton.layer.shadowOffset = CGSize(width: 0, height: 5)
+        addButton.layer.shadowRadius = 5
     }
     
     override func viewDidLayoutSubviews() {
