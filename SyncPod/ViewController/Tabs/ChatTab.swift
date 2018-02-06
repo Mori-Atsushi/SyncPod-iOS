@@ -81,8 +81,9 @@ class ChatTab: UIViewController, IndicatorInfoProvider, ChatListDelegate, UITabl
     
     func checkViewSize() {
         let width = MainView.superview!.frame.width
-        let height = isShowKeyboard ? MainView.superview!.frame.height - (keyboardFrame?.height ?? 0):
-            MainView.superview!.frame.height
+        let defaultHeight = MainView.superview!.frame.height
+        let showedKeyboardHeight = defaultHeight - (keyboardFrame?.height ?? 0)
+        let height = isShowKeyboard ? showedKeyboardHeight : defaultHeight
         
         MainView.frame = CGRect(x: 0,
             y: 0,
