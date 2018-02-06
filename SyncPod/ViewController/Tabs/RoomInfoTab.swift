@@ -14,10 +14,20 @@ import SwiftyJSON
 class RoomInfoTab: UIViewController, IndicatorInfoProvider, HttpRequestDelegate {
     var itemInfo: IndicatorInfo = "ルーム情報"
     let room = DataStore.CurrentRoom
+    var shareText = ""
+    var shareUrl = ""
     
     @IBOutlet weak var roomName: UILabel!
     @IBOutlet weak var roomDescription: UILabel!
     @IBOutlet weak var shareButton: UIButton!
+    
+    @IBAction func share(_ sender: UIButton) {
+        if let shareWebsite = URL(string: shareUrl) {
+            let activityItems = [shareText, shareWebsite] as [Any]
+            let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+            self.present(activityVC, animated: true, completion: nil)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,9 +48,10 @@ class RoomInfoTab: UIViewController, IndicatorInfoProvider, HttpRequestDelegate 
     }
     
     func onSuccess(data: JSON) {
-        print(data)
         self.roomName.text = data["room"]["name"].string
         self.roomDescription.text = data["room"]["description"].string
+        self.shareText = "SyncPodで一緒に動画を見ませんか？\n\nルーム名: \(data["room"]["name"].string!)\nルームキー: \(data["room"]["key"].string!)\n\nこちらのURLからも入室できます。"
+        self.shareUrl = "http://app.sync-pod.com/room?room_key=\(data["room"]["key"].string!)"
     }
     
     func onFailure(error: Error) {
