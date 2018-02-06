@@ -27,3 +27,14 @@ extension UITextView {
         return border
     }
 }
+
+extension Array where Element:UIViewController {
+    func indexOfArray(_ searchObject: UIViewController) -> Int? {
+        for (index, value) in self.enumerated() {
+            if value == searchObject {
+                return index
+            }
+        }
+        return nil
+    }
+}
