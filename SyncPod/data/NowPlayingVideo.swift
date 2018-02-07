@@ -15,10 +15,10 @@ protocol VideoDataDelegate {
 
 class NowPlayingVideo {
     var delegate: VideoDataDelegate?
-    var video: Video?
+    var video: SyncPodVideo?
     
     func set(video: JSON) {
-        self.video = Video(video: video)
+        self.video = SyncPodVideo(video: video)
         delegate?.updatedVideoData()
     }
     
