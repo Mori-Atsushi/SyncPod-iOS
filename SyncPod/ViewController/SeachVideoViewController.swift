@@ -32,9 +32,6 @@ class  SeachVideoViewController: UIViewController, UISearchBarDelegate, UITableV
             let http = HttpRequestHelper(delegate: self)
             let data = ["keyword": searchBar.text!]
             http.get(data: data, endPoint: "youtube/search")
-
-//            DataStore.roomChannel?.addVideo(searchBar.text!)
-//            self.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -58,5 +55,11 @@ class  SeachVideoViewController: UIViewController, UISearchBarDelegate, UITableV
     //データの個数を返すメソッド
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return result.count
+    }
+    
+    //タッチされた時の挙動
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        DataStore.roomChannel?.addVideo(result[indexPath.row].youtubeVideoId)
+        self.dismiss(animated: true, completion: nil)
     }
 }
