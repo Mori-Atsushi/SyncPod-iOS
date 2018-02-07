@@ -455,7 +455,7 @@ Cg
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N6o-o1-4X7">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                         <subviews>
-                                            <searchBar contentMode="redraw" horizontalCompressionResistancePriority="250" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="REu-hb-3tk">
+                                            <searchBar contentMode="redraw" horizontalCompressionResistancePriority="250" searchBarStyle="minimal" placeholder="キーワード" translatesAutoresizingMaskIntoConstraints="NO" id="REu-hb-3tk">
                                                 <rect key="frame" x="0.0" y="0.0" width="312" height="56"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
