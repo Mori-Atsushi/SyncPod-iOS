@@ -29,7 +29,7 @@ class PlayList {
     
     func remove(video: JSON) {
         let v = Video(video: video)
-        if(list[0].id == v.id) {
+        if !list.isEmpty && list[0].id == v.id {
             self.list.remove(at: 0)
             delegate?.updatedPlayList()
         }
@@ -39,7 +39,13 @@ class PlayList {
         return list[index]
     }
     
-    var count:Int {
+    var isEmpty: Bool {
+        get {
+            return list.isEmpty
+        }
+    }
+    
+    var count: Int {
         get {
             return list.count
         }
