@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D0507E4202A22C400791EA9 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0507E3202A22C300791EA9 /* AlamofireImage.framework */; };
 		0D0BB2492021A8C000DD977C /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0BB2482021A8C000DD977C /* Chat.swift */; };
 		0D0BB24B2021A92200DD977C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0BB24A2021A92200DD977C /* User.swift */; };
 		0D0BB24D2021AAB600DD977C /* ChatList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0BB24C2021AAB600DD977C /* ChatList.swift */; };
@@ -16,6 +17,7 @@
 		0D0D51BA2017513F00B02F8B /* HttpRequestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0D51B82017513F00B02F8B /* HttpRequestsHelper.swift */; };
 		0D1646551FF24CDE0059BBDF /* FirstStart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D1646531FF24CDE0059BBDF /* FirstStart.storyboard */; };
 		0D1BDB5020073F0200DA351D /* FirstStartTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1BDB4F20073F0200DA351D /* FirstStartTopViewController.swift */; };
+		0D1C1DEC202A1B780064F3D9 /* SeachVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C1DEB202A1B780064F3D9 /* SeachVideoViewController.swift */; };
 		0D2468AC200FC01A001348FB /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2468AB200FC01A001348FB /* TopViewController.swift */; };
 		0D4B438520099E550035DF1D /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4B438320099E550035DF1D /* SwiftyJSON.framework */; };
 		0D4B438620099E550035DF1D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4B438420099E550035DF1D /* Alamofire.framework */; };
@@ -70,6 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D0507E3202A22C300791EA9 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		0D0BB2482021A8C000DD977C /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		0D0BB24A2021A92200DD977C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0D0BB24C2021AAB600DD977C /* ChatList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatList.swift; sourceTree = "<group>"; };
@@ -79,6 +82,7 @@
 		0D0D51B82017513F00B02F8B /* HttpRequestsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequestsHelper.swift; sourceTree = "<group>"; };
 		0D1646541FF24CDE0059BBDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FirstStart.storyboard; sourceTree = "<group>"; };
 		0D1BDB4F20073F0200DA351D /* FirstStartTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstStartTopViewController.swift; sourceTree = "<group>"; };
+		0D1C1DEB202A1B780064F3D9 /* SeachVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeachVideoViewController.swift; sourceTree = "<group>"; };
 		0D2468AB200FC01A001348FB /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		0D4B438320099E550035DF1D /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		0D4B438420099E550035DF1D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D0507E4202A22C400791EA9 /* AlamofireImage.framework in Frameworks */,
 				0DF8BF762024D7BD00F250E1 /* ScrollingStackContainer.framework in Frameworks */,
 				0D67B738201C3B6D00CCB84C /* XLPagerTabStrip.framework in Frameworks */,
 				0DE94BFD201289A700E26582 /* YouTubePlayer.framework in Frameworks */,
@@ -174,6 +179,7 @@
 		0D4B438220099E540035DF1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D0507E3202A22C300791EA9 /* AlamofireImage.framework */,
 				0DF8BF752024D7BD00F250E1 /* ScrollingStackContainer.framework */,
 				0D67B737201C3B6D00CCB84C /* XLPagerTabStrip.framework */,
 				0DE94BFC201289A700E26582 /* YouTubePlayer.framework */,
@@ -263,6 +269,7 @@
 				0D2468AB200FC01A001348FB /* TopViewController.swift */,
 				0D8BB2B320109DEE00C7F6A9 /* RoomViewController.swift */,
 				0D939F40201B6A0200014633 /* CreateRoomViewController.swift */,
+				0D1C1DEB202A1B780064F3D9 /* SeachVideoViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -460,6 +467,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/YouTubePlayer.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/XLPagerTabStrip.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ScrollingStackContainer.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
 			);
 			outputPaths = (
 			);
@@ -497,6 +505,7 @@
 				0D578C80201F1F23004BF2EE /* Room.swift in Sources */,
 				0D0BB24D2021AAB600DD977C /* ChatList.swift in Sources */,
 				0D5B82701FC9A5D30055A72C /* AppDelegate.swift in Sources */,
+				0D1C1DEC202A1B780064F3D9 /* SeachVideoViewController.swift in Sources */,
 				0D0BB24F2021B10E00DD977C /* ChatTableViewCell.swift in Sources */,
 				0D0D51B92017513F00B02F8B /* RoomChannel.swift in Sources */,
 				0DFDDB74200F092A009C7E56 /* CurrentUser.swift in Sources */,

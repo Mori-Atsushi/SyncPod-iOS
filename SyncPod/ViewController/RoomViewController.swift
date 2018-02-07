@@ -50,10 +50,14 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        DataStore.roomChannel?.disconnect()
-        videoPlayer.delegate = nil
-        center.removeObserver(self)
-        room.nowPlayingVideo.clear()
+        let viewControllers = self.navigationController?.viewControllers
+        if viewControllers?.indexOfArray(self) == nil {
+            DataStore.roomChannel?.disconnect()
+            DataStore.roomChannel = nil
+            videoPlayer.delegate = nil
+            center.removeObserver(self)
+            room.nowPlayingVideo.clear()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -63,6 +67,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        startRoom()
         if(!videoPlayerContainer.isHidden) {
             self.navigationController?.navigationBar.isHidden = true
         }
@@ -100,6 +105,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
             let videoCurrentTime = room.nowPlayingVideo.video!.currentTime
             if(lastVideoYoutubeVideoId == videoId) {
                 videoPlayer.seekTo(videoCurrentTime, seekAhead: true)
+                videoPlayer.play()
             } else {
                 readyVideo(videoId: videoId, time: videoCurrentTime)
             }
