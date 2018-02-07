@@ -11,7 +11,10 @@ import SwiftyJSON
 
 class  SeachVideoViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate, HttpRequestDelegate {
     
+    var http: HttpRequestHelper?
     var result = [Video]()
+    var nextToken: String?
+    var keyword: String?
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -24,25 +27,41 @@ class  SeachVideoViewController: UIViewController, UISearchBarDelegate, UITableV
         super.viewDidLoad()
         searchBar.delegate = self
         searchBar.becomeFirstResponder()
+        http = HttpRequestHelper(delegate: self)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.view.endEditing(true)
         if !searchBar.text!.isEmpty {
-            let http = HttpRequestHelper(delegate: self)
-            let data = ["keyword": searchBar.text!]
-            http.get(data: data, endPoint: "youtube/search")
+            self.result.removeAll()
+            self.nextToken = nil
+            self.tableView.reloadData()
+            self.keyword = searchBar.text!
+            let data = ["keyword": self.keyword!]
+            http?.get(data: data, endPoint: "youtube/search")
         }
     }
     
     func onSuccess(data: JSON) {
         print(data)
-        result = data["items"].arrayValue.map { Video(video: $0 ) }
+        result.append(contentsOf: data["items"].arrayValue.map { Video(video: $0 ) })
+        nextToken = data["next_page_token"].string
         self.tableView.reloadData()
     }
     
     func onFailure(error: Error) {
         print(error)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let currentOffsetY = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.height
+        let distanceToBottom = maximumOffset - currentOffsetY
+        if distanceToBottom < 500 && nextToken != nil {
+            let data = ["keyword": self.keyword!, "page_token": nextToken!]
+            http?.get(data: data, endPoint: "youtube/search")
+            nextToken = nil
+        }
     }
     
     //データを返すメソッド（スクロールなどでページを更新する必要が出るたびに呼び出される）
