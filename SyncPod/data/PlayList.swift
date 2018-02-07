@@ -27,11 +27,15 @@ class PlayList {
         delegate?.updatedPlayList()
     }
     
+    func remove(index: Int) {
+        self.list.remove(at: index)
+        delegate?.updatedPlayList()
+    }
+    
     func remove(video: JSON) {
         let v = Video(video: video)
         if !list.isEmpty && list[0].id == v.id {
-            self.list.remove(at: 0)
-            delegate?.updatedPlayList()
+            remove(index: 0)
         }
     }
     

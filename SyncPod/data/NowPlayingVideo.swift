@@ -36,6 +36,12 @@ class NowPlayingVideo {
         self._status = .ready
     }
     
+    func set(video: Video) {
+        self.video = video
+        delegate?.updatedVideoData()
+        self._status = .ready
+    }
+    
     func play() {
         self._status = .playing
     }
