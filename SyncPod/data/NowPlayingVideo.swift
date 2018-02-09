@@ -21,7 +21,7 @@ enum VideoStatus {
 
 class NowPlayingVideo {
     var delegate: VideoDataDelegate?
-    var video: Video?
+    var video: SyncPodVideo?
     private var _status: VideoStatus = .none
     
     var status: VideoStatus {
@@ -31,12 +31,12 @@ class NowPlayingVideo {
     }
     
     func set(video: JSON) {
-        self.video = Video(video: video)
+        self.video = SyncPodVideo(video: video)
         delegate?.updatedVideoData()
         self._status = .ready
     }
     
-    func set(video: Video) {
+    func set(video: SyncPodVideo) {
         self.video = video
         delegate?.updatedVideoData()
         self._status = .ready

@@ -14,16 +14,16 @@ protocol PlayListDelegate {
 }
 
 class PlayList {
-    private var list: [Video] = []
+    private var list: [SyncPodVideo] = []
     var delegate: PlayListDelegate?
     
     func set(list: JSON) {
-        self.list = list.arrayValue.map { Video(video: $0) }
+        self.list = list.arrayValue.map { SyncPodVideo(video: $0) }
         delegate?.updatedPlayList()
     }
     
     func add(video: JSON) {
-        self.list.append(Video(video: video))
+        self.list.append(SyncPodVideo(video: video))
         delegate?.updatedPlayList()
     }
     
@@ -33,13 +33,14 @@ class PlayList {
     }
     
     func remove(video: JSON) {
-        let v = Video(video: video)
+        let v = SyncPodVideo(video: video)
         if !list.isEmpty && list[0].id == v.id {
-            remove(index: 0)
+            self.list.remove(at: 0)
+            delegate?.updatedPlayList()
         }
     }
     
-    func get(index: Int) -> Video {
+    func get(index: Int) -> SyncPodVideo {
         return list[index]
     }
     
