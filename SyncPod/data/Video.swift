@@ -10,20 +10,16 @@ import Foundation
 import SwiftyJSON
 
 class Video {
-    let id: Int
     let youtubeVideoId: String
-    let currentTime: Float
     let title: String
     let channelTitle: String?
     let published: String?
     let viewCount: Int?
     let duration: String
     let thumbnailUrl: String?
-
+    
     init(video: JSON) {
-        id = video["id"].int!
         youtubeVideoId = video["youtube_video_id"].string!
-        currentTime = video["current_time"].float!
         title = video["title"].string!
         channelTitle = video["channel_title"].string
         published = video["published"].string
@@ -45,4 +41,16 @@ class Video {
             }
         }
     }
+}
+
+class SyncPodVideo : Video {
+    let id: Int
+    let currentTime: Float
+    
+    override init(video: JSON) {
+        id = video["id"].int!
+        currentTime = video["current_time"].float!
+        super.init(video: video)
+    }
+
 }
