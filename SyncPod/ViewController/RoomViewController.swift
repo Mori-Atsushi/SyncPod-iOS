@@ -99,16 +99,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
 
     func onReceiveNowPlayingVideo(json: JSON) {
         if(json["data"]["video"] != JSON.null) {
-            let lastVideoYoutubeVideoId = room.nowPlayingVideo.video?.youtubeVideoId
-            room.nowPlayingVideo.set(video: json["data"]["video"])
-            let videoId = room.nowPlayingVideo.video!.youtubeVideoId
-            let videoCurrentTime = room.nowPlayingVideo.video!.currentTime
-            if(lastVideoYoutubeVideoId == videoId) {
-                videoPlayer.seekTo(videoCurrentTime, seekAhead: true)
-                videoPlayer.play()
-            } else {
-                readyVideo(videoId: videoId, time: videoCurrentTime)
-            }
+            readyVideo(video: json["data"]["video"], isPlaying: true)
         } else {
             endVideo()
         }
@@ -116,9 +107,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
 
     func onReceiveStartVideo(json: JSON) {
         if(json["data"]["video"] != JSON.null) {
-            room.nowPlayingVideo.set(video: json["data"]["video"])
-            let videoId = room.nowPlayingVideo.video!.youtubeVideoId
-            readyVideo(videoId: videoId, time: 0)
+            readyVideo(video: json["data"]["video"], isPlaying: true)
             room.playList.remove(video: json["data"]["video"])
         }
     }
@@ -130,7 +119,11 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     }
     
     func onReceiveAddVideo(json: JSON) {
-        room.playList.add(video: json["data"]["video"])
+        if room.playList.isEmpty && room.nowPlayingVideo.status == .none {
+            readyVideo(video: json["data"]["video"], isPlaying: false)
+        } else {
+            room.playList.add(video: json["data"]["video"])
+        }
     }
     
     func onReceivePastChats(json: JSON) {
@@ -141,11 +134,27 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
         room.chatList.add(chat: json["data"]["chat"])
     }
     
-    private func readyVideo(videoId: String, time: Float) {
-        videoPlayer.playerVars["start"] = time as AnyObject
-        videoPlayer.loadVideoID(videoId)
-        videoPlayerContainer.isHidden = false
-        self.navigationController?.navigationBar.isHidden = true
+    private func readyVideo(video: JSON, isPlaying: Bool) {
+        let lastVideoYoutubeVideoId = room.nowPlayingVideo.video?.youtubeVideoId
+        room.nowPlayingVideo.set(video: video)
+        if isPlaying {
+            room.nowPlayingVideo.play()
+        }
+        let videoId = room.nowPlayingVideo.video!.youtubeVideoId
+        let videoCurrentTime = room.nowPlayingVideo.video!.currentTime
+        if(lastVideoYoutubeVideoId == videoId) {
+            videoPlayer.seekTo(videoCurrentTime, seekAhead: true)
+            if room.nowPlayingVideo.status == .playing {
+                videoPlayer.play()
+            } else {
+                videoPlayer.pause()
+            }
+        } else {
+            videoPlayer.playerVars["start"] = videoCurrentTime as AnyObject
+            videoPlayer.loadVideoID(videoId)
+            videoPlayerContainer.isHidden = false
+            self.navigationController?.navigationBar.isHidden = true
+        }
     }
     
     private func endVideo() {
@@ -155,12 +164,22 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     }
 
     func playerReady(_ videoPlayer: YouTubePlayerView) {
-        videoPlayer.play()
+        if(room.nowPlayingVideo.status == .playing) {
+            videoPlayer.play()
+        }
     }
     
     func playerStateChanged(_ videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
         if(playerState == .Ended) {
-            endVideo()
+            if room.playList.isEmpty {
+                endVideo()
+            } else {
+                let nextVideo = room.playList.get(index: 0)
+                videoPlayer.playerVars["start"] = "0" as AnyObject
+                videoPlayer.loadVideoID(nextVideo.youtubeVideoId)
+                room.nowPlayingVideo.set(video: nextVideo)
+                room.playList.remove(index: 0)
+            }
         }
     }
 }
