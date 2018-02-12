@@ -693,7 +693,7 @@
 				);
 				INFOPLIST_FILE = SyncPod/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Syder.SyncPod;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cyder.syncpod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -712,7 +712,7 @@
 				);
 				INFOPLIST_FILE = SyncPod/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Syder.SyncPod;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cyder.syncpod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
