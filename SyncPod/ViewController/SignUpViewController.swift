@@ -52,7 +52,7 @@ class SignUpViewController: UIViewController, UINavigationBarDelegate, HttpReque
     func onSuccess(data: JSON) {
         CurrentUser.userToken = data["user"]["access_token"].string
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "TopView") as UIViewController
+        let viewController = storyboard.instantiateViewController(withIdentifier: "NavigationController") as UIViewController
         present(viewController, animated: true)
     }
 
