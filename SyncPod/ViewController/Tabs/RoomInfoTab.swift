@@ -17,6 +17,7 @@ class RoomInfoTab: UIViewController, IndicatorInfoProvider, HttpRequestDelegate,
     var onlineUsers: [User] = []
     var shareText = ""
     var shareUrl = ""
+    private let refreshControl = UIRefreshControl()
     
     @IBOutlet weak var TableView: UITableView!
     @IBOutlet weak var roomName: UILabel!
@@ -35,15 +36,22 @@ class RoomInfoTab: UIViewController, IndicatorInfoProvider, HttpRequestDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         shareButton.layer.cornerRadius = DeviceConst.buttonCornerRadius
+        
+        self.TableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(RoomInfoTab.refresh(sender:)), for: .valueChanged)
+    }
+    
+    @objc func refresh(sender: UIRefreshControl) {
+        if(self.room.key != nil) {
+            let http = HttpRequestHelper(delegate: self)
+            http.get(data: ["room_key": self.room.key!], endPoint: "rooms")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if(self.room.key != nil) {
-            let http = HttpRequestHelper(delegate: self)
-            http.get(data: ["room_key": self.room.key!], endPoint: "rooms")
-        }
+        self.refresh(sender: refreshControl)
     }
     
     override func viewDidLayoutSubviews() {
@@ -73,10 +81,12 @@ class RoomInfoTab: UIViewController, IndicatorInfoProvider, HttpRequestDelegate,
         self.onlineTitle.text = "オンライン（\(data["room"]["online_users"].count)人）"
         self.onlineUsers = data["room"]["online_users"].arrayValue.map { User(user: $0) }
         self.TableView.reloadData()
+        refreshControl.endRefreshing()
     }
     
     func onFailure(error: Error) {
         print(error)
+        refreshControl.endRefreshing()
     }
     
     //データを返すメソッド（スクロールなどでページを更新する必要が出るたびに呼び出される）
