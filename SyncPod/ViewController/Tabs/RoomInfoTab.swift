@@ -21,6 +21,7 @@ class RoomInfoTab: UIViewController, IndicatorInfoProvider, HttpRequestDelegate 
     @IBOutlet weak var roomName: UILabel!
     @IBOutlet weak var roomDescription: UILabel!
     @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var onlineTitle: UILabel!
     
     @IBAction func share(_ sender: UIButton) {
         if let shareWebsite = URL(string: shareUrl) {
@@ -68,6 +69,7 @@ class RoomInfoTab: UIViewController, IndicatorInfoProvider, HttpRequestDelegate 
         self.roomDescription.text = data["room"]["description"].string
         self.shareText = "SyncPodで一緒に動画を見ませんか？\n\nルーム名: \(data["room"]["name"].string!)\nルームキー: \(data["room"]["key"].string!)\n\nこちらのURLからも入室できます。"
         self.shareUrl = "http://app.sync-pod.com/room?room_key=\(data["room"]["key"].string!)"
+        self.onlineTitle.text = "オンライン（\(data["room"]["online_users"].count)人）"
     }
     
     func onFailure(error: Error) {
