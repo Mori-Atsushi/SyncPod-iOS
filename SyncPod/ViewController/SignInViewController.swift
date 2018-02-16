@@ -16,6 +16,13 @@ class SignInViewController: UIViewController, UINavigationBarDelegate, HttpReque
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
 
+    @IBAction func openTerms(_ sender: UIButton) {
+        let url = URL(string: "http://app.sync-pod.com/terms")!
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

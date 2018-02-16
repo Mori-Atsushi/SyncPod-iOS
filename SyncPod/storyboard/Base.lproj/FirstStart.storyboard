@@ -75,6 +75,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4m-hD-F1l">
                                                 <rect key="frame" x="33" y="0.0" width="62" height="30"/>
                                                 <state key="normal" title="利用規約"/>
+                                                <connections>
+                                                    <action selector="openTerms:" destination="bTF-t6-yGw" eventType="touchUpInside" id="mVi-5B-KT1"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="に同意する" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTS-if-bBS">
                                                 <rect key="frame" x="98" y="0.0" width="162" height="30"/>
@@ -219,6 +222,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Trb-C6-cSp">
                                                 <rect key="frame" x="33" y="0.0" width="62" height="30"/>
                                                 <state key="normal" title="利用規約"/>
+                                                <connections>
+                                                    <action selector="openTerms:" destination="pcd-yy-Hjh" eventType="touchUpInside" id="XJL-hi-5Yt"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="に同意する" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ViG-1Y-fPQ">
                                                 <rect key="frame" x="98" y="0.0" width="162" height="30"/>
