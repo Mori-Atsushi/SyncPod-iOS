@@ -17,6 +17,7 @@ class RoomInfoTab: UIViewController, IndicatorInfoProvider, HttpRequestDelegate 
     var shareText = ""
     var shareUrl = ""
     
+    @IBOutlet weak var TableView: UITableView!
     @IBOutlet weak var roomName: UILabel!
     @IBOutlet weak var roomDescription: UILabel!
     @IBOutlet weak var shareButton: UIButton!
@@ -40,6 +41,21 @@ class RoomInfoTab: UIViewController, IndicatorInfoProvider, HttpRequestDelegate 
         if(self.room.key != nil) {
             let http = HttpRequestHelper(delegate: self)
             http.get(data: ["room_key": self.room.key!], endPoint: "rooms")
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        guard let headerView = TableView.tableHeaderView else {
+            return
+        }
+        
+        let size = headerView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+        
+        if headerView.frame.size.height != size.height {
+            headerView.frame.size.height = size.height
+            TableView.tableHeaderView = headerView
         }
     }
     
