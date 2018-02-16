@@ -129,6 +129,7 @@
                         <outlet property="navigationBar" destination="AaI-Le-6PT" id="vL9-ff-8Qa"/>
                         <outlet property="passwordField" destination="Roa-P4-zjy" id="Xco-It-qMh"/>
                         <outlet property="submitButton" destination="MTh-2l-qgk" id="asd-B3-3pg"/>
+                        <outlet property="termsSwitch" destination="oon-iv-6YE" id="LB1-CM-i0u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f28-O1-XVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -273,6 +274,7 @@
                         <outlet property="passwordConfirmField" destination="zMK-gO-WxX" id="kZx-oN-594"/>
                         <outlet property="passwordField" destination="vxJ-CX-0Jn" id="X4s-pI-Lth"/>
                         <outlet property="submitButton" destination="Tyb-gs-aBs" id="dHw-y3-0ft"/>
+                        <outlet property="termsSwitch" destination="eMr-9M-wmg" id="bk6-D2-E3b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fq0-6D-nHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
