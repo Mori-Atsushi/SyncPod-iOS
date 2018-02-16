@@ -11,9 +11,10 @@ import XLPagerTabStrip
 import Alamofire
 import SwiftyJSON
 
-class RoomInfoTab: UIViewController, IndicatorInfoProvider, HttpRequestDelegate {
+class RoomInfoTab: UIViewController, IndicatorInfoProvider, HttpRequestDelegate, UITableViewDataSource, UITableViewDelegate {
     var itemInfo: IndicatorInfo = "ルーム情報"
     let room = DataStore.CurrentRoom
+    var onlineUsers: [User] = []
     var shareText = ""
     var shareUrl = ""
     
@@ -70,10 +71,24 @@ class RoomInfoTab: UIViewController, IndicatorInfoProvider, HttpRequestDelegate 
         self.shareText = "SyncPodで一緒に動画を見ませんか？\n\nルーム名: \(data["room"]["name"].string!)\nルームキー: \(data["room"]["key"].string!)\n\nこちらのURLからも入室できます。"
         self.shareUrl = "http://app.sync-pod.com/room?room_key=\(data["room"]["key"].string!)"
         self.onlineTitle.text = "オンライン（\(data["room"]["online_users"].count)人）"
+        self.onlineUsers = data["room"]["online_users"].arrayValue.map { User(user: $0) }
+        self.TableView.reloadData()
     }
     
     func onFailure(error: Error) {
         print(error)
+    }
+    
+    //データを返すメソッド（スクロールなどでページを更新する必要が出るたびに呼び出される）
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "User", for: indexPath as IndexPath) as! UserTableViewCell
+        cell.setCell(user: onlineUsers[indexPath.row])
+        return cell
+    }
+    
+    //データの個数を返すメソッド
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return onlineUsers.count
     }
 }
 
