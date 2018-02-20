@@ -14,7 +14,7 @@ import SwiftyJSON
 class RoomInfoTab: UIViewController, IndicatorInfoProvider, HttpRequestDelegate, UITableViewDataSource, UITableViewDelegate {
     var itemInfo: IndicatorInfo = "ルーム情報"
     let room = DataStore.CurrentRoom
-    var onlineUsers: [User] = []
+    var onlineUsers: [User]?
     var shareText = ""
     var shareUrl = ""
     private let refreshControl = UIRefreshControl()
@@ -92,13 +92,13 @@ class RoomInfoTab: UIViewController, IndicatorInfoProvider, HttpRequestDelegate,
     //データを返すメソッド（スクロールなどでページを更新する必要が出るたびに呼び出される）
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "User", for: indexPath as IndexPath) as! UserTableViewCell
-        cell.setCell(user: onlineUsers[indexPath.row])
+        cell.setCell(user: onlineUsers![indexPath.row])
         return cell
     }
     
     //データの個数を返すメソッド
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return onlineUsers.count
+        return onlineUsers != nil ? onlineUsers!.count : 0
     }
 }
 
