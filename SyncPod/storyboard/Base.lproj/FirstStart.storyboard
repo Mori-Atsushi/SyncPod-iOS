@@ -30,8 +30,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="hdv-7C-g4c">
-                                <rect key="frame" x="30" y="94" width="260" height="160"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="hdv-7C-g4c">
+                                <rect key="frame" x="30" y="94" width="260" height="191"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VDe-9N-lnJ" userLabel="Field Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="80"/>
@@ -62,8 +62,34 @@
                                             <constraint firstItem="f85-bL-sH4" firstAttribute="leading" secondItem="VDe-9N-lnJ" secondAttribute="leading" id="t7t-x8-Dp9"/>
                                         </constraints>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mHy-86-KwG">
+                                        <rect key="frame" x="0.0" y="95" width="260" height="31"/>
+                                        <subviews>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oon-iv-6YE">
+                                                <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                            </switch>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="AGn-WF-1MH">
+                                                <rect key="frame" x="59" y="0.0" width="201" height="31"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4m-hD-F1l">
+                                                        <rect key="frame" x="0.0" y="0.0" width="62" height="31"/>
+                                                        <state key="normal" title="利用規約"/>
+                                                        <connections>
+                                                            <action selector="openTerms:" destination="bTF-t6-yGw" eventType="touchUpInside" id="mVi-5B-KT1"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="に同意する" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTS-if-bBS">
+                                                        <rect key="frame" x="67" y="0.0" width="134" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTh-2l-qgk">
-                                        <rect key="frame" x="0.0" y="110" width="260" height="50"/>
+                                        <rect key="frame" x="0.0" y="141" width="260" height="50"/>
                                         <color key="backgroundColor" red="0.16470588235294117" green="0.2196078431372549" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="5mA-pd-dtR"/>
@@ -103,6 +129,7 @@
                         <outlet property="navigationBar" destination="AaI-Le-6PT" id="vL9-ff-8Qa"/>
                         <outlet property="passwordField" destination="Roa-P4-zjy" id="Xco-It-qMh"/>
                         <outlet property="submitButton" destination="MTh-2l-qgk" id="asd-B3-3pg"/>
+                        <outlet property="termsSwitch" destination="oon-iv-6YE" id="LB1-CM-i0u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f28-O1-XVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -130,8 +157,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="95q-xq-WFe">
-                                <rect key="frame" x="30" y="94" width="260" height="260"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="95q-xq-WFe">
+                                <rect key="frame" x="30" y="94" width="260" height="291"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="I5n-0O-FBF" userLabel="Field Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="180"/>
@@ -184,8 +211,34 @@
                                             <constraint firstItem="zMK-gO-WxX" firstAttribute="leading" secondItem="I5n-0O-FBF" secondAttribute="leading" id="ybe-8n-s8T"/>
                                         </constraints>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Cin-KE-Xnz">
+                                        <rect key="frame" x="0.0" y="195" width="260" height="31"/>
+                                        <subviews>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eMr-9M-wmg">
+                                                <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                            </switch>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9Hq-Hr-e6v">
+                                                <rect key="frame" x="59" y="0.0" width="201" height="31"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Trb-C6-cSp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="62" height="31"/>
+                                                        <state key="normal" title="利用規約"/>
+                                                        <connections>
+                                                            <action selector="openTerms:" destination="pcd-yy-Hjh" eventType="touchUpInside" id="XJL-hi-5Yt"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="に同意する" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ViG-1Y-fPQ">
+                                                        <rect key="frame" x="67" y="0.0" width="134" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tyb-gs-aBs">
-                                        <rect key="frame" x="0.0" y="210" width="260" height="50"/>
+                                        <rect key="frame" x="0.0" y="241" width="260" height="50"/>
                                         <color key="backgroundColor" red="0.0" green="0.43137254899999999" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="CjT-2H-IBH"/>
@@ -221,6 +274,7 @@
                         <outlet property="passwordConfirmField" destination="zMK-gO-WxX" id="kZx-oN-594"/>
                         <outlet property="passwordField" destination="vxJ-CX-0Jn" id="X4s-pI-Lth"/>
                         <outlet property="submitButton" destination="Tyb-gs-aBs" id="dHw-y3-0ft"/>
+                        <outlet property="termsSwitch" destination="eMr-9M-wmg" id="bk6-D2-E3b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fq0-6D-nHX" userLabel="First Responder" sceneMemberID="firstResponder"/>

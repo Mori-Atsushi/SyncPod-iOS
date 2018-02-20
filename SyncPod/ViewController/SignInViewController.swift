@@ -15,6 +15,14 @@ class SignInViewController: UIViewController, UINavigationBarDelegate, HttpReque
     @IBOutlet weak var mailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var termsSwitch: UISwitch!
+    
+    @IBAction func openTerms(_ sender: UIButton) {
+        let url = URL(string: "http://app.sync-pod.com/terms")!
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +65,10 @@ class SignInViewController: UIViewController, UINavigationBarDelegate, HttpReque
     private func validate(email: String, password: String) -> Bool {
         if (email == "" || password == "") {
             ErrorAlart(viewController: self, title: "ログイン失敗", message: "全てのフォームを入力して下さい。").show()
+            return false;
+        }
+        if(!termsSwitch.isOn) {
+            ErrorAlart(viewController: self, title: "ログイン失敗", message: "利用規約に同意して下さい。").show()
             return false;
         }
 
