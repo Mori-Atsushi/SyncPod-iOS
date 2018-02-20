@@ -50,6 +50,7 @@
 		0DCD202E200D02CB001C90DA /* ViewExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD202D200D02CB001C90DA /* ViewExtentions.swift */; };
 		0DE76208202031D8000A0838 /* UrlExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE76207202031D8000A0838 /* UrlExtention.swift */; };
 		0DE94BFD201289A700E26582 /* YouTubePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE94BFC201289A700E26582 /* YouTubePlayer.framework */; };
+		0DF4FACB2036EDA100ABB4F8 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF4FACA2036EDA100ABB4F8 /* UserTableViewCell.swift */; };
 		0DF8BF762024D7BD00F250E1 /* ScrollingStackContainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF8BF752024D7BD00F250E1 /* ScrollingStackContainer.framework */; };
 		0DFDDB74200F092A009C7E56 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFDDB73200F092A009C7E56 /* CurrentUser.swift */; };
 /* End PBXBuildFile section */
@@ -122,6 +123,7 @@
 		0DE76207202031D8000A0838 /* UrlExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlExtention.swift; sourceTree = "<group>"; };
 		0DE94BFA2012899600E26582 /* YouTubePlayer.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = YouTubePlayer.framework.dSYM; path = Carthage/Build/iOS/YouTubePlayer.framework.dSYM; sourceTree = "<group>"; };
 		0DE94BFC201289A700E26582 /* YouTubePlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YouTubePlayer.framework; path = Carthage/Build/iOS/YouTubePlayer.framework; sourceTree = "<group>"; };
+		0DF4FACA2036EDA100ABB4F8 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		0DF8BF752024D7BD00F250E1 /* ScrollingStackContainer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScrollingStackContainer.framework; path = Carthage/Build/iOS/ScrollingStackContainer.framework; sourceTree = "<group>"; };
 		0DFDDB73200F092A009C7E56 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -290,6 +292,7 @@
 				0D578C7B201E03C0004BF2EE /* JoinedRoomsTableViewCell.swift */,
 				0D0BB24E2021B10E00DD977C /* ChatTableViewCell.swift */,
 				0D6B3ED220244F85006D509B /* VideoTableViewCell.swift */,
+				0DF4FACA2036EDA100ABB4F8 /* UserTableViewCell.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				0D67B73C201C3D1300CCB84C /* PlayListTab.swift in Sources */,
 				0D578C7C201E03C0004BF2EE /* JoinedRoomsTableViewCell.swift in Sources */,
 				0D86D757202457BF002EFF99 /* NowPlayingVideo.swift in Sources */,
+				0DF4FACB2036EDA100ABB4F8 /* UserTableViewCell.swift in Sources */,
 				0D0D51B22017511300B02F8B /* Alert.swift in Sources */,
 				0DA2FB49201C700A00292BFE /* RoomTabViewController.swift in Sources */,
 				0D0BB2492021A8C000DD977C /* Chat.swift in Sources */,
