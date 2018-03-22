@@ -663,6 +663,7 @@ Cg
                                         <state key="normal" title="送信"/>
                                         <connections>
                                             <action selector="sendCreateRoom:" destination="p9L-PJ-jLy" eventType="touchUpInside" id="Ssq-qG-Cno"/>
+                                            <action selector="sendUserReport:" destination="TcX-Tf-poV" eventType="touchUpInside" id="d7M-ng-CV3"/>
                                         </connections>
                                     </button>
                                 </subviews>
