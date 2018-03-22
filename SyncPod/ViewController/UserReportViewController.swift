@@ -51,7 +51,7 @@ class  UserReportViewController: UIViewController, UINavigationBarDelegate, Http
     }
     
     func onFailure(error: Error) {
-        ErrorAlart(viewController: self, title: "ルーム作成失敗", message: "エラーが発生しました。").show()
+        ErrorAlart(viewController: self, title: "送信失敗", message: "エラーが発生しました。").show()
     }
     
     private func validate(message: String) -> Bool {
