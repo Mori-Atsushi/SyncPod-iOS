@@ -38,6 +38,7 @@
 		0D67B73E201C3D1D00CCB84C /* ChatTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D67B73D201C3D1D00CCB84C /* ChatTab.swift */; };
 		0D67B740201C3D7200CCB84C /* RoomInfoTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D67B73F201C3D7200CCB84C /* RoomInfoTab.swift */; };
 		0D6B3ED320244F85006D509B /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6B3ED220244F85006D509B /* VideoTableViewCell.swift */; };
+		0D6F1478206395E30024CE7F /* UserReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6F1477206395E30024CE7F /* UserReportViewController.swift */; };
 		0D859B5A200882B8008A3672 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D859B59200882B8008A3672 /* SignInViewController.swift */; };
 		0D86D757202457BF002EFF99 /* NowPlayingVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D86D756202457BF002EFF99 /* NowPlayingVideo.swift */; };
 		0D8BB2B420109DEE00C7F6A9 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BB2B320109DEE00C7F6A9 /* RoomViewController.swift */; };
@@ -110,6 +111,7 @@
 		0D67B73D201C3D1D00CCB84C /* ChatTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTab.swift; sourceTree = "<group>"; };
 		0D67B73F201C3D7200CCB84C /* RoomInfoTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfoTab.swift; sourceTree = "<group>"; };
 		0D6B3ED220244F85006D509B /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		0D6F1477206395E30024CE7F /* UserReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReportViewController.swift; sourceTree = "<group>"; };
 		0D859B59200882B8008A3672 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		0D86D756202457BF002EFF99 /* NowPlayingVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingVideo.swift; sourceTree = "<group>"; };
 		0D8BB2B320109DEE00C7F6A9 /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				0D8BB2B320109DEE00C7F6A9 /* RoomViewController.swift */,
 				0D939F40201B6A0200014633 /* CreateRoomViewController.swift */,
 				0D1C1DEB202A1B780064F3D9 /* SeachVideoViewController.swift */,
+				0D6F1477206395E30024CE7F /* UserReportViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				0DA2FB49201C700A00292BFE /* RoomTabViewController.swift in Sources */,
 				0D0BB2492021A8C000DD977C /* Chat.swift in Sources */,
 				0D578C86201F2203004BF2EE /* PlayList.swift in Sources */,
+				0D6F1478206395E30024CE7F /* UserReportViewController.swift in Sources */,
 				0D1BDB5020073F0200DA351D /* FirstStartTopViewController.swift in Sources */,
 				0DE76208202031D8000A0838 /* UrlExtention.swift in Sources */,
 				0D578C80201F1F23004BF2EE /* Room.swift in Sources */,

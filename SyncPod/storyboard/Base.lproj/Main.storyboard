@@ -621,7 +621,11 @@ Cg
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="違反報告" id="NSr-Rc-uCq">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="tSt-AN-BgS"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="tSt-AN-BgS">
+                                            <connections>
+                                                <action selector="back:" destination="TcX-Tf-poV" id="NZe-N1-6G5"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
