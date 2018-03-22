@@ -679,6 +679,11 @@ Cg
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XpK-Jz-dr8"/>
                     </view>
+                    <connections>
+                        <outlet property="messageField" destination="YKv-zz-WwG" id="Kpi-nh-uXK"/>
+                        <outlet property="navigationBar" destination="rdq-1C-0NA" id="qZt-8Y-Axz"/>
+                        <outlet property="submitButton" destination="sOV-fc-Znl" id="OtG-yU-tTo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R6q-qt-IvS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
