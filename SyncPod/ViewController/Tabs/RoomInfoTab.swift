@@ -104,20 +104,20 @@ class RoomInfoTab: UIViewController, IndicatorInfoProvider, HttpRequestDelegate,
     //タッチされた時の挙動
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(onlineUsers![indexPath.row])
-        let user_name = onlineUsers![indexPath.row].name
+        let exitForceActionTitle = onlineUsers![indexPath.row].name + "さんを退出させる"
         let alert: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle:  UIAlertControllerStyle.actionSheet)
-        let defaultAction: UIAlertAction = UIAlertAction(title: user_name + "さんを退出させる", style: UIAlertActionStyle.default, handler: {
+        let exitForceAction: UIAlertAction = UIAlertAction(title: exitForceActionTitle, style: UIAlertActionStyle.default, handler: {
             (action: UIAlertAction!) -> Void in
-            self.force_exit(target: self.onlineUsers![indexPath.row])
+            self.exitForce(target: self.onlineUsers![indexPath.row])
         })
         let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.cancel)
 
         alert.addAction(cancelAction)
-        alert.addAction(defaultAction)
+        alert.addAction(exitForceAction)
         present(alert, animated: true, completion: nil)
     }
     
-    private func force_exit(target: User) {
+    private func exitForce(target: User) {
         let title = target.name + "さんを退出させる"
         let message = target.name + "さんは24時間このルームに入室できなくなります。本当によろしいですか？"
         let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle:  UIAlertControllerStyle.alert)
