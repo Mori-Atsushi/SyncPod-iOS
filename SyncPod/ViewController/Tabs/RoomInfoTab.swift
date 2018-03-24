@@ -100,5 +100,21 @@ class RoomInfoTab: UIViewController, IndicatorInfoProvider, HttpRequestDelegate,
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return onlineUsers != nil ? onlineUsers!.count : 0
     }
+    
+    //タッチされた時の挙動
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(onlineUsers![indexPath.row])
+        let user_name = onlineUsers![indexPath.row].name
+        let alert: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle:  UIAlertControllerStyle.actionSheet)
+        let defaultAction: UIAlertAction = UIAlertAction(title: user_name + "さんを退出させる", style: UIAlertActionStyle.default, handler:{
+            (action: UIAlertAction!) -> Void in
+            print("OK")
+        })
+        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.cancel)
+
+        alert.addAction(cancelAction)
+        alert.addAction(defaultAction)
+        present(alert, animated: true, completion: nil)
+    }
 }
 
