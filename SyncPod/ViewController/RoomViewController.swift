@@ -71,6 +71,9 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
         if(!videoPlayerContainer.isHidden) {
             self.navigationController?.navigationBar.isHidden = true
         }
+        if DataStore.roomChannel == nil {
+            onRejected()
+        }
     }
     
     @objc func restartApp(notification: Notification) {
@@ -138,6 +141,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
         switch json["data"]["message"] {
         case "force exit":
             DataStore.roomChannel?.disconnect()
+            DataStore.roomChannel = nil
             let alart = ErrorAlart(viewController: self,
                                    title: "強制退出",
                                    message: "他のユーザから強制退室を受けました。今後しばらくこのルームには入室できません。",
