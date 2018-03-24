@@ -9,6 +9,7 @@ import Foundation
 
 class CurrentUser {
     static private var _userToken: String?
+    static private var _id: Int?
     static var userToken: String? {
         get {
             _userToken = _userToken ?? UserDefaults.standard.string(forKey: "userToken")
@@ -17,6 +18,17 @@ class CurrentUser {
         set {
             _userToken = newValue
             UserDefaults.standard.set(newValue, forKey: "userToken")
+        }
+    }
+
+    static var id: Int? {
+        get {
+            _id = _id ?? UserDefaults.standard.integer(forKey: "userId")
+            return _id
+        }
+        set {
+            _id = newValue
+            UserDefaults.standard.set(newValue, forKey: "userId")
         }
     }
 }

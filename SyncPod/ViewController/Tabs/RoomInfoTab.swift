@@ -103,17 +103,19 @@ class RoomInfoTab: UIViewController, IndicatorInfoProvider, HttpRequestDelegate,
     
     //タッチされた時の挙動
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(onlineUsers![indexPath.row])
-        let exitForceActionTitle = onlineUsers![indexPath.row].name + "さんを退出させる"
         let alert: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle:  UIAlertControllerStyle.actionSheet)
-        let exitForceAction: UIAlertAction = UIAlertAction(title: exitForceActionTitle, style: UIAlertActionStyle.default, handler: {
-            (action: UIAlertAction!) -> Void in
-            self.exitForce(target: self.onlineUsers![indexPath.row])
-        })
         let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.cancel)
 
         alert.addAction(cancelAction)
-        alert.addAction(exitForceAction)
+
+        if onlineUsers![indexPath.row].id != CurrentUser.id {
+            let exitForceActionTitle = onlineUsers![indexPath.row].name + "さんを退出させる"
+            let exitForceAction: UIAlertAction = UIAlertAction(title: exitForceActionTitle, style: UIAlertActionStyle.default, handler: {
+                (action: UIAlertAction!) -> Void in
+                self.exitForce(target: self.onlineUsers![indexPath.row])
+            })
+            alert.addAction(exitForceAction)
+        }
         present(alert, animated: true, completion: nil)
     }
     

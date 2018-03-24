@@ -53,6 +53,7 @@ class SignInViewController: UIViewController, UINavigationBarDelegate, HttpReque
 
     func onSuccess(data: JSON) {
         CurrentUser.userToken = data["user"]["access_token"].string
+        CurrentUser.id = data["user"]["id"].int
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "NavigationController") as UIViewController
         present(viewController, animated: true)
