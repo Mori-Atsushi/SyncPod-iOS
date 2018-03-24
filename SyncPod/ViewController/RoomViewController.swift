@@ -134,6 +134,20 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
         room.chatList.add(chat: json["data"]["chat"])
     }
     
+    func onReceiveError(json: JSON) {
+        switch json["data"]["message"] {
+        case "force exit":
+            DataStore.roomChannel?.disconnect()
+            let alart = ErrorAlart(viewController: self,
+                                   title: "強制退出",
+                                   message: "他のユーザから強制退室を受けました。今後しばらくこのルームには入室できません。",
+                                   callback: { self.navigationController?.popViewController(animated: true) })
+            alart.show()
+        default:
+            print(json["data"]["message"])
+        }
+    }
+    
     private func readyVideo(video: JSON, isPlaying: Bool) {
         let lastVideoYoutubeVideoId = room.nowPlayingVideo.video?.youtubeVideoId
         room.nowPlayingVideo.set(video: video)
