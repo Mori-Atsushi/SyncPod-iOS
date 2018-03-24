@@ -123,14 +123,13 @@ class RoomInfoTab: UIViewController, IndicatorInfoProvider, HttpRequestDelegate,
         let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle:  UIAlertControllerStyle.alert)
         let defaultAction: UIAlertAction = UIAlertAction(title: "退出させる", style: UIAlertActionStyle.destructive, handler:{
             (action: UIAlertAction!) -> Void in
-            print("OK")
+            DataStore.roomChannel?.exitForce(target)
         })
         let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.cancel)
         
         alert.addAction(cancelAction)
         alert.addAction(defaultAction)
         present(alert, animated: true, completion: nil)
-
     }
 }
 

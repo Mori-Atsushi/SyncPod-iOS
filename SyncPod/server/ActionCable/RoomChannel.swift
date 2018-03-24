@@ -65,6 +65,10 @@ class RoomChannel {
     func addVideo(_ videoId: String) {
         self.roomChannel?.action("add_video", with: ["youtube_video_id": videoId])
     }
+    
+    func exitForce(_ user: User) {
+        self.roomChannel?.action("exit_force", with: ["user_id": user.id])
+    }
 
     func disconnect() {
         client.disconnect()
