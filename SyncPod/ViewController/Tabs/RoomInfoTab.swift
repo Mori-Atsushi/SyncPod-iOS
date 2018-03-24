@@ -106,15 +106,31 @@ class RoomInfoTab: UIViewController, IndicatorInfoProvider, HttpRequestDelegate,
         print(onlineUsers![indexPath.row])
         let user_name = onlineUsers![indexPath.row].name
         let alert: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle:  UIAlertControllerStyle.actionSheet)
-        let defaultAction: UIAlertAction = UIAlertAction(title: user_name + "さんを退出させる", style: UIAlertActionStyle.default, handler:{
+        let defaultAction: UIAlertAction = UIAlertAction(title: user_name + "さんを退出させる", style: UIAlertActionStyle.default, handler: {
             (action: UIAlertAction!) -> Void in
-            print("OK")
+            self.force_exit(target: self.onlineUsers![indexPath.row])
         })
         let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.cancel)
 
         alert.addAction(cancelAction)
         alert.addAction(defaultAction)
         present(alert, animated: true, completion: nil)
+    }
+    
+    private func force_exit(target: User) {
+        let title = target.name + "さんを退出させる"
+        let message = target.name + "さんは24時間このルームに入室できなくなります。本当によろしいですか？"
+        let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle:  UIAlertControllerStyle.alert)
+        let defaultAction: UIAlertAction = UIAlertAction(title: "退出させる", style: UIAlertActionStyle.destructive, handler:{
+            (action: UIAlertAction!) -> Void in
+            print("OK")
+        })
+        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.cancel)
+        
+        alert.addAction(cancelAction)
+        alert.addAction(defaultAction)
+        present(alert, animated: true, completion: nil)
+
     }
 }
 
