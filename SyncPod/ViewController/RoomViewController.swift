@@ -71,6 +71,9 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
         if(!videoPlayerContainer.isHidden) {
             self.navigationController?.navigationBar.isHidden = true
         }
+        if DataStore.roomChannel == nil {
+            onRejected()
+        }
     }
     
     @objc func restartApp(notification: Notification) {
@@ -86,7 +89,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     func onRejected() {
         let alart = ErrorAlart(viewController: self,
             title: "入室エラー",
-            message: "入室できませんでした。ルームキーが間違ってる可能性があります。",
+            message: "入室できませんでした。ルームキーが間違ってるか、ブロックされている可能性があります。",
             callback: { self.navigationController?.popViewController(animated: true) })
         alart.show()
     }
@@ -132,6 +135,21 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     
     func onReceiveChat(json: JSON) {
         room.chatList.add(chat: json["data"]["chat"])
+    }
+    
+    func onReceiveError(json: JSON) {
+        switch json["data"]["message"] {
+        case "force exit":
+            DataStore.roomChannel?.disconnect()
+            DataStore.roomChannel = nil
+            let alart = ErrorAlart(viewController: self,
+                                   title: "強制退出",
+                                   message: "他のユーザから強制退室を受けました。今後しばらくこのルームには入室できません。",
+                                   callback: { self.navigationController?.popViewController(animated: true) })
+            alart.show()
+        default:
+            print(json["data"]["message"])
+        }
     }
     
     private func readyVideo(video: JSON, isPlaying: Bool) {

@@ -533,6 +533,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="JuI-Xp-U1W" id="acN-p5-kaW"/>
+                                    <outlet property="delegate" destination="JuI-Xp-U1W" id="yJM-Kf-tKa"/>
                                 </connections>
                             </tableView>
                         </subviews>

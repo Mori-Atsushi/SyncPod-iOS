@@ -100,5 +100,38 @@ class RoomInfoTab: UIViewController, IndicatorInfoProvider, HttpRequestDelegate,
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return onlineUsers != nil ? onlineUsers!.count : 0
     }
+    
+    //タッチされた時の挙動
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let alert: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle:  UIAlertControllerStyle.actionSheet)
+        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.cancel)
+
+        alert.addAction(cancelAction)
+
+        if onlineUsers![indexPath.row].id != CurrentUser.id {
+            let exitForceActionTitle = onlineUsers![indexPath.row].name + "さんを退出させる"
+            let exitForceAction: UIAlertAction = UIAlertAction(title: exitForceActionTitle, style: UIAlertActionStyle.default, handler: {
+                (action: UIAlertAction!) -> Void in
+                self.exitForce(target: self.onlineUsers![indexPath.row])
+            })
+            alert.addAction(exitForceAction)
+        }
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func exitForce(target: User) {
+        let title = target.name + "さんを退出させる"
+        let message = target.name + "さんは24時間このルームに入室できなくなります。本当によろしいですか？"
+        let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle:  UIAlertControllerStyle.alert)
+        let defaultAction: UIAlertAction = UIAlertAction(title: "退出させる", style: UIAlertActionStyle.destructive, handler:{
+            (action: UIAlertAction!) -> Void in
+            DataStore.roomChannel?.exitForce(target)
+        })
+        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.cancel)
+        
+        alert.addAction(cancelAction)
+        alert.addAction(defaultAction)
+        present(alert, animated: true, completion: nil)
+    }
 }
 

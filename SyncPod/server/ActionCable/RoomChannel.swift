@@ -18,6 +18,7 @@ protocol RoomChannelDelegate {
     func onReceiveAddVideo(json: JSON) -> Void
     func onReceivePastChats(json: JSON) -> Void
     func onReceiveChat(json: JSON) -> Void
+    func onReceiveError(json: JSON) -> Void
 }
 
 class RoomChannel {
@@ -65,6 +66,10 @@ class RoomChannel {
     func addVideo(_ videoId: String) {
         self.roomChannel?.action("add_video", with: ["youtube_video_id": videoId])
     }
+    
+    func exitForce(_ user: User) {
+        self.roomChannel?.action("exit_force", with: ["user_id": user.id])
+    }
 
     func disconnect() {
         client.disconnect()
@@ -101,6 +106,8 @@ class RoomChannel {
                 self.roomChannelDelegate.onReceivePastChats(json: json)
             case "add_chat":
                 self.roomChannelDelegate.onReceiveChat(json: json)
+            case "error":
+                self.roomChannelDelegate.onReceiveError(json: json)
             default:
                 print("Received", data!)
             }
