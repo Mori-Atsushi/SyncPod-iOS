@@ -56,7 +56,7 @@ class  UserReportViewController: UIViewController, UINavigationBarDelegate, Http
     
     private func validate(message: String) -> Bool {
         if (message == "") {
-            ErrorAlart(viewController: self, title: "送信失敗", message: "全てのフォームを入力して下さい。").show()
+            ErrorAlart(viewController: self, title: "送信失敗", message: "フォームを埋めて下さい。").show()
             return false;
         }
         return true
