@@ -25,6 +25,12 @@ class RoomInfoTab: UIViewController, IndicatorInfoProvider, HttpRequestDelegate,
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var onlineTitle: UILabel!
     
+    @IBAction func sendButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let next = storyboard.instantiateViewController(withIdentifier: "UserReportView")
+        self.present(next, animated: true, completion: nil)
+    }
+    
     @IBAction func share(_ sender: UIButton) {
         if let shareWebsite = URL(string: shareUrl) {
             let activityItems = [shareText, shareWebsite] as [Any]
