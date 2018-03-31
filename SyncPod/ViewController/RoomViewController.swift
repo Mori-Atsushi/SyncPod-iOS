@@ -14,6 +14,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
 
     var roomKey: String = ""
     var room = DataStore.CurrentRoom
+    var isBackground = true
 
     let playerVars = [
         "playsinline": "1" as AnyObject,
@@ -57,6 +58,8 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
             videoPlayer.delegate = nil
             center.removeObserver(self)
             room.nowPlayingVideo.clear()
+        } else {
+            isBackground = true
         }
     }
     
@@ -68,6 +71,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         startRoom()
+        isBackground = false
         if(!videoPlayerContainer.isHidden) {
             self.navigationController?.navigationBar.isHidden = true
         }
@@ -162,11 +166,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
         let videoCurrentTime = room.nowPlayingVideo.video!.currentTime
         if(lastVideoYoutubeVideoId == videoId) {
             videoPlayer.seekTo(videoCurrentTime, seekAhead: true)
-            if room.nowPlayingVideo.status == .playing {
-                videoPlayer.play()
-            } else {
-                videoPlayer.pause()
-            }
+            playerReady(videoPlayer)
         } else {
             videoPlayer.playerVars["start"] = videoCurrentTime as AnyObject
             videoPlayer.loadVideoID(videoId)
@@ -183,8 +183,10 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     }
 
     func playerReady(_ videoPlayer: YouTubePlayerView) {
-        if(room.nowPlayingVideo.status == .playing) {
+        if(room.nowPlayingVideo.status == .playing && !isBackground) {
             videoPlayer.play()
+        } else {
+            videoPlayer.pause()
         }
     }
     
