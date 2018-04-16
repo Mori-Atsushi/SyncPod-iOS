@@ -21,9 +21,15 @@ class  UserReportViewController: UIViewController, UINavigationBarDelegate, Http
     
     @IBAction func sendUserReport(_ sender: UIButton) {
         let message = messageField.text!
-        
+        let full_message = """
+            \(message)
+
+            ----------------------------------------
+            room key: \(DataStore.CurrentRoom.key ?? "")
+            """
+
         if validate(message: message) {
-            sendUserReportHttp(message: message)
+            sendUserReportHttp(message: full_message)
         }
     }
     
