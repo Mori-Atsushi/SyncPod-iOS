@@ -15,7 +15,7 @@ protocol HttpRequestDelegate {
 }
 
 class HttpRequestHelper {
-    let host: String = "http://59.106.220.89:3000/api/v1/"
+    let host: String = "https://api.sync-pod.com/api/v1/"
 
     var httpRequestDelegate: HttpRequestDelegate
 
