@@ -22,7 +22,7 @@ protocol RoomChannelDelegate {
 }
 
 class RoomChannel {
-    let host = "ws://59.106.220.89:3000/cable/"
+    let host = "https://api.sync-pod.com/cable/"
     let client: ActionCableClient
     var roomChannel: Channel?
     var roomChannelDelegate: RoomChannelDelegate
