@@ -11,6 +11,12 @@ import Alamofire
 import SwiftyJSON
 
 class SignInViewController: UIViewController, UINavigationBarDelegate, HttpRequestDelegate {
+    
+    var isShowKeyboard = false
+    var keyboardFrame: CGRect?
+    let center = NotificationCenter.default
+    
+    @IBOutlet weak var MainView: UIView!
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var mailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -36,6 +42,30 @@ class SignInViewController: UIViewController, UINavigationBarDelegate, HttpReque
         super.viewDidLayoutSubviews()
         mailField.addBorderBottom(height: DeviceConst.textFieldBorderHeight, color: UIColor.lightGray)
         passwordField.addBorderBottom(height: DeviceConst.textFieldBorderHeight, color: UIColor.lightGray)
+        
+        checkViewSize()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        center.addObserver(
+            self,
+            selector: #selector(SignInViewController.showKeyboard(notification:)),
+            name: .UIKeyboardWillShow,
+            object: nil)
+        center.addObserver(
+            self,
+            selector: #selector(SignInViewController.hideKeyboard(notification:)),
+            name: .UIKeyboardWillHide,
+            object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        isShowKeyboard = false
+        center.removeObserver(self)
     }
 
     @IBAction func sendSignIn(_ sender: UIButton) {
@@ -83,5 +113,29 @@ class SignInViewController: UIViewController, UINavigationBarDelegate, HttpReque
             "password": password
         ]
         Http.post(data: data, endPoint: "login")
+    }
+    
+    @objc func showKeyboard(notification: Notification) {
+        isShowKeyboard = true
+        let info = notification.userInfo!
+        self.keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        checkViewSize()
+    }
+    
+    @objc func hideKeyboard(notification: Notification) {
+        isShowKeyboard = false
+        checkViewSize()
+    }
+    
+    private func checkViewSize() {
+        let width = MainView.superview!.frame.width
+        let defaultHeight = MainView.superview!.frame.height
+        let showedKeyboardHeight = defaultHeight - (keyboardFrame?.height ?? 0)
+        let height = isShowKeyboard ? showedKeyboardHeight : defaultHeight
+        
+        MainView.frame = CGRect(x: MainView.frame.origin.x,
+                                y: MainView.frame.origin.y,
+                                width: width,
+                                height: height)
     }
 }
