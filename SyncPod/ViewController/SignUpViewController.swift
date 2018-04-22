@@ -11,6 +11,12 @@ import Alamofire
 import SwiftyJSON
 
 class SignUpViewController: UIViewController, UINavigationBarDelegate, HttpRequestDelegate {
+    
+    var isShowKeyboard = false
+    var keyboardFrame: CGRect?
+    let center = NotificationCenter.default
+    
+    @IBOutlet weak var MainView: UIView!
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var mailField: UITextField!
@@ -40,6 +46,30 @@ class SignUpViewController: UIViewController, UINavigationBarDelegate, HttpReque
         mailField.addBorderBottom(height: DeviceConst.textFieldBorderHeight, color: UIColor.lightGray)
         passwordField.addBorderBottom(height: DeviceConst.textFieldBorderHeight, color: UIColor.lightGray)
         passwordConfirmField.addBorderBottom(height: DeviceConst.textFieldBorderHeight, color: UIColor.lightGray)
+        
+        checkViewSize()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        center.addObserver(
+            self,
+            selector: #selector(SignUpViewController.showKeyboard(notification:)),
+            name: .UIKeyboardWillShow,
+            object: nil)
+        center.addObserver(
+            self,
+            selector: #selector(SignUpViewController.hideKeyboard(notification:)),
+            name: .UIKeyboardWillHide,
+            object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        isShowKeyboard = false
+        center.removeObserver(self)
     }
 
     @IBAction func sendSignUp(_ sender: UIButton) {
@@ -108,6 +138,31 @@ class SignUpViewController: UIViewController, UINavigationBarDelegate, HttpReque
             ]
         ]
         Http.post(data: data, endPoint: "users")
+    }
+    
+    
+    @objc func showKeyboard(notification: Notification) {
+        isShowKeyboard = true
+        let info = notification.userInfo!
+        self.keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        checkViewSize()
+    }
+    
+    @objc func hideKeyboard(notification: Notification) {
+        isShowKeyboard = false
+        checkViewSize()
+    }
+    
+    private func checkViewSize() {
+        let width = MainView.superview!.frame.width
+        let defaultHeight = MainView.superview!.frame.height
+        let showedKeyboardHeight = defaultHeight - (keyboardFrame?.height ?? 0)
+        let height = isShowKeyboard ? showedKeyboardHeight : defaultHeight
+        
+        MainView.frame = CGRect(x: MainView.frame.origin.x,
+                                y: MainView.frame.origin.y,
+                                width: width,
+                                height: height)
     }
 }
 
