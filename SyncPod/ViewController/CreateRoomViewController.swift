@@ -16,6 +16,17 @@ class CreateRoomViewController: UIViewController, HttpRequestDelegate {
     @IBOutlet weak var descriptionField: UITextView!
     @IBOutlet weak var submitButton: UIButton!
     
+    private var isPublic = true
+    
+    @IBAction func changePublishingSetting(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            isPublic = true
+        default:
+            isPublic = false
+        }
+    }
+
     var textViewBorder: CALayer?
     
     override func viewDidLoad() {
@@ -36,7 +47,7 @@ class CreateRoomViewController: UIViewController, HttpRequestDelegate {
         let description = descriptionField.text!
         
         if validate(name: name, description: description) {
-            sendCreateRoomHttp(name: name, description: description)
+            sendCreateRoomHttp(name: name, description: description, isPublic: isPublic)
         }
     }
     
@@ -61,12 +72,13 @@ class CreateRoomViewController: UIViewController, HttpRequestDelegate {
         return true
     }
     
-    private func sendCreateRoomHttp(name: String, description: String) {
+    private func sendCreateRoomHttp(name: String, description: String, isPublic: Bool) {
         let Http = HttpRequestHelper(delegate: self)
         let data: Parameters = [
             "room": [
                 "name": name,
-                "description": description
+                "description": description,
+                "public": isPublic
             ]
         ]
         Http.post(data: data, endPoint: "rooms")
