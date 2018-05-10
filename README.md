@@ -17,7 +17,7 @@ brew cask install swimat
 
 2. [システム設定] -> [機能拡張] -> [Xcode Source Editor] -> [Swimat]にチェックを入れる。
 
-### 
+### Carthage
 1. 次のコマンドを実行する。
 ```sh
 brew install carthage
@@ -25,7 +25,7 @@ brew install carthage
 
 2. 外部ライブラリをビルドする
 ```sh
-carthage update --platform iOS
+carthage build --platform iOS
 ```
 
 ## セットアップ
