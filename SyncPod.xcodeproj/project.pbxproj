@@ -19,6 +19,9 @@
 		0D8BB2B62010A25700C7F6A9 /* ActionCableClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8BB2B52010A25700C7F6A9 /* ActionCableClient.framework */; };
 		0D8BB2B82010A37900C7F6A9 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8BB2B72010A37900C7F6A9 /* Starscream.framework */; };
 		0DE94BFD201289A700E26582 /* YouTubePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE94BFC201289A700E26582 /* YouTubePlayer.framework */; };
+		0DF119FE20A46DAA00D04895 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF119FD20A46DAA00D04895 /* RxSwift.framework */; };
+		0DF11A0020A46DDB00D04895 /* RxAlamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF119FF20A46DDB00D04895 /* RxAlamofire.framework */; };
+		0DF11A0220A46E5C00D04895 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF11A0120A46E5C00D04895 /* Swinject.framework */; };
 		0DF8BF762024D7BD00F250E1 /* ScrollingStackContainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF8BF752024D7BD00F250E1 /* ScrollingStackContainer.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +62,9 @@
 		0D8BB2B72010A37900C7F6A9 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
 		0DE94BFA2012899600E26582 /* YouTubePlayer.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = YouTubePlayer.framework.dSYM; path = Carthage/Build/iOS/YouTubePlayer.framework.dSYM; sourceTree = "<group>"; };
 		0DE94BFC201289A700E26582 /* YouTubePlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YouTubePlayer.framework; path = Carthage/Build/iOS/YouTubePlayer.framework; sourceTree = "<group>"; };
+		0DF119FD20A46DAA00D04895 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		0DF119FF20A46DDB00D04895 /* RxAlamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAlamofire.framework; path = Carthage/Build/iOS/RxAlamofire.framework; sourceTree = "<group>"; };
+		0DF11A0120A46E5C00D04895 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
 		0DF8BF752024D7BD00F250E1 /* ScrollingStackContainer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScrollingStackContainer.framework; path = Carthage/Build/iOS/ScrollingStackContainer.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +73,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DF11A0220A46E5C00D04895 /* Swinject.framework in Frameworks */,
+				0DF11A0020A46DDB00D04895 /* RxAlamofire.framework in Frameworks */,
+				0DF119FE20A46DAA00D04895 /* RxSwift.framework in Frameworks */,
 				0D0507E4202A22C400791EA9 /* AlamofireImage.framework in Frameworks */,
 				0DF8BF762024D7BD00F250E1 /* ScrollingStackContainer.framework in Frameworks */,
 				0D67B738201C3B6D00CCB84C /* XLPagerTabStrip.framework in Frameworks */,
@@ -98,6 +107,9 @@
 		0D4B438220099E540035DF1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0DF11A0120A46E5C00D04895 /* Swinject.framework */,
+				0DF119FF20A46DDB00D04895 /* RxAlamofire.framework */,
+				0DF119FD20A46DAA00D04895 /* RxSwift.framework */,
 				0D0507E3202A22C300791EA9 /* AlamofireImage.framework */,
 				0DF8BF752024D7BD00F250E1 /* ScrollingStackContainer.framework */,
 				0D67B737201C3B6D00CCB84C /* XLPagerTabStrip.framework */,
