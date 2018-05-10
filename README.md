@@ -3,19 +3,16 @@ SyncPodのiOSアプリ用のリポジトリです。
 
 ## 必要環境
 * Xcode 9.1
-* [Swimat](https://github.com/Jintin/Swimat)
+* [SwiftLint](https://github.com/realm/SwiftLint)
 * [Carthage](https://github.com/Carthage/Carthage)
 
 ### Xcode 9.1
 [App Store](https://itunes.apple.com/jp/app/xcode/id497799835?mt=12)からインストールする。
 
-### Swimat
+### SwiftLint
 1. 次のコマンドを実行する。
-```sh
-brew cask install swimat
+```shbrew install swiftlint
 ```
-
-2. [システム設定] -> [機能拡張] -> [Xcode Source Editor] -> [Swimat]にチェックを入れる。
 
 ### 
 1. 次のコマンドを実行する。
