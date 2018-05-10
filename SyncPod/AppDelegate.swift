@@ -13,7 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, open customUrl: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+    func application(_ application: UIApplication,
+                     open customUrl: URL,
+                     options: [UIApplicationOpenURLOptionsKey : Any] = [:]
+        ) -> Bool {
         // Override point for customization after application launch.
 
         return true
