@@ -98,18 +98,16 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
         refreshControl.endRefreshing()
         if data["joined_rooms"] != JSON.null {
             joinedRooms = data["joined_rooms"]
+            self.JoinedRoomTableView.reloadData()
+            self.JoinedRoomTableView.layoutIfNeeded()
+            self.JoinedRoomTableViewHeight.constant =  JoinedRoomTableView.contentSize.height
         }
         if data["rooms"] != JSON.null {
             popularRooms = data["rooms"]
+            self.PopularRoomTableView.reloadData()
+            self.PopularRoomTableView.layoutIfNeeded()
+            self.PopularRoomTableViewHeight.constant = PopularRoomTableView.contentSize.height
         }
-
-        self.PopularRoomTableView.reloadData()
-        self.PopularRoomTableView.layoutIfNeeded()
-        self.PopularRoomTableViewHeight.constant = PopularRoomTableView.contentSize.height
-
-        self.JoinedRoomTableView.reloadData()
-        self.JoinedRoomTableView.layoutIfNeeded()
-        self.JoinedRoomTableViewHeight.constant =  JoinedRoomTableView.contentSize.height
     }
 
     func onFailure(error: Error) {
