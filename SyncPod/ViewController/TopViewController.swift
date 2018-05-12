@@ -95,15 +95,18 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
     }
 
     func onSuccess(data: JSON) {
+        let maxHeight: CGFloat = 1000.0
         refreshControl.endRefreshing()
         if data["joined_rooms"] != JSON.null {
             joinedRooms = data["joined_rooms"]
+            self.JoinedRoomTableViewHeight.constant = maxHeight
             self.JoinedRoomTableView.reloadData()
             self.JoinedRoomTableView.layoutIfNeeded()
-            self.JoinedRoomTableViewHeight.constant =  JoinedRoomTableView.contentSize.height
+            self.JoinedRoomTableViewHeight.constant = JoinedRoomTableView.contentSize.height
         }
         if data["rooms"] != JSON.null {
             popularRooms = data["rooms"]
+            self.PopularRoomTableViewHeight.constant = maxHeight
             self.PopularRoomTableView.reloadData()
             self.PopularRoomTableView.layoutIfNeeded()
             self.PopularRoomTableViewHeight.constant = PopularRoomTableView.contentSize.height
