@@ -140,7 +140,7 @@ Cg
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUL-p2-cis">
+                                            <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUL-p2-cis" userLabel="Popular Room Table View">
                                                 <rect key="frame" x="0.0" y="331.5" width="375" height="271.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
@@ -343,14 +343,15 @@ Cg
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="XCk-dS-KK6" firstAttribute="leading" secondItem="yQu-oJ-LYJ" secondAttribute="leading" constant="10" id="09I-ev-Zb8"/>
+                                            <constraint firstAttribute="trailing" secondItem="yUL-p2-cis" secondAttribute="trailing" id="2Wv-hq-dab"/>
                                             <constraint firstAttribute="trailing" secondItem="XCk-dS-KK6" secondAttribute="trailing" constant="10" id="ES1-dt-SCn"/>
-                                            <constraint firstItem="YuR-0J-Jb0" firstAttribute="top" secondItem="C9B-XQ-M3F" secondAttribute="bottom" constant="10" id="NsM-BH-CWB"/>
+                                            <constraint firstItem="yUL-p2-cis" firstAttribute="leading" secondItem="yQu-oJ-LYJ" secondAttribute="leading" id="HKH-It-mzt"/>
                                             <constraint firstAttribute="trailing" secondItem="C9B-XQ-M3F" secondAttribute="trailing" id="SPU-Ts-5eR"/>
                                             <constraint firstAttribute="trailing" secondItem="c2d-Ez-jF8" secondAttribute="trailing" id="WTc-HG-hGt"/>
                                             <constraint firstItem="c2d-Ez-jF8" firstAttribute="leading" secondItem="yQu-oJ-LYJ" secondAttribute="leading" id="cA4-MZ-7w5"/>
                                             <constraint firstItem="C9B-XQ-M3F" firstAttribute="leading" secondItem="yQu-oJ-LYJ" secondAttribute="leading" id="j69-fa-ofc"/>
                                             <constraint firstAttribute="trailing" secondItem="YuR-0J-Jb0" secondAttribute="trailing" constant="10" id="oT2-cY-hvd"/>
-                                            <constraint firstItem="yUL-p2-cis" firstAttribute="top" secondItem="YuR-0J-Jb0" secondAttribute="bottom" constant="10" id="rBC-Ys-5Uy"/>
+                                            <constraint firstAttribute="bottom" secondItem="c2d-Ez-jF8" secondAttribute="bottom" id="uQG-u1-mrf"/>
                                             <constraint firstItem="YuR-0J-Jb0" firstAttribute="leading" secondItem="yQu-oJ-LYJ" secondAttribute="leading" constant="10" id="vmc-G6-FD5"/>
                                         </constraints>
                                     </stackView>
@@ -377,8 +378,9 @@ Cg
                     <connections>
                         <outlet property="CreateRoomPanel" destination="owv-OT-CUC" id="f6b-qE-1fx"/>
                         <outlet property="JoinRoomPanel" destination="jdY-WT-thj" id="8LM-f2-riU"/>
+                        <outlet property="JoinedRoomTableView" destination="c2d-Ez-jF8" id="8ux-P7-awd"/>
+                        <outlet property="PopularRoomTableView" destination="yUL-p2-cis" id="Hhi-Mh-W65"/>
                         <outlet property="ScrillView" destination="IEq-RW-Kwq" id="aPV-OO-T2V"/>
-                        <outlet property="TableView" destination="c2d-Ez-jF8" id="8ux-P7-awd"/>
                         <segue destination="6al-Zs-kNG" kind="show" identifier="JoinRoomSegue" id="NMh-oi-6gp"/>
                         <segue destination="p9L-PJ-jLy" kind="show" identifier="CreateRoomSegue" id="XeR-AB-Y3i"/>
                     </connections>
