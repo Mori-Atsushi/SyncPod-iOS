@@ -21,8 +21,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IEq-RW-Kwq">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yQu-oJ-LYJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="372"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yQu-oJ-LYJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="411"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C9B-XQ-M3F">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="291"/>
@@ -134,14 +134,33 @@ Cg
                                                     <constraint firstAttribute="bottom" secondItem="SGS-19-Ndw" secondAttribute="bottom" constant="10" id="wkD-YP-Rkk"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今人気のルーム" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YuR-0J-Jb0" userLabel="今人気のルーム">
-                                                <rect key="frame" x="10" y="301" width="355" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ls-TJ-MQ2" userLabel="Border">
+                                                <rect key="frame" x="0.0" y="291" width="375" height="10"/>
+                                                <color key="backgroundColor" white="0.80206927325990462" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="10" id="pkV-Ig-Bpz"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFf-fo-oTu">
+                                                <rect key="frame" x="0.0" y="301" width="375" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今人気のルーム" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YuR-0J-Jb0" userLabel="今人気のルーム">
+                                                        <rect key="frame" x="10" y="10" width="355" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="YuR-0J-Jb0" secondAttribute="bottom" id="Mbb-1f-wTc"/>
+                                                    <constraint firstItem="YuR-0J-Jb0" firstAttribute="top" secondItem="EFf-fo-oTu" secondAttribute="top" constant="10" id="NIU-zg-cwM"/>
+                                                    <constraint firstAttribute="trailing" secondItem="YuR-0J-Jb0" secondAttribute="trailing" constant="10" id="OrS-Qb-OFi"/>
+                                                    <constraint firstItem="YuR-0J-Jb0" firstAttribute="leading" secondItem="EFf-fo-oTu" secondAttribute="leading" constant="10" id="ebY-g5-2W8"/>
+                                                </constraints>
+                                            </view>
                                             <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUL-p2-cis" userLabel="Popular Room Table View">
-                                                <rect key="frame" x="0.0" y="331.5" width="375" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="351" width="375" height="0.0"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" id="ELD-pG-2Kw"/>
@@ -240,14 +259,37 @@ Cg
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ceh-Cg-AM2"/>
                                                 </connections>
                                             </tableView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最近入室したルーム" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCk-dS-KK6">
-                                                <rect key="frame" x="10" y="341.5" width="355" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ElE-UM-FGn" userLabel="Border">
+                                                <rect key="frame" x="0.0" y="351" width="375" height="10"/>
+                                                <color key="backgroundColor" white="0.80243598093611113" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="10" id="HC3-fP-9kL"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZoJ-l5-z7v">
+                                                <rect key="frame" x="0.0" y="361" width="375" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最近入室したルーム" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbd-6W-Pdm" userLabel="今人気のルーム">
+                                                        <rect key="frame" x="10" y="10" width="355" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="Wbd-6W-Pdm" firstAttribute="leading" secondItem="ZoJ-l5-z7v" secondAttribute="leading" constant="10" id="8sa-Yg-aMH"/>
+                                                    <constraint firstItem="Wbd-6W-Pdm" firstAttribute="top" secondItem="ZoJ-l5-z7v" secondAttribute="top" constant="10" id="EG9-wK-IFK"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Wbd-6W-Pdm" secondAttribute="trailing" constant="10" id="Elf-bD-XmH"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Wbd-6W-Pdm" secondAttribute="trailing" constant="10" id="PKF-ag-QZp"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Wbd-6W-Pdm" secondAttribute="bottom" id="cVw-qp-u94"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Wbd-6W-Pdm" secondAttribute="bottom" id="iu9-YT-yhx"/>
+                                                    <constraint firstItem="Wbd-6W-Pdm" firstAttribute="leading" secondItem="ZoJ-l5-z7v" secondAttribute="leading" constant="10" id="xcN-Rb-Ydw"/>
+                                                    <constraint firstItem="Wbd-6W-Pdm" firstAttribute="top" secondItem="ZoJ-l5-z7v" secondAttribute="top" constant="10" id="zb9-OW-swu"/>
+                                                </constraints>
+                                            </view>
                                             <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2d-Ez-jF8">
-                                                <rect key="frame" x="0.0" y="372" width="375" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="411" width="375" height="0.0"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" id="yAF-pU-3A8"/>
@@ -348,17 +390,21 @@ Cg
                                             </tableView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="XCk-dS-KK6" firstAttribute="leading" secondItem="yQu-oJ-LYJ" secondAttribute="leading" constant="10" id="09I-ev-Zb8"/>
+                                            <constraint firstItem="7ls-TJ-MQ2" firstAttribute="leading" secondItem="yQu-oJ-LYJ" secondAttribute="leading" id="0l2-2l-Wzd"/>
                                             <constraint firstAttribute="trailing" secondItem="yUL-p2-cis" secondAttribute="trailing" id="2Wv-hq-dab"/>
-                                            <constraint firstAttribute="trailing" secondItem="XCk-dS-KK6" secondAttribute="trailing" constant="10" id="ES1-dt-SCn"/>
                                             <constraint firstItem="yUL-p2-cis" firstAttribute="leading" secondItem="yQu-oJ-LYJ" secondAttribute="leading" id="HKH-It-mzt"/>
+                                            <constraint firstAttribute="trailing" secondItem="ElE-UM-FGn" secondAttribute="trailing" id="Jme-6r-jDI"/>
+                                            <constraint firstAttribute="trailing" secondItem="EFf-fo-oTu" secondAttribute="trailing" id="Ofx-Wf-SRH"/>
                                             <constraint firstAttribute="trailing" secondItem="C9B-XQ-M3F" secondAttribute="trailing" id="SPU-Ts-5eR"/>
                                             <constraint firstAttribute="trailing" secondItem="c2d-Ez-jF8" secondAttribute="trailing" id="WTc-HG-hGt"/>
+                                            <constraint firstItem="ElE-UM-FGn" firstAttribute="leading" secondItem="yQu-oJ-LYJ" secondAttribute="leading" id="aHG-3Y-W9i"/>
                                             <constraint firstItem="c2d-Ez-jF8" firstAttribute="leading" secondItem="yQu-oJ-LYJ" secondAttribute="leading" id="cA4-MZ-7w5"/>
+                                            <constraint firstAttribute="trailing" secondItem="7ls-TJ-MQ2" secondAttribute="trailing" id="eKH-7d-CWW"/>
                                             <constraint firstItem="C9B-XQ-M3F" firstAttribute="leading" secondItem="yQu-oJ-LYJ" secondAttribute="leading" id="j69-fa-ofc"/>
-                                            <constraint firstAttribute="trailing" secondItem="YuR-0J-Jb0" secondAttribute="trailing" constant="10" id="oT2-cY-hvd"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZoJ-l5-z7v" secondAttribute="trailing" id="pUe-ck-oUl"/>
                                             <constraint firstAttribute="bottom" secondItem="c2d-Ez-jF8" secondAttribute="bottom" id="uQG-u1-mrf"/>
-                                            <constraint firstItem="YuR-0J-Jb0" firstAttribute="leading" secondItem="yQu-oJ-LYJ" secondAttribute="leading" constant="10" id="vmc-G6-FD5"/>
+                                            <constraint firstItem="ZoJ-l5-z7v" firstAttribute="leading" secondItem="yQu-oJ-LYJ" secondAttribute="leading" id="xqs-Db-Ka6"/>
+                                            <constraint firstItem="EFf-fo-oTu" firstAttribute="leading" secondItem="yQu-oJ-LYJ" secondAttribute="leading" id="yf2-DL-Y5Q"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
