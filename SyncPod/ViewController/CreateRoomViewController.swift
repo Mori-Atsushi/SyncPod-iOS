@@ -18,9 +18,14 @@ class CreateRoomViewController: UIViewController, HttpRequestDelegate {
     
     private var isPublic = true
     
+    enum PublishingSettings: Int {
+        case publicRoom = 0
+        case privateRoom = 1
+    }
+    
     @IBAction func changePublishingSetting(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
-        case 0:
+        case PublishingSettings.publicRoom.rawValue:
             isPublic = true
         default:
             isPublic = false
