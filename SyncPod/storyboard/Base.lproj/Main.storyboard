@@ -18,11 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IEq-RW-Kwq">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IEq-RW-Kwq">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yQu-oJ-LYJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="915"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yQu-oJ-LYJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="372"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C9B-XQ-M3F">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="291"/>
@@ -140,9 +140,12 @@ Cg
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUL-p2-cis" userLabel="Popular Room Table View">
-                                                <rect key="frame" x="0.0" y="331.5" width="375" height="271.5"/>
+                                            <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUL-p2-cis" userLabel="Popular Room Table View">
+                                                <rect key="frame" x="0.0" y="331.5" width="375" height="0.0"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" id="ELD-pG-2Kw"/>
+                                                </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Room" rowHeight="140" id="2Oq-lN-Glo" customClass="JoinedRoomsTabledViewCell" customModule="SyncPod" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="375" height="140"/>
@@ -237,15 +240,18 @@ Cg
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ceh-Cg-AM2"/>
                                                 </connections>
                                             </tableView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="最近入室したルーム" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCk-dS-KK6">
-                                                <rect key="frame" x="10" y="613" width="355" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最近入室したルーム" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCk-dS-KK6">
+                                                <rect key="frame" x="10" y="341.5" width="355" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2d-Ez-jF8">
-                                                <rect key="frame" x="0.0" y="643.5" width="375" height="271.5"/>
+                                            <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2d-Ez-jF8">
+                                                <rect key="frame" x="0.0" y="372" width="375" height="0.0"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" id="yAF-pU-3A8"/>
+                                                </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Room" rowHeight="140" id="JYK-5e-NEI" customClass="JoinedRoomsTabledViewCell" customModule="SyncPod" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="375" height="140"/>
@@ -378,8 +384,10 @@ Cg
                     <connections>
                         <outlet property="CreateRoomPanel" destination="owv-OT-CUC" id="f6b-qE-1fx"/>
                         <outlet property="JoinRoomPanel" destination="jdY-WT-thj" id="8LM-f2-riU"/>
-                        <outlet property="JoinedRoomTableView" destination="c2d-Ez-jF8" id="8ux-P7-awd"/>
+                        <outlet property="JoinedRoomTableView" destination="c2d-Ez-jF8" id="W89-r2-Z5E"/>
+                        <outlet property="JoinedRoomTableViewHeight" destination="yAF-pU-3A8" id="yUB-Oi-FsI"/>
                         <outlet property="PopularRoomTableView" destination="yUL-p2-cis" id="Hhi-Mh-W65"/>
+                        <outlet property="PopularRoomTableViewHeight" destination="ELD-pG-2Kw" id="TpI-aP-Vur"/>
                         <outlet property="ScrillView" destination="IEq-RW-Kwq" id="aPV-OO-T2V"/>
                         <segue destination="6al-Zs-kNG" kind="show" identifier="JoinRoomSegue" id="NMh-oi-6gp"/>
                         <segue destination="p9L-PJ-jLy" kind="show" identifier="CreateRoomSegue" id="XeR-AB-Y3i"/>

@@ -15,6 +15,8 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
     @IBOutlet weak var PopularRoomTableView: UITableView!
     @IBOutlet weak var JoinedRoomTableView: UITableView!
     @IBOutlet weak var ScrillView: UIScrollView!
+    @IBOutlet weak var PopularRoomTableViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var JoinedRoomTableViewHeight: NSLayoutConstraint!
 
     var joinedRooms: JSON = []
     var popularRooms: JSON = []
@@ -32,9 +34,6 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
 
         let createRoomTap = UITapGestureRecognizer(target: self, action: #selector(TopViewController.createRoom(_:)))
         self.CreateRoomPanel.addGestureRecognizer(createRoomTap)
-
-        self.PopularRoomTableView.translatesAutoresizingMaskIntoConstraints = true
-        self.JoinedRoomTableView.translatesAutoresizingMaskIntoConstraints = true
 
         //引っ張って更新
         self.ScrillView.refreshControl = refreshControl
@@ -96,7 +95,6 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
     }
 
     func onSuccess(data: JSON) {
-        print(data["rooms"])
         refreshControl.endRefreshing()
         if data["joined_rooms"] != JSON.null {
             joinedRooms = data["joined_rooms"]
@@ -107,17 +105,11 @@ class TopViewController: UIViewController, HttpRequestDelegate, UITableViewDataS
 
         self.PopularRoomTableView.reloadData()
         self.PopularRoomTableView.layoutIfNeeded()
-        self.PopularRoomTableView.frame = CGRect(x: PopularRoomTableView.frame.origin.x,
-            y: PopularRoomTableView.frame.origin.y,
-            width: PopularRoomTableView.superview!.frame.width,
-            height: PopularRoomTableView.contentSize.height)
+        self.PopularRoomTableViewHeight.constant = PopularRoomTableView.contentSize.height
 
         self.JoinedRoomTableView.reloadData()
         self.JoinedRoomTableView.layoutIfNeeded()
-        self.JoinedRoomTableView.frame = CGRect(x: JoinedRoomTableView.frame.origin.x,
-            y: JoinedRoomTableView.frame.origin.y,
-            width: JoinedRoomTableView.superview!.frame.width,
-            height: JoinedRoomTableView.contentSize.height)
+        self.JoinedRoomTableViewHeight.constant =  JoinedRoomTableView.contentSize.height
     }
 
     func onFailure(error: Error) {
