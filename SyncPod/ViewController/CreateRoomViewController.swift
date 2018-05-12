@@ -15,6 +15,7 @@ class CreateRoomViewController: UIViewController, HttpRequestDelegate {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var descriptionField: UITextView!
     @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var publishingSettingDescription: UILabel!
     
     private var isPublic = true
     
@@ -24,11 +25,15 @@ class CreateRoomViewController: UIViewController, HttpRequestDelegate {
     }
     
     @IBAction func changePublishingSetting(_ sender: UISegmentedControl) {
+        isPublic = false
         switch sender.selectedSegmentIndex {
         case PublishingSettings.publicRoom.rawValue:
+            publishingSettingDescription.text = "誰でも入れるルームです。「今盛り上がっているルーム」等に掲載されることがあります。"
             isPublic = true
+        case PublishingSettings.privateRoom.rawValue:
+            publishingSettingDescription.text = "招待した人のみがルームに参加することが出来ます。"
         default:
-            isPublic = false
+            break
         }
     }
 
