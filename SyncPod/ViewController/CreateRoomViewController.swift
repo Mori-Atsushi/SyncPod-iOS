@@ -28,10 +28,10 @@ class CreateRoomViewController: UIViewController, HttpRequestDelegate {
         isPublic = false
         switch sender.selectedSegmentIndex {
         case PublishingSettings.publicRoom.rawValue:
-            publishingSettingDescription.text = "誰でも入れるルームです。「今盛り上がっているルーム」等に掲載されることがあります。"
+            publishingSettingDescription.text = "だれでも入れるルームです。"
             isPublic = true
         case PublishingSettings.privateRoom.rawValue:
-            publishingSettingDescription.text = "招待した人のみがルームに参加することが出来ます。"
+            publishingSettingDescription.text = "招待された人のみが入れるルームです。"
         default:
             break
         }

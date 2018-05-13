@@ -289,10 +289,10 @@ Cg
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="U8Z-te-kkC">
-                                <rect key="frame" x="30" y="94" width="315" height="342.5"/>
+                                <rect key="frame" x="30" y="94" width="315" height="326"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9Lf-gV-Vh3" userLabel="Field Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="315" height="262.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="246"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="B5V-sd-NhP">
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="29"/>
@@ -304,14 +304,14 @@ Cg
                                                     <action selector="changePublishingSetting:" destination="p9L-PJ-jLy" eventType="valueChanged" id="lR8-sJ-NQs"/>
                                                 </connections>
                                             </segmentedControl>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="誰でも入れるルームです。「今盛り上がっているルーム」等に掲載されることがあります。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcE-x2-6de">
-                                                <rect key="frame" x="0.0" y="48" width="315" height="33.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="だれでも入れるルームです。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcE-x2-6de">
+                                                <rect key="frame" x="0.0" y="48" width="315" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6Pr-Yk-8Mm">
-                                                <rect key="frame" x="0.0" y="101.5" width="315" height="55.5"/>
+                                                <rect key="frame" x="0.0" y="85" width="315" height="55.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ルーム名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbS-hT-gu0">
                                                         <rect key="frame" x="0.0" y="0.0" width="315" height="20.5"/>
@@ -331,7 +331,7 @@ Cg
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gAS-2c-brU">
-                                                <rect key="frame" x="0.0" y="177" width="315" height="85.5"/>
+                                                <rect key="frame" x="0.0" y="160.5" width="315" height="85.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ルーム説明" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DD1-TL-fnv">
                                                         <rect key="frame" x="0.0" y="0.0" width="315" height="20.5"/>
@@ -353,7 +353,7 @@ Cg
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qix-39-e3R">
-                                        <rect key="frame" x="0.0" y="292.5" width="315" height="50"/>
+                                        <rect key="frame" x="0.0" y="276" width="315" height="50"/>
                                         <color key="backgroundColor" red="0.0" green="0.43137254899999999" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="k0e-g3-zXw"/>
