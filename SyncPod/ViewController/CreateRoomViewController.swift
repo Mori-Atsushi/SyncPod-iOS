@@ -15,7 +15,28 @@ class CreateRoomViewController: UIViewController, HttpRequestDelegate {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var descriptionField: UITextView!
     @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var publishingSettingDescription: UILabel!
     
+    private var isPublic = true
+    
+    enum PublishingSettings: Int {
+        case publicRoom = 0
+        case privateRoom = 1
+    }
+    
+    @IBAction func changePublishingSetting(_ sender: UISegmentedControl) {
+        isPublic = false
+        switch sender.selectedSegmentIndex {
+        case PublishingSettings.publicRoom.rawValue:
+            publishingSettingDescription.text = "だれでも入れるルームです。"
+            isPublic = true
+        case PublishingSettings.privateRoom.rawValue:
+            publishingSettingDescription.text = "招待された人のみが入れるルームです。"
+        default:
+            break
+        }
+    }
+
     var textViewBorder: CALayer?
     
     override func viewDidLoad() {
@@ -36,7 +57,7 @@ class CreateRoomViewController: UIViewController, HttpRequestDelegate {
         let description = descriptionField.text!
         
         if validate(name: name, description: description) {
-            sendCreateRoomHttp(name: name, description: description)
+            sendCreateRoomHttp(name: name, description: description, isPublic: isPublic)
         }
     }
     
@@ -61,12 +82,13 @@ class CreateRoomViewController: UIViewController, HttpRequestDelegate {
         return true
     }
     
-    private func sendCreateRoomHttp(name: String, description: String) {
+    private func sendCreateRoomHttp(name: String, description: String, isPublic: Bool) {
         let Http = HttpRequestHelper(delegate: self)
         let data: Parameters = [
             "room": [
                 "name": name,
-                "description": description
+                "description": description,
+                "public": isPublic
             ]
         ]
         Http.post(data: data, endPoint: "rooms")
