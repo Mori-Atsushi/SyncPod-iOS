@@ -12,7 +12,7 @@
         <!--WelcomeView-->
         <scene sceneID="svF-t7-MyV">
             <objects>
-                <viewController storyboardIdentifier="WelcomeView" title="WelcomeView" id="Mpo-e4-7AY" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeView" title="WelcomeView" id="Mpo-e4-7AY" customClass="WelcomeViewConstoller" customModule="SyncPod" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iLt-07-gPp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,6 +80,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jSc-tZ-WvC"/>
                     </view>
+                    <connections>
+                        <outlet property="signInButton" destination="EtE-dl-gex" id="Ie5-lE-omn"/>
+                        <outlet property="signUpButton" destination="EjT-FE-v12" id="4br-cg-UKw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LJf-Eo-IfA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

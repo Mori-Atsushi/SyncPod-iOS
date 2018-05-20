@@ -16,6 +16,8 @@
 		0D5B82851FC9A5D30055A72C /* SyncPodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B82841FC9A5D30055A72C /* SyncPodTests.swift */; };
 		0D5B82901FC9A5D30055A72C /* SyncPodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B828F1FC9A5D30055A72C /* SyncPodUITests.swift */; };
 		0D67B738201C3B6D00CCB84C /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D67B737201C3B6D00CCB84C /* XLPagerTabStrip.framework */; };
+		0D7FC69A20B1636700CB4169 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7FC69920B1636700CB4169 /* WelcomeViewController.swift */; };
+		0D7FC69D20B164D100CB4169 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7FC69C20B164D100CB4169 /* WelcomeViewModel.swift */; };
 		0D8BB2B62010A25700C7F6A9 /* ActionCableClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8BB2B52010A25700C7F6A9 /* ActionCableClient.framework */; };
 		0D8BB2B82010A37900C7F6A9 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8BB2B72010A37900C7F6A9 /* Starscream.framework */; };
 		0DE94BFD201289A700E26582 /* YouTubePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE94BFC201289A700E26582 /* YouTubePlayer.framework */; };
@@ -61,6 +63,8 @@
 		0D5B828F1FC9A5D30055A72C /* SyncPodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncPodUITests.swift; sourceTree = "<group>"; };
 		0D5B82911FC9A5D30055A72C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D67B737201C3B6D00CCB84C /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
+		0D7FC69920B1636700CB4169 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		0D7FC69C20B164D100CB4169 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		0D8BB2B52010A25700C7F6A9 /* ActionCableClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ActionCableClient.framework; path = Carthage/Build/iOS/ActionCableClient.framework; sourceTree = "<group>"; };
 		0D8BB2B72010A37900C7F6A9 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
 		0DE94BFA2012899600E26582 /* YouTubePlayer.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = YouTubePlayer.framework.dSYM; path = Carthage/Build/iOS/YouTubePlayer.framework.dSYM; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 		0D5B826E1FC9A5D30055A72C /* SyncPod */ = {
 			isa = PBXGroup;
 			children = (
+				0D7FC69B20B164BF00CB4169 /* viewmodel */,
 				0DFF805320B155CB0087411D /* view */,
 				0DFF805020B155890087411D /* storyboard */,
 				0D5B826F1FC9A5D30055A72C /* AppDelegate.swift */,
@@ -185,6 +190,14 @@
 			path = SyncPodUITests;
 			sourceTree = "<group>";
 		};
+		0D7FC69B20B164BF00CB4169 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				0D7FC69C20B164D100CB4169 /* WelcomeViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
 		0DFF805020B155890087411D /* storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +218,7 @@
 		0DFF805420B155D40087411D /* viewcontroller */ = {
 			isa = PBXGroup;
 			children = (
+				0D7FC69920B1636700CB4169 /* WelcomeViewController.swift */,
 			);
 			path = viewcontroller;
 			sourceTree = "<group>";
@@ -374,6 +388,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D5B82701FC9A5D30055A72C /* AppDelegate.swift in Sources */,
+				0D7FC69D20B164D100CB4169 /* WelcomeViewModel.swift in Sources */,
+				0D7FC69A20B1636700CB4169 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
