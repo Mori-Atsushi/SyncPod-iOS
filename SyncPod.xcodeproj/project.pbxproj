@@ -19,6 +19,8 @@
 		0D7FC69A20B1636700CB4169 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7FC69920B1636700CB4169 /* WelcomeViewController.swift */; };
 		0D7FC69D20B164D100CB4169 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7FC69C20B164D100CB4169 /* WelcomeViewModel.swift */; };
 		0D7FC6A020B172A400CB4169 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7FC69F20B172A400CB4169 /* ApplicationCoordinator.swift */; };
+		0D7FC6A320B1949D00CB4169 /* WelcomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7FC6A220B1949D00CB4169 /* WelcomeCoordinator.swift */; };
+		0D7FC6A520B1966300CB4169 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7FC6A420B1966300CB4169 /* BaseCoordinator.swift */; };
 		0D8BB2B62010A25700C7F6A9 /* ActionCableClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8BB2B52010A25700C7F6A9 /* ActionCableClient.framework */; };
 		0D8BB2B82010A37900C7F6A9 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8BB2B72010A37900C7F6A9 /* Starscream.framework */; };
 		0DE94BFD201289A700E26582 /* YouTubePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE94BFC201289A700E26582 /* YouTubePlayer.framework */; };
@@ -67,6 +69,8 @@
 		0D7FC69920B1636700CB4169 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		0D7FC69C20B164D100CB4169 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		0D7FC69F20B172A400CB4169 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		0D7FC6A220B1949D00CB4169 /* WelcomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCoordinator.swift; sourceTree = "<group>"; };
+		0D7FC6A420B1966300CB4169 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		0D8BB2B52010A25700C7F6A9 /* ActionCableClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ActionCableClient.framework; path = Carthage/Build/iOS/ActionCableClient.framework; sourceTree = "<group>"; };
 		0D8BB2B72010A37900C7F6A9 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
 		0DE94BFA2012899600E26582 /* YouTubePlayer.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = YouTubePlayer.framework.dSYM; path = Carthage/Build/iOS/YouTubePlayer.framework.dSYM; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 		0D5B826E1FC9A5D30055A72C /* SyncPod */ = {
 			isa = PBXGroup;
 			children = (
+				0D7FC6A120B1945400CB4169 /* coordinator */,
 				0D7FC69B20B164BF00CB4169 /* viewmodel */,
 				0DFF805320B155CB0087411D /* view */,
 				0DFF805020B155890087411D /* storyboard */,
@@ -200,12 +205,14 @@
 			path = viewmodel;
 			sourceTree = "<group>";
 		};
-		0D7FC69E20B1728D00CB4169 /* helper */ = {
+		0D7FC6A120B1945400CB4169 /* coordinator */ = {
 			isa = PBXGroup;
 			children = (
 				0D7FC69F20B172A400CB4169 /* ApplicationCoordinator.swift */,
+				0D7FC6A220B1949D00CB4169 /* WelcomeCoordinator.swift */,
+				0D7FC6A420B1966300CB4169 /* BaseCoordinator.swift */,
 			);
-			path = helper;
+			path = coordinator;
 			sourceTree = "<group>";
 		};
 		0DFF805020B155890087411D /* storyboard */ = {
@@ -220,7 +227,6 @@
 		0DFF805320B155CB0087411D /* view */ = {
 			isa = PBXGroup;
 			children = (
-				0D7FC69E20B1728D00CB4169 /* helper */,
 				0DFF805420B155D40087411D /* viewcontroller */,
 			);
 			path = view;
@@ -399,7 +405,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D5B82701FC9A5D30055A72C /* AppDelegate.swift in Sources */,
+				0D7FC6A520B1966300CB4169 /* BaseCoordinator.swift in Sources */,
 				0D7FC69D20B164D100CB4169 /* WelcomeViewModel.swift in Sources */,
+				0D7FC6A320B1949D00CB4169 /* WelcomeCoordinator.swift in Sources */,
 				0D7FC69A20B1636700CB4169 /* WelcomeViewController.swift in Sources */,
 				0D7FC6A020B172A400CB4169 /* ApplicationCoordinator.swift in Sources */,
 			);

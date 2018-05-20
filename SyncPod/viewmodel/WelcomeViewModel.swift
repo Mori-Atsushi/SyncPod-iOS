@@ -9,7 +9,7 @@
 import Foundation
 
 struct WelcomeViewModel {
-    var coordinator: ApplicationCoordinator?
+    var coordinator: WelcomeCoordinator?
 
     func onSignInClicked() {
         coordinator?.navigateToSignIn()

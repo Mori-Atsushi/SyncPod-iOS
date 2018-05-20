@@ -12,9 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    lazy var applicationCoordinator: ApplicationCoordinator = {
-        return ApplicationCoordinator(window: self.window!)
-    }()
+    lazy var applicationCoordinator = ApplicationCoordinator(window: self.window!)
 
     func application(
         _ application: UIApplication,
