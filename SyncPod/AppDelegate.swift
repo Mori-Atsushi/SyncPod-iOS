@@ -7,26 +7,33 @@
 //
 
 import UIKit
+import Swinject
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    lazy var applicationCoordinator = ApplicationCoordinator(window: self.window!)
+    lazy var assembler = Assembler([
+        CoordinatorAssembly(),
+        ViewModelAssembly(),
+        ViewControllerAssembly()
+        ])
+    lazy var coordinator = assembler.resolver.resolve(ApplicationCoordinator.self)!
 
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?
     ) -> Bool {
-        applicationCoordinator.start()
+        coordinator.start()
         return true
     }
 
     func application(
-        _ application: UIApplication, open url: URL,
+        _ application: UIApplication,
+        open url: URL,
         options: [UIApplicationOpenURLOptionsKey: Any] = [:]
     ) -> Bool {
-        applicationCoordinator.start()
+        coordinator.start()
         return true
     }
 
