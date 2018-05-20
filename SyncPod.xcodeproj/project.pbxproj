@@ -24,6 +24,8 @@
 		0DF11A0220A46E5C00D04895 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF11A0120A46E5C00D04895 /* Swinject.framework */; };
 		0DF8BF762024D7BD00F250E1 /* ScrollingStackContainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF8BF752024D7BD00F250E1 /* ScrollingStackContainer.framework */; };
 		0DFF805820B157550087411D /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DFF805720B157550087411D /* RxCocoa.framework */; };
+		0DFF805A20B158DB0087411D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DFF805920B158DB0087411D /* Main.storyboard */; };
+		0DFF805C20B1593E0087411D /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DFF805B20B1593E0087411D /* Welcome.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		0DF8BF752024D7BD00F250E1 /* ScrollingStackContainer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScrollingStackContainer.framework; path = Carthage/Build/iOS/ScrollingStackContainer.framework; sourceTree = "<group>"; };
 		0DFF805520B1573F0087411D /* RxCocoa.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxCocoa.framework.dSYM; path = Carthage/Build/iOS/RxCocoa.framework.dSYM; sourceTree = "<group>"; };
 		0DFF805720B157550087411D /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		0DFF805920B158DB0087411D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		0DFF805B20B1593E0087411D /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,8 @@
 		0D5B826E1FC9A5D30055A72C /* SyncPod */ = {
 			isa = PBXGroup;
 			children = (
+				0DFF805320B155CB0087411D /* view */,
+				0DFF805020B155890087411D /* storyboard */,
 				0D5B826F1FC9A5D30055A72C /* AppDelegate.swift */,
 				0D5B82761FC9A5D30055A72C /* Assets.xcassets */,
 				0D5B82781FC9A5D30055A72C /* LaunchScreen.storyboard */,
@@ -177,6 +183,30 @@
 				0D5B82911FC9A5D30055A72C /* Info.plist */,
 			);
 			path = SyncPodUITests;
+			sourceTree = "<group>";
+		};
+		0DFF805020B155890087411D /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				0DFF805920B158DB0087411D /* Main.storyboard */,
+				0DFF805B20B1593E0087411D /* Welcome.storyboard */,
+			);
+			path = storyboard;
+			sourceTree = "<group>";
+		};
+		0DFF805320B155CB0087411D /* view */ = {
+			isa = PBXGroup;
+			children = (
+				0DFF805420B155D40087411D /* viewcontroller */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		0DFF805420B155D40087411D /* viewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = viewcontroller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,7 +318,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D5B827A1FC9A5D30055A72C /* LaunchScreen.storyboard in Resources */,
+				0DFF805C20B1593E0087411D /* Welcome.storyboard in Resources */,
 				0D5B82771FC9A5D30055A72C /* Assets.xcassets in Resources */,
+				0DFF805A20B158DB0087411D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
