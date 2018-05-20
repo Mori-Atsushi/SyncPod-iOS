@@ -89,6 +89,36 @@
             </objects>
             <point key="canvasLocation" x="284" y="135.38230884557723"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="V98-Xu-aaa">
+            <objects>
+                <viewController storyboardIdentifier="SignInView" id="aBI-9y-41E" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q6f-Kz-NYs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="IJw-Ig-NCL"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w2c-PS-sjn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1214" y="147"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CPh-g7-qpl">
+            <objects>
+                <viewController storyboardIdentifier="SignUpView" id="8kN-ds-4ac" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9oS-O9-aja">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="72C-bF-C4g"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dFQ-yz-OIa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2162" y="146"/>
+        </scene>
     </scenes>
     <resources>
         <image name="logo" width="300" height="128"/>
