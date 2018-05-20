@@ -1,4 +1,3 @@
-
 //
 //  AppDelegate.swift
 //  SyncPod
@@ -13,17 +12,23 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    lazy var applicationCoordinator: ApplicationCoordinator = {
+        return ApplicationCoordinator(window: self.window!)
+    }()
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        self.selectStartPage()
-        
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?
+    ) -> Bool {
+        applicationCoordinator.start()
         return true
     }
-    
-    func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        self.selectStartPage()
-        
+
+    func application(
+        _ application: UIApplication, open url: URL,
+        options: [UIApplicationOpenURLOptionsKey: Any] = [:]
+    ) -> Bool {
+        applicationCoordinator.start()
         return true
     }
 
@@ -40,11 +45,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-    }
-    
-    private func selectStartPage() {
-        let storyboard: UIStoryboard = UIStoryboard(name: "Welcome", bundle: nil)
-        let viewController: UIViewController = storyboard.instantiateViewController(withIdentifier: "WelcomeView") as UIViewController
-        window?.rootViewController = viewController
     }
 }
