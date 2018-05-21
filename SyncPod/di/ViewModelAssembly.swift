@@ -10,8 +10,10 @@ import Swinject
 
 class ViewModelAssembly: Assembly {
     func assemble(container: Container) {
-        container.register(WelcomeViewModel.self) { _ in
-            return WelcomeViewModel()
+        container.register(WelcomeViewModel.self) { res in
+            WelcomeViewModel(
+                coordinator: res.resolve(WelcomeCoordinator.self)!
+            )
         }.inObjectScope(.container)
     }
 }

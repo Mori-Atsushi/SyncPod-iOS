@@ -7,25 +7,21 @@
 //
 
 import UIKit
+import SwinjectStoryboard
 
 class WelcomeCoordinator: BaseCoordinator {
+    weak var delegate = UIApplication.shared.delegate as? AppDelegate
     private let window: UIWindow
-    private let storyboard: UIStoryboard
+    private let storyboard: SwinjectStoryboard
     private var nowViewController: UIViewController
 
-    init(window: UIWindow) {
-        self.window = window
-        self.storyboard = UIStoryboard(name: "Welcome", bundle: nil)
+    init() {
+        self.window = (delegate?.window)!
+        self.storyboard = SwinjectStoryboard.create(name: "Welcome", bundle: nil)
         self.nowViewController = storyboard.instantiateViewController(withIdentifier: "WelcomeView")
-        if let welcomeVC = nowViewController as? WelcomeViewConstoller {
-            let viewModel = WelcomeViewModel()
-            viewModel.coordinator = self
-            welcomeVC.viewModel = viewModel
-        }
     }
 
     func start() {
-        window.rootViewController = nowViewController
     }
 
     func navigateToSignIn() {

@@ -7,11 +7,12 @@
 //
 
 import Swinject
+import SwinjectStoryboard
 
 class ViewControllerAssembly: Assembly {
     func assemble(container: Container) {
-        container.register(WelcomeViewConstoller.self) { _ in
-            return WelcomeViewConstoller()
+        container.storyboardInitCompleted(WelcomeViewConstoller.self) { res, viewController in
+            viewController.viewModel = res.resolve(WelcomeViewModel.self)!
         }
     }
 }

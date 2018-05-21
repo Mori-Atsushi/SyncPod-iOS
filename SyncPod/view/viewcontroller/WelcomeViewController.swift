@@ -12,7 +12,7 @@ import RxCocoa
 
 class WelcomeViewConstoller: UIViewController {
     let disposeBag = DisposeBag()
-    var viewModel: WelcomeViewModel?
+    var viewModel: WelcomeViewModel!
 
     @IBOutlet weak var signInButton: UIBarButtonItem!
     @IBOutlet weak var signUpButton: UIBarButtonItem!
@@ -20,15 +20,17 @@ class WelcomeViewConstoller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print(viewModel)
+
         setUpDataBinding()
     }
 
     private func setUpDataBinding() {
         signInButton.rx.tap
-            .subscribe({ _ in self.viewModel?.onSignInClicked() })
+            .subscribe({ _ in self.viewModel.onSignInClicked() })
             .disposed(by: disposeBag)
         signUpButton.rx.tap
-            .subscribe({ _ in self.viewModel?.onSignUpClicked() })
+            .subscribe({ _ in self.viewModel.onSignUpClicked() })
             .disposed(by: disposeBag)
     }
 }

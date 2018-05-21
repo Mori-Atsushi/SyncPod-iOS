@@ -8,17 +8,13 @@
 
 import UIKit
 import Swinject
+import SwinjectStoryboard
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    lazy var assembler = Assembler([
-        CoordinatorAssembly(),
-        ViewModelAssembly(),
-        ViewControllerAssembly()
-        ])
-    lazy var coordinator = assembler.resolver.resolve(ApplicationCoordinator.self)!
+    lazy var coordinator = DependencyManager.getResolver().resolve(ApplicationCoordinator.self)!
 
     func application(
         _ application: UIApplication,

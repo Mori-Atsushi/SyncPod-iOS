@@ -9,12 +9,10 @@
 import UIKit
 
 class ApplicationCoordinator: BaseCoordinator {
-    private let window: UIWindow
     private let welcomeCoordinator: WelcomeCoordinator
 
-    init(window: UIWindow) {
-        self.window = window
-        self.welcomeCoordinator = WelcomeCoordinator(window: window)
+    init(welcomeCoordinator: WelcomeCoordinator) {
+        self.welcomeCoordinator = welcomeCoordinator
     }
 
     func start() {

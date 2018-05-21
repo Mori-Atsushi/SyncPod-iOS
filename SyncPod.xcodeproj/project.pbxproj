@@ -25,6 +25,7 @@
 		0D7FC6AA20B1C18200CB4169 /* ViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7FC6A920B1C18200CB4169 /* ViewControllerAssembly.swift */; };
 		0D7FC6AC20B1C35B00CB4169 /* ViewModelAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7FC6AB20B1C35B00CB4169 /* ViewModelAssembly.swift */; };
 		0D7FC6B020B1C6F300CB4169 /* CoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7FC6AF20B1C6F300CB4169 /* CoordinatorAssembly.swift */; };
+		0D7FC6B220B1C9DF00CB4169 /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7FC6B120B1C9DF00CB4169 /* DependencyManager.swift */; };
 		0D8BB2B62010A25700C7F6A9 /* ActionCableClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8BB2B52010A25700C7F6A9 /* ActionCableClient.framework */; };
 		0D8BB2B82010A37900C7F6A9 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8BB2B72010A37900C7F6A9 /* Starscream.framework */; };
 		0DE94BFD201289A700E26582 /* YouTubePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE94BFC201289A700E26582 /* YouTubePlayer.framework */; };
@@ -79,6 +80,7 @@
 		0D7FC6A920B1C18200CB4169 /* ViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAssembly.swift; sourceTree = "<group>"; };
 		0D7FC6AB20B1C35B00CB4169 /* ViewModelAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelAssembly.swift; sourceTree = "<group>"; };
 		0D7FC6AF20B1C6F300CB4169 /* CoordinatorAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorAssembly.swift; sourceTree = "<group>"; };
+		0D7FC6B120B1C9DF00CB4169 /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
 		0D8BB2B52010A25700C7F6A9 /* ActionCableClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ActionCableClient.framework; path = Carthage/Build/iOS/ActionCableClient.framework; sourceTree = "<group>"; };
 		0D8BB2B72010A37900C7F6A9 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
 		0DE94BFA2012899600E26582 /* YouTubePlayer.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = YouTubePlayer.framework.dSYM; path = Carthage/Build/iOS/YouTubePlayer.framework.dSYM; sourceTree = "<group>"; };
@@ -98,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D86F07520B2AA8E00FA68C7 /* SwinjectStoryboard.framework in Frameworks */,
+				0D7FC6B420B1DDA100CB4169 /* SwinjectStoryboard.framework in Frameworks */,
 				0DFF805820B157550087411D /* RxCocoa.framework in Frameworks */,
 				0DF11A0220A46E5C00D04895 /* Swinject.framework in Frameworks */,
 				0DF11A0020A46DDB00D04895 /* RxAlamofire.framework in Frameworks */,
@@ -134,7 +136,7 @@
 		0D4B438220099E540035DF1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0D86F07420B2AA8E00FA68C7 /* SwinjectStoryboard.framework */,
+				0D7FC6B320B1DDA100CB4169 /* SwinjectStoryboard.framework */,
 				0DFF805720B157550087411D /* RxCocoa.framework */,
 				0DFF805520B1573F0087411D /* RxCocoa.framework.dSYM */,
 				0DF11A0120A46E5C00D04895 /* Swinject.framework */,
@@ -232,6 +234,7 @@
 				0D7FC6A920B1C18200CB4169 /* ViewControllerAssembly.swift */,
 				0D7FC6AB20B1C35B00CB4169 /* ViewModelAssembly.swift */,
 				0D7FC6AF20B1C6F300CB4169 /* CoordinatorAssembly.swift */,
+				0D7FC6B120B1C9DF00CB4169 /* DependencyManager.swift */,
 			);
 			path = di;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 			files = (
 				0D5B82701FC9A5D30055A72C /* AppDelegate.swift in Sources */,
 				0D7FC6A520B1966300CB4169 /* BaseCoordinator.swift in Sources */,
+				0D7FC6B220B1C9DF00CB4169 /* DependencyManager.swift in Sources */,
 				0D7FC6B020B1C6F300CB4169 /* CoordinatorAssembly.swift in Sources */,
 				0D7FC6AC20B1C35B00CB4169 /* ViewModelAssembly.swift in Sources */,
 				0D7FC69D20B164D100CB4169 /* WelcomeViewModel.swift in Sources */,

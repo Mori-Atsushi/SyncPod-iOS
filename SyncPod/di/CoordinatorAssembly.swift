@@ -10,15 +10,15 @@ import UIKit
 import Swinject
 
 class CoordinatorAssembly: Assembly {
-    weak var delegate = UIApplication.shared.delegate as? AppDelegate
-
     func assemble(container: Container) {
-        container.register(ApplicationCoordinator.self) { _ in
-            return ApplicationCoordinator(window: (self.delegate?.window)!)
+        container.register(ApplicationCoordinator.self) { res in
+            ApplicationCoordinator(
+                welcomeCoordinator: res.resolve(WelcomeCoordinator.self)!
+            )
         }.inObjectScope(.container)
 
         container.register(WelcomeCoordinator.self) { _ in
-            return WelcomeCoordinator(window: (self.delegate?.window)!)
+            WelcomeCoordinator()
         }.inObjectScope(.container)
     }
 }
