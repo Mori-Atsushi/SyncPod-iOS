@@ -17,6 +17,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YTPlayerViewDel
     var isBackground = true
 
     let playerVars = [
+        "origin": "https://youtube.com" as AnyObject,
         "playsinline": "1" as AnyObject,
         "controls": "0" as AnyObject,
         "disablekb": "1" as AnyObject,
