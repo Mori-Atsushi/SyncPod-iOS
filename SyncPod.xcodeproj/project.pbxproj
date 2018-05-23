@@ -16,6 +16,7 @@
 		0D5B82851FC9A5D30055A72C /* SyncPodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B82841FC9A5D30055A72C /* SyncPodTests.swift */; };
 		0D5B82901FC9A5D30055A72C /* SyncPodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B828F1FC9A5D30055A72C /* SyncPodUITests.swift */; };
 		0D67B738201C3B6D00CCB84C /* XLPagerTabStrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D67B737201C3B6D00CCB84C /* XLPagerTabStrip.framework */; };
+		0D86F07520B2AA8E00FA68C7 /* SwinjectStoryboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D86F07420B2AA8E00FA68C7 /* SwinjectStoryboard.framework */; };
 		0D7FC69A20B1636700CB4169 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7FC69920B1636700CB4169 /* WelcomeViewController.swift */; };
 		0D7FC69D20B164D100CB4169 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7FC69C20B164D100CB4169 /* WelcomeViewModel.swift */; };
 		0D7FC6A020B172A400CB4169 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7FC69F20B172A400CB4169 /* ApplicationCoordinator.swift */; };
@@ -66,6 +67,7 @@
 		0D5B828F1FC9A5D30055A72C /* SyncPodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncPodUITests.swift; sourceTree = "<group>"; };
 		0D5B82911FC9A5D30055A72C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D67B737201C3B6D00CCB84C /* XLPagerTabStrip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLPagerTabStrip.framework; path = Carthage/Build/iOS/XLPagerTabStrip.framework; sourceTree = "<group>"; };
+		0D86F07420B2AA8E00FA68C7 /* SwinjectStoryboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwinjectStoryboard.framework; path = Carthage/Build/iOS/SwinjectStoryboard.framework; sourceTree = "<group>"; };
 		0D7FC69920B1636700CB4169 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		0D7FC69C20B164D100CB4169 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		0D7FC69F20B172A400CB4169 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D86F07520B2AA8E00FA68C7 /* SwinjectStoryboard.framework in Frameworks */,
 				0DFF805820B157550087411D /* RxCocoa.framework in Frameworks */,
 				0DF11A0220A46E5C00D04895 /* Swinject.framework in Frameworks */,
 				0DF11A0020A46DDB00D04895 /* RxAlamofire.framework in Frameworks */,
@@ -125,6 +128,7 @@
 		0D4B438220099E540035DF1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D86F07420B2AA8E00FA68C7 /* SwinjectStoryboard.framework */,
 				0DFF805720B157550087411D /* RxCocoa.framework */,
 				0DFF805520B1573F0087411D /* RxCocoa.framework.dSYM */,
 				0DF11A0120A46E5C00D04895 /* Swinject.framework */,
@@ -389,6 +393,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Swinject.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxAlamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwinjectStoryboard.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 			);
 			outputPaths = (
