@@ -16,7 +16,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YTPlayerViewDel
     var room = DataStore.CurrentRoom
     var isBackground = true
 
-    let playerVars = [
+    var playerVars = [
         "origin": "https://youtube.com" as AnyObject,
         "playsinline": "1" as AnyObject,
         "controls": "0" as AnyObject,
@@ -168,6 +168,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YTPlayerViewDel
             videoPlayer.seek(toSeconds: videoCurrentTime, allowSeekAhead: true)
             playerViewDidBecomeReady(videoPlayer)
         } else {
+            playerVars["start"] = videoCurrentTime as AnyObject
             videoPlayer.load(withVideoId: videoId, playerVars: playerVars)
             videoPlayerContainer.isHidden = false
             self.navigationController?.navigationBar.isHidden = true
@@ -195,6 +196,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YTPlayerViewDel
                 endVideo()
             } else {
                 let nextVideo = room.playList.get(index: 0)
+                playerVars["start"] = "0" as AnyObject
                 videoPlayer.load(withVideoId: nextVideo.youtubeVideoId, playerVars: playerVars)
                 room.nowPlayingVideo.set(video: nextVideo)
                 room.playList.remove(index: 0)
