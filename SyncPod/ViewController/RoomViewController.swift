@@ -190,8 +190,8 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YTPlayerViewDel
         }
     }
     
-    func playerView(_ videoPlayer: YTPlayerView, playerState: YTPlayerState) {
-        if(playerState == .ended) {
+    func playerView(_ playerView: YTPlayerView, didChangeTo state: YTPlayerState) {
+        if(state == .ended) {
             if room.playList.isEmpty {
                 endVideo()
             } else {
