@@ -452,10 +452,10 @@ Cg
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="U8Z-te-kkC">
-                                <rect key="frame" x="30" y="94" width="315" height="241"/>
+                                <rect key="frame" x="30" y="94" width="315" height="326"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9Lf-gV-Vh3" userLabel="Field Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="315" height="161"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="246"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="B5V-sd-NhP">
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="29"/>
@@ -494,7 +494,7 @@ Cg
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gAS-2c-brU">
-                                                <rect key="frame" x="0.0" y="75.5" width="315" height="85.5"/>
+                                                <rect key="frame" x="0.0" y="160.5" width="315" height="85.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ルーム説明" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DD1-TL-fnv">
                                                         <rect key="frame" x="0.0" y="0.0" width="315" height="20.5"/>
@@ -516,7 +516,7 @@ Cg
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qix-39-e3R">
-                                        <rect key="frame" x="0.0" y="191" width="315" height="50"/>
+                                        <rect key="frame" x="0.0" y="276" width="315" height="50"/>
                                         <color key="backgroundColor" red="0.0" green="0.43137254899999999" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="k0e-g3-zXw"/>
@@ -569,7 +569,7 @@ Cg
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Jy-67-sPJ">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSj-zH-Ega" customClass="YouTubePlayerView" customModule="YouTubePlayer">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSj-zH-Ega" customClass="YTPlayerView">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
