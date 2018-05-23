@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct WelcomeViewModel {
+class WelcomeViewModel {
     var coordinator: WelcomeCoordinator?
 
     func onSignInClicked() {

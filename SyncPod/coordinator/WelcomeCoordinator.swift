@@ -11,32 +11,32 @@ import UIKit
 class WelcomeCoordinator: BaseCoordinator {
     private let window: UIWindow
     private let storyboard: UIStoryboard
-    private var nowVC: UIViewController
+    private var nowViewController: UIViewController
 
     init(window: UIWindow) {
         self.window = window
         self.storyboard = UIStoryboard(name: "Welcome", bundle: nil)
-        self.nowVC = storyboard.instantiateViewController(withIdentifier: "WelcomeView")
-        if let welcomeVC = nowVC as? WelcomeViewConstoller {
-            var viewModel = WelcomeViewModel()
+        self.nowViewController = storyboard.instantiateViewController(withIdentifier: "WelcomeView")
+        if let welcomeVC = nowViewController as? WelcomeViewConstoller {
+            let viewModel = WelcomeViewModel()
             viewModel.coordinator = self
             welcomeVC.viewModel = viewModel
         }
     }
 
     func start() {
-        window.rootViewController = nowVC
+        window.rootViewController = nowViewController
     }
 
     func navigateToSignIn() {
         let viewController = storyboard.instantiateViewController(withIdentifier: "SignInView")
-        nowVC.present(viewController, animated: true, completion: nil)
-        nowVC = viewController
+        nowViewController.present(viewController, animated: true, completion: nil)
+        nowViewController = viewController
     }
 
     func navigateToSignUp() {
         let viewController = storyboard.instantiateViewController(withIdentifier: "SignUpView")
-        nowVC.present(viewController, animated: true, completion: nil)
-        nowVC = viewController
+        nowViewController.present(viewController, animated: true, completion: nil)
+        nowViewController = viewController
     }
 }
