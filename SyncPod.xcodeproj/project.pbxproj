@@ -44,6 +44,7 @@
 		0D8BB2B420109DEE00C7F6A9 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BB2B320109DEE00C7F6A9 /* RoomViewController.swift */; };
 		0D8BB2B62010A25700C7F6A9 /* ActionCableClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8BB2B52010A25700C7F6A9 /* ActionCableClient.framework */; };
 		0D8BB2B82010A37900C7F6A9 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8BB2B72010A37900C7F6A9 /* Starscream.framework */; };
+		0D92819420B55074008B0F32 /* YouTubeiOSPlayerHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D92819320B55074008B0F32 /* YouTubeiOSPlayerHelper.framework */; };
 		0D939F41201B6A0200014633 /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D939F40201B6A0200014633 /* CreateRoomViewController.swift */; };
 		0DA2FB49201C700A00292BFE /* RoomTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA2FB48201C700A00292BFE /* RoomTabViewController.swift */; };
 		0DCA418D200C9B3500ED9B50 /* DeviceConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCA418C200C9B3500ED9B50 /* DeviceConst.swift */; };
@@ -117,6 +118,7 @@
 		0D8BB2B320109DEE00C7F6A9 /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		0D8BB2B52010A25700C7F6A9 /* ActionCableClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ActionCableClient.framework; path = Carthage/Build/iOS/ActionCableClient.framework; sourceTree = "<group>"; };
 		0D8BB2B72010A37900C7F6A9 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
+		0D92819320B55074008B0F32 /* YouTubeiOSPlayerHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YouTubeiOSPlayerHelper.framework; path = Carthage/Build/iOS/YouTubeiOSPlayerHelper.framework; sourceTree = "<group>"; };
 		0D939F40201B6A0200014633 /* CreateRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomViewController.swift; sourceTree = "<group>"; };
 		0DA2FB48201C700A00292BFE /* RoomTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTabViewController.swift; sourceTree = "<group>"; };
 		0DCA418C200C9B3500ED9B50 /* DeviceConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConst.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D92819420B55074008B0F32 /* YouTubeiOSPlayerHelper.framework in Frameworks */,
 				0D0507E4202A22C400791EA9 /* AlamofireImage.framework in Frameworks */,
 				0DF8BF762024D7BD00F250E1 /* ScrollingStackContainer.framework in Frameworks */,
 				0D67B738201C3B6D00CCB84C /* XLPagerTabStrip.framework in Frameworks */,
@@ -183,6 +186,7 @@
 		0D4B438220099E540035DF1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D92819320B55074008B0F32 /* YouTubeiOSPlayerHelper.framework */,
 				0D0507E3202A22C300791EA9 /* AlamofireImage.framework */,
 				0DF8BF752024D7BD00F250E1 /* ScrollingStackContainer.framework */,
 				0D67B737201C3B6D00CCB84C /* XLPagerTabStrip.framework */,
@@ -474,6 +478,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/XLPagerTabStrip.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ScrollingStackContainer.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/YouTubeiOSPlayerHelper.framework",
 			);
 			outputPaths = (
 			);

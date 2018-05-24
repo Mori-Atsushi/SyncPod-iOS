@@ -6,3 +6,4 @@ github "gilesvangruisen/Swift-YouTube-Player"
 github "Alamofire/AlamofireImage" ~> 3.3
 github "xmartlabs/XLPagerTabStrip" ~> 8.0
 github "malcommac/ScrollingStackContainer" ~> 0.5
+github "youtube/youtube-ios-player-helper"
