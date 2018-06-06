@@ -9,13 +9,16 @@
 import Foundation
 
 class WelcomeViewModel {
-    var coordinator: WelcomeCoordinator?
+    let coordinator: WelcomeCoordinator
 
+    init(coordinator: WelcomeCoordinator) {
+        self.coordinator = coordinator
+    }
     func onSignInClicked() {
-        coordinator?.navigateToSignIn()
+        coordinator.navigateToSignIn()
     }
 
     func onSignUpClicked() {
-        coordinator?.navigateToSignUp()
+        coordinator.navigateToSignUp()
     }
 }
