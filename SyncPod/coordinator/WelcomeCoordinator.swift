@@ -22,6 +22,7 @@ class WelcomeCoordinator: BaseCoordinator {
     }
 
     func start() {
+        window.rootViewController = nowViewController
     }
 
     func navigateToSignIn() {
