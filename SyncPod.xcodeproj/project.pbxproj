@@ -51,7 +51,6 @@
 		0DCD202C200D00A5001C90DA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD202B200D00A5001C90DA /* SignUpViewController.swift */; };
 		0DCD202E200D02CB001C90DA /* ViewExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD202D200D02CB001C90DA /* ViewExtentions.swift */; };
 		0DE76208202031D8000A0838 /* UrlExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE76207202031D8000A0838 /* UrlExtention.swift */; };
-		0DE94BFD201289A700E26582 /* YouTubePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE94BFC201289A700E26582 /* YouTubePlayer.framework */; };
 		0DF4FACB2036EDA100ABB4F8 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF4FACA2036EDA100ABB4F8 /* UserTableViewCell.swift */; };
 		0DF8BF762024D7BD00F250E1 /* ScrollingStackContainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF8BF752024D7BD00F250E1 /* ScrollingStackContainer.framework */; };
 		0DFDDB74200F092A009C7E56 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFDDB73200F092A009C7E56 /* CurrentUser.swift */; };
@@ -141,7 +140,6 @@
 				0D0507E4202A22C400791EA9 /* AlamofireImage.framework in Frameworks */,
 				0DF8BF762024D7BD00F250E1 /* ScrollingStackContainer.framework in Frameworks */,
 				0D67B738201C3B6D00CCB84C /* XLPagerTabStrip.framework in Frameworks */,
-				0DE94BFD201289A700E26582 /* YouTubePlayer.framework in Frameworks */,
 				0D8BB2B82010A37900C7F6A9 /* Starscream.framework in Frameworks */,
 				0D8BB2B62010A25700C7F6A9 /* ActionCableClient.framework in Frameworks */,
 				0D4B438520099E550035DF1D /* SwiftyJSON.framework in Frameworks */,
@@ -474,7 +472,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ActionCableClient.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Starscream.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/YouTubePlayer.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/XLPagerTabStrip.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ScrollingStackContainer.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
