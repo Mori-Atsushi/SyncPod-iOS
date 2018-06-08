@@ -8,15 +8,16 @@
 
 import UIKit
 import SwiftyJSON
-import YouTubePlayer
+import YouTubeiOSPlayerHelper
 
-class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDelegate {
+class RoomViewController: UIViewController, RoomChannelDelegate, YTPlayerViewDelegate {
 
     var roomKey: String = ""
     var room = DataStore.CurrentRoom
     var isBackground = true
 
-    let playerVars = [
+    var playerVars = [
+        "origin": "https://youtube.com" as AnyObject,
         "playsinline": "1" as AnyObject,
         "controls": "0" as AnyObject,
         "disablekb": "1" as AnyObject,
@@ -26,7 +27,7 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     ]
     let center = NotificationCenter.default
 
-    @IBOutlet weak var videoPlayer: YouTubePlayerView!
+    @IBOutlet weak var videoPlayer: YTPlayerView!
     @IBOutlet weak var videoPlayerContainer: UIView!
     
     @IBAction func backButton(_ sender: UIButton) {
@@ -38,7 +39,6 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
         DataStore.roomChannel = RoomChannel(roomKey: roomKey, delegate: self)
         room.key = roomKey
         videoPlayer.delegate = self
-        videoPlayer.playerVars = playerVars
         videoPlayer.isUserInteractionEnabled = false
         videoPlayerContainer.isHidden = true
         
@@ -165,11 +165,11 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
         let videoId = room.nowPlayingVideo.video!.youtubeVideoId
         let videoCurrentTime = room.nowPlayingVideo.video!.currentTime
         if(lastVideoYoutubeVideoId == videoId) {
-            videoPlayer.seekTo(videoCurrentTime, seekAhead: true)
-            playerReady(videoPlayer)
+            videoPlayer.seek(toSeconds: videoCurrentTime, allowSeekAhead: true)
+            playerViewDidBecomeReady(videoPlayer)
         } else {
-            videoPlayer.playerVars["start"] = videoCurrentTime as AnyObject
-            videoPlayer.loadVideoID(videoId)
+            playerVars["start"] = videoCurrentTime as AnyObject
+            videoPlayer.load(withVideoId: videoId, playerVars: playerVars)
             videoPlayerContainer.isHidden = false
             self.navigationController?.navigationBar.isHidden = true
         }
@@ -177,27 +177,27 @@ class RoomViewController: UIViewController, RoomChannelDelegate, YouTubePlayerDe
     
     private func endVideo() {
         room.nowPlayingVideo.clear()
-        videoPlayer.stop()
+        videoPlayer.stopVideo()
         self.videoPlayerContainer.isHidden = true
         self.navigationController?.navigationBar.isHidden = false
     }
 
-    func playerReady(_ videoPlayer: YouTubePlayerView) {
+    func playerViewDidBecomeReady(_ videoPlayer: YTPlayerView) {
         if(room.nowPlayingVideo.status == .playing && !isBackground) {
-            videoPlayer.play()
+            videoPlayer.playVideo()
         } else {
-            videoPlayer.pause()
+            videoPlayer.pauseVideo()
         }
     }
     
-    func playerStateChanged(_ videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
-        if(playerState == .Ended) {
+    func playerView(_ playerView: YTPlayerView, didChangeTo state: YTPlayerState) {
+        if(state == .ended) {
             if room.playList.isEmpty {
                 endVideo()
             } else {
                 let nextVideo = room.playList.get(index: 0)
-                videoPlayer.playerVars["start"] = "0" as AnyObject
-                videoPlayer.loadVideoID(nextVideo.youtubeVideoId)
+                playerVars["start"] = "0" as AnyObject
+                videoPlayer.load(withVideoId: nextVideo.youtubeVideoId, playerVars: playerVars)
                 room.nowPlayingVideo.set(video: nextVideo)
                 room.playList.remove(index: 0)
             }
